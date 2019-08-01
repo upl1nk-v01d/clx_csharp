@@ -7,7 +7,7 @@
     <ProjectGuid>{9B3223F3-9620-477E-96D6-FD2FB2C0B543}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Logic_01</RootNamespace>
-    <AssemblyName>Logic_01</AssemblyName>
+    <AssemblyName>Logic-01</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

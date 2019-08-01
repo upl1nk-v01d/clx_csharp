@@ -7,7 +7,7 @@
     <ProjectGuid>{75AF7A9F-D1A4-4CC2-A306-643E7C37428F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>AddNumbers_01</RootNamespace>
-    <AssemblyName>AddNumbers_01</AssemblyName>
+    <AssemblyName>AddNumbers-01</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
