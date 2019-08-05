@@ -2,3 +2,6 @@
 /*/*/obj/*
 /*/*/bin/*
 .idea
+/csharp-basics/*/*/.vs/*
+/csharp-basics/exercises/*/*/obj/*
+/csharp-basics/exercises/*/*/bin/*
