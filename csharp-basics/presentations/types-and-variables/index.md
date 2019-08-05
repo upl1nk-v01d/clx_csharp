@@ -31,7 +31,7 @@ Static typing
 @snapend
 
 @snap[west span-40]
-@code[java zoom-12](presentations/types-and-variables/types.java)
+@code[java zoom-12](presentations/types-and-variables/types.cs)
 @snapend
 
 @snap[west span-45 text-08]
@@ -161,3 +161,75 @@ String immutability
 <br/>
 @box[bg-orange text-white fragment](If String method returns String - although it may look similar but it is a new object)
 @snapend
+
++++?image=presentation/types-and-variables/box.jpg&size=auto 50%
+@title[Comparison]
+
+@snap[south text-18]
+Variable ≈ Box
+@snapend
+
++++
+@title[How to declare a variable?]
+
+@snap[north]
+Variable Declaration
+@snapend
+
+@ul[list-bullets-black](false)
+- Give it a name, for example *x*.
+- Assign a type.
+- For example ```int x = 10;```
+- Variable declaration tells the compiler to allocate appropriate memory space for the variable based on its data type. 
+@ulend
+
++++
+@title[How variables are stored in memory]
+
+@snap[north img-w-40 img-pt-3]
+![memory](presentations/types-and-variables/variables-in-memory.png)
+@snapend
+
+@snap[north]
+Variable as alias of memory address
+@snapend
+
+@ul[list-bullets-black south span-100](false)
+- The number *0x000abc26* stands for one memory address in [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) (0-9, and a-f).
+- The variable *x* itself refers to *0x000abc26* in the program after compilation.
+@ulend
+
+Note:
+
+In mathematics and computing, hexadecimal (also base 16, or hex) is a positional numeral system with a radix, or base, of 16. It uses sixteen distinct symbols, most often the symbols "0"–"9" to represent values zero to nine, and "A"–"F" (or alternatively "a"–"f") to represent values ten to fifteen.
+
+Hexadecimal numerals are widely used by computer system designers and programmers, as they provide a more human-friendly representation of binary-coded values.
+
++++
+@title[Two "Before" rules]
+
+@snap[north]
+Two "Before" rules
+@snapend
+
+@ul[list-bullets-black](false)
+- @css[text-orange](A declared variable must have a value assigned before it can be used.)
+- @css[text-orange](A variable must be declared before it can have a value assigned.)
+  - In practice, do not declare the variable until you need it.
+@ulend
+
++++
+@title[null]
+
+@snap[north]
+What if there is no value?
+@snapend
+
+@ul[list-bullets-black](false)
+- If there is no memory allocated for the variable it is **null**.
+- Primitive types cannot be **null**.
+@ulend
+
+Note:
+
+Recall box, it is when there is nothing in the box.
