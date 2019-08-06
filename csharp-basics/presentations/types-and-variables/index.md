@@ -190,10 +190,7 @@ Variable Declaration
 ![memory](presentations/types-and-variables/variables-in-memory.png)
 @snapend
 
-@snap[north]
-Variable as alias of memory address
-@snapend
-
+<br/>
 @ul[list-bullets-black south span-100](false)
 - The number *0x000abc26* stands for one memory address in [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) (0-9, and a-f).
 - The variable *x* itself refers to *0x000abc26* in the program after compilation.
@@ -233,3 +230,278 @@ What if there is no value?
 Note:
 
 Recall box, it is when there is nothing in the box.
+
++++
+@title[Example]
+
+@snap[midpoint]
+@code[java zoom-12](presentations/types-and-variables/nullExample.cs)
+@snapend
+
++++
+@title[Variable scope]
+
+@snap[north]
+Variable scope
+@snapend
+
+@ul[list-bullets-black](false)
+- @css[text-orange](Class) Level Scope
+- @css[text-orange](Method) Level Scope
+- @css[text-orange](Block) Level Scope
+@ulend
+
++++
+@title[Variable scope - Class]
+
+@snap[span-100]
+Class Level Scope
+@snapend
+@ul[list-bullets-black](false)
+ - Declaring the variables in a class but outside any method can be directly accessed anywhere in the class.
+ - These variables are also termed as the fields or class members.
+ - Class level scoped variable can be accessed by the non-static methods of the class in which it is declared.
+ - Access modifier of class level variables doesn’t affect their scope within a class.
+ - Member variables can also be accessed outside the class by using the access modifiers.
+@ulend
++++
+@title[Variable scope - Class Example]
+
+@snap[span-100]
+@code[java zoom-09](presentations/types-and-variables/classScope.cs)
+@snapend
+
++++
+@title[Variable scope - Method ]
+
+@snap[span-100]
+Method Level Scope
+@snapend
+@ul[list-bullets-black](false)
+ - Variables that are declared inside a method have method level scope. These are not accessible outside the method.
+ - However, these variables can be accessed by the nested code blocks inside a method.
+ - These variables are termed as the local variables.
+ - There will be a compile-time error if these variables are declared twice with the same name in the same scope.
+ - These variables don’t exist after method’s execution is over.
+@ulend
++++
+@title[Variable scope - Method Example]
+
+@snap[span-100]
+@code[java zoom-09](presentations/types-and-variables/methodScope.cs)
+@snapend
+
++++
+@title[Variable scope - Block ]
+
+@snap[span-100]
+Block Level Scope
+@snapend
+@ul[list-bullets-black](false)[span-100]
+ - These variables are generally declared inside the for, while statement etc.
+ - These variables are also termed as the loop variables or statements variable as they have limited their scope up to the body of the statement in which it declared.
+ - Generally, a loop inside a method has three level of nested code blocks(i.e. class level, method level, loop level).
+ - The variable which is declared outside the loop is also accessible within the nested loops. It means a class level variable will be accessible to the methods and all loops. Method level variable will be accessible to loop and method inside that method.
+ - A variable which is declared inside a loop body will not be visible to the outside of loop body.
+@ulend
++++
+@title[Variable scope - Block Example]
+
+@snap[span-100]
+@code[java zoom-09](presentations/types-and-variables/blockScope.cs)
+@snapend
+
++++
+@title[Naming rules]
+
+@snap[north]
+Naming rules
+@snapend
+
+@ul[list-bullets-black](false)
+- Identifiers are the names that identify the elements such as **variables**, **methods**, and **classes** in the program.
+- The naming rule excludes the following situations:
+  - @css[text-orange](cannot start with a digit)
+  - @css[text-orange](cannot be any [reserved word](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/))
+  - @css[text-orange](cannot include any blank between letters)
+  - @css[text-orange](cannot contain +, -, ∗, / and %)
+  - C# is @css[text-orange](case sensitive).
+@ulend
+
++++
+@title[Type Conversion and Compatibility]
+
+@snap[north span-100]
+Type Conversion and Compatibility
+@snapend
+<br/>
+@ul[list-bullets-black](false)
+- Type conversion happens when we assign the value of one data type to another. 
+- If the data types are @css[text-orange](compatible), then C# does Automatic Type Conversion. 
+- If not comparable, then they need to be converted @css[text-orange](explicitly) which is known as Explicit Type conversion. 
+- For example, assigning an int value to a long variable.
+- For example, the integer 1 is compatible to a double value 1.0.
+- However, there is no automatic conversion from double to int. (Why?)
+@ulend
++++
+
+@title[Lossy Conversion]
+
+@snap[north span-100]
+Lossy Conversion
+@snapend
+
+@ul[list-bullets-black](false)
+- if we want to assign a value of larger data type to a smaller data type we perform explicit type casting.
+- This is useful for incompatible data types where automatic conversion cannot be done.(double to int)
+- Here, target-type specifies the desired type to convert the specified value to.
+- Sometimes, it may result into the @css[text-orange](lossy conversion).(???)
+@ulend
+
++++
+@title[Lossy Conversion - example]
+
+@snap[north span-100]
+Lossy Conversion
+@snapend
+<br/>
+@snap[span-100]
+@code[java zoom-09](presentations/types-and-variables/lossyConversion.cs)
+@snapend
+
+@snap[span-100]
+@css[text-orange](Explanation:)
+Here due to lossy conversion, the value of i becomes 765 and there is a loss of 0.12 value.
+@snapend
++++
+@title[Casting]
+
+@snap[north span-100]
+Casting
+@snapend
+<br/>
+@snap[span-100]
+C# provides **built-in** methods for Type-Conversions as follows :
+@snapend
++++
+@title[Built-in casting]
+
+@snap[north span-100]
+Built-in casting
+@snapend
+<br/>
+@ul[list-bullets-black](false)
+- ToBoolean:	It will converts a type to Boolean value
+- ToChar:	It will converts a type to a character value
+- ToByte:	It will converts a value to Byte Value
+- ToDecimal:	It will converts a value to Decimal point value
+- ToDouble:	It will converts a type to double data type
+- ToInt16:	It will converts a type to 16-bit integer
+- ToInt32:	It will converts a type to 32 bit integer
+- ToInt64:	It will converts a type to 64 bit integer
+- ToString:	It will converts a given type to string
+- ToUInt16:	It will converts a type to unsigned 16 bit integer
+- ToUInt32:	It will converts a type to unsigned 32 bit integer
+- ToUInt64:	It will converts a type to unsigned 64 bit integer
+@ulend
++++
+@title[Casting example]
+
+@snap[north span-100]
+Casting example
+@snapend
+<br/>
+@snap[span-100]
+@code[java zoom-12](presentations/types-and-variables/Casting.cs)
+@snapend
+
+@ul[list-bullets-black](false)
+- Note that the C# compiler does only @css[text-orange](type-checking) but no real execution before compilation.
+- In other words, the values of variables are unknown until they are really executed.
+@ulend
+
++++?color=linear-gradient(to top, #ffb347, #ffcc33)
+@title[Quiz]
+
+@snap[midpoint announce-quiz text-white]
+QUIZ
+@snapend
+
++++
+@title[Question #1]
+
+@snap[midpoint]
+@code[java zoom-10](presentations/types-and-variables/Floats.cs)
+@snapend
+
++++
+@title[Question #2]
+
+@snap[span-100]
+In which of the following answers does the number of bits increase from fewest to most?
+@snapend
+
+@ol[list-bullets-black](false)
+- byte < long < short < int
+- int < byte < short < long
+- byte < short < int < long
+- short < byte < long < int
+@olend
+
++++
+@title[Question #3]
+
+@snap[midpoint]
+@code[java zoom-10](presentations/types-and-variables/Question1.cs)
+@snapend
+
++++
+@title[Question #4]
+
+@snap[midpoint]
+@code[java zoom-10](presentations/types-and-variables/Question2.cs)
+@snapend
+
++++
+@title[Question #5]
+
+@snap
+Which of these statements are true?
+@snapend
+
+@ol[list-bullets-black](false)
+- null can be any type, including primitive types
+- primitive - *int*, object - Integer
+- null can be any type, excluding primitive types
+- primitive - *Integer*, object - int
+@olend
+
++++
+@title[Must read]
+
+@snap[span-100 text-center]
+*[Clean Code](http://www.amazon.com/gp/product/0132350882/ref=as_li_qf_sp_asin_tl?camp=1789&creative=9325&creativeASIN=0132350882&ie=UTF8&linkCode=as2&tag=robbagcom-20)*
+@snapend
+<br/>
+@snap[span-100 text-center]
+*[The Passionate Programmer](https://www.goodreads.com/book/show/6399113-the-passionate-programmer)*
+@snapend
+<br/>
+
+@snap[span-100 text-center]
+*[C# in Depth Second Edition](https://www.amazon.com/gp/product/1935182471/ref=as_li_qf_sp_asin_tl?camp=1789&creative=9325&creativeASIN=1935182471&ie=UTF8&linkCode=as2&tag=robbagcom-20)*
+@snapend
+
++++
+@title[Further reading]
+
+@snap[span-100]
+Further reading and tutorials:
+@snapend
+<br/>
+@ul[list-bullets-black](false)
+- [Data types](http://zetcode.com/lang/csharp/datatypes/)
+- [Static vs dynamic typing](https://hackernoon.com/i-finally-understand-static-vs-dynamic-typing-and-you-will-too-ad0c2bd0acc7)
+- [Why String is Immutable in C#?](https://www.c-sharpcorner.com/article/why-string-is-immutable/)
+- [Primitives vs objects](http://www.jeremyshanks.com/c-variables-primitive-nonprimitive-types/)
+@ulend
