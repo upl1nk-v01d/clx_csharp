@@ -22,6 +22,7 @@ namespace Tax_11
             Console.WriteLine("Sales tax: £" + salesTax);
             Console.WriteLine("Total: £" + (price + salesTax));
             Console.ReadKey();
+
         }
 
         //change only this method accordingly.

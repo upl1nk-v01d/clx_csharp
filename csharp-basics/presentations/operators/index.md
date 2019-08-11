@@ -46,3 +46,181 @@ Note:
 However, if both expressions have type int, then the result is an int.
 
 C# does integer division, which basically is the same as regular real division, but you throw away the remainder (or fraction). Thus, 7 / 3 is 2 with a remainder of 1. Throw away the remainder, and the result is 2.
+
++++
+@title[Rational operators]
+
+@snap[north]
+Rational operators
+@snapend
+
+| Java operator | Mathematics symbol |
+| --- | --- |
+| ```<``` | ```<``` |
+| ```<=``` | ```≤``` |
+| ```>``` | ```>``` |
+| ```>=``` | ```≥``` |
+| ```==``` | ```=``` |
+| ```!=``` | ```≠``` |
+
+Note:
+
+Note that the equality operator is double equality sign (==), not single equality sign (=).
+
++++
+@title[Logical operators]
+
+@snap[north]
+Logical operators
+@snapend
+
+| Operator | Name | Description |
+| --- | --- | --- |
+| ! | not | logical negation |
+| && | and | logical conjunction |
+| &#124;&#124; | or | logical disjunction |
+| ^ | exclusive or | [logical exclusion](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators#logical-exclusive-or-operator-) |
+
+Note:
+
+^ - More simply, you can also think of xor as "this or that, but not both!".
+
++++
+@title[Truth table]
+
+@snap[north]
+Truth table
+@snapend
+
+| x | y | !x | x && y | x &#124;&#124; y | x ^ y |
+| --- | --- | --- | --- | --- | --- |
+| true | true | false | true | true | false |
+| true | false | false | false | true | true |
+| false | true | true | false | true | true |
+| false | false | true | false | false | false |
+
++++
+@title[Arithmetic compound operators]
+
+@snap[north span-100]
+Arithmetic compound operators
+@snapend
+
+| Operator | Description |
+| --- | --- |
+| ++ | Increment |
+| += | Addition assignment |
+| -- | Decrement |
+| -= | Subtraction assignment |
+| *= | Multiplication assignment |
+| /= | Division assignment |
+| %= | Modulus assignment |
+
++++
+@title[Example #1]
+
+@snap[north span-100]
+Example
+@snapend
+
+@snap[midpoint span-100]
+@code[java zoom-15](presentations/operators/Example1.cs)
+@snapend
+
++++
+@title[++x vs x++]
+
+@snap[north span-100]
+++x vs x++
+@snapend
+
+@snap[midpoint span-100]
+@code[java zoom-15](presentations/operators/Example2.cs)
+@snapend
+
++++?image=presentations/operators/operator-precedence.jpg&size=auto 75%
+@title[Operator precedence]
+
+@snap[north span-100]
+Operator precedence
+@snapend
+
++++
+@title[Math methods]
+
+@snap[north span-100]
+Math methods
+@snapend
+
+| Method | Description |
+| --- | --- |
+| Math.Abs() | Absolute value |
+| Math.Round() | Rounding |
+| ... | ... |
+
+@snap[south span-100]
+[System.Math](https://docs.microsoft.com/en-us/dotnet/api/system.math?view=netframework-4.8) provides methods for mathematical operations 
+@snapend
+
++++?color=linear-gradient(to top, #ffb347, #ffcc33)
+@title[Quiz]
+
+@snap[midpoint announce-quiz text-white]
+QUIZ
+@snapend
+
++++
+@title[Question #1]
+
+@snap[midpoint span-100]
+@code[java zoom-15](presentation/operators/Question1.cs)
+@snapend
+
++++
+@title[Question #2]
+
+@snap[midpoint span-100]
+@code[java zoom-15](presentation/operators/Question2.cs)
+@snapend
+
++++
+@title[Question #3]
+
+@snap[midpoint span-100]
+@code[java zoom-15](presentation/operators/Question3.cs)
+@snapend
+
++++
+@title[Question #4]
+
+@snap[midpoint span-100]
+@code[java zoom-15](src/main/java/io/codelex/arithmetic/examples/PrePostIncrement.cs)
+@snapend
+
++++
+@title[Must read]
+
+@snap[span-100 text-center]
+*Head First Java*
+@snapend
+@ul[list-bullets-black span-100](false)
+- Numbers Matter [Chapter 10]
+@ulend
+
+<br/>
+
+@snap[span-100 text-center]
+*Java for beginners*
+@snapend
+@ul[list-bullets-black span-100](false)
+- Mathematical Operators [9]
+@ulend
+
+<br/>
+
+@snap[span-100 text-center]
+*Java SE 8 Certification Guide*
+@snapend
+@ul[list-bullets-black span-100](false)
+- Operators [111 - 123] 
+@ulend
