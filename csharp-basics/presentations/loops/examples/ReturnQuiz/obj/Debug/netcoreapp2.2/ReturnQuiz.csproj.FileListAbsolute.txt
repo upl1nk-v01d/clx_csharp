@@ -1,0 +1,11 @@
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\bin\Debug\netcoreapp2.2\ReturnQuiz.deps.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\bin\Debug\netcoreapp2.2\ReturnQuiz.runtimeconfig.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\bin\Debug\netcoreapp2.2\ReturnQuiz.runtimeconfig.dev.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\bin\Debug\netcoreapp2.2\ReturnQuiz.dll
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\bin\Debug\netcoreapp2.2\ReturnQuiz.pdb
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\obj\Debug\netcoreapp2.2\ReturnQuiz.csprojAssemblyReference.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\obj\Debug\netcoreapp2.2\ReturnQuiz.csproj.CoreCompileInputs.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\obj\Debug\netcoreapp2.2\ReturnQuiz.AssemblyInfoInputs.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\obj\Debug\netcoreapp2.2\ReturnQuiz.AssemblyInfo.cs
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\obj\Debug\netcoreapp2.2\ReturnQuiz.dll
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ReturnQuiz\obj\Debug\netcoreapp2.2\ReturnQuiz.pdb

@@ -1,0 +1,11 @@
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\bin\Debug\netcoreapp2.2\DoWhileQuiz.deps.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\bin\Debug\netcoreapp2.2\DoWhileQuiz.runtimeconfig.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\bin\Debug\netcoreapp2.2\DoWhileQuiz.runtimeconfig.dev.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\bin\Debug\netcoreapp2.2\DoWhileQuiz.dll
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\bin\Debug\netcoreapp2.2\DoWhileQuiz.pdb
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\obj\Debug\netcoreapp2.2\DoWhileQuiz.csprojAssemblyReference.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\obj\Debug\netcoreapp2.2\DoWhileQuiz.csproj.CoreCompileInputs.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\obj\Debug\netcoreapp2.2\DoWhileQuiz.AssemblyInfoInputs.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\obj\Debug\netcoreapp2.2\DoWhileQuiz.AssemblyInfo.cs
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\obj\Debug\netcoreapp2.2\DoWhileQuiz.dll
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\DoWhileQuiz\obj\Debug\netcoreapp2.2\DoWhileQuiz.pdb

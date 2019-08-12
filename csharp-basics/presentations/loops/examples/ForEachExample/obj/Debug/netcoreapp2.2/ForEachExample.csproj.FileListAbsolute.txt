@@ -1,0 +1,11 @@
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\bin\Debug\netcoreapp2.2\ForEachExample.deps.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\bin\Debug\netcoreapp2.2\ForEachExample.runtimeconfig.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\bin\Debug\netcoreapp2.2\ForEachExample.runtimeconfig.dev.json
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\bin\Debug\netcoreapp2.2\ForEachExample.dll
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\bin\Debug\netcoreapp2.2\ForEachExample.pdb
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\obj\Debug\netcoreapp2.2\ForEachExample.csprojAssemblyReference.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\obj\Debug\netcoreapp2.2\ForEachExample.csproj.CoreCompileInputs.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\obj\Debug\netcoreapp2.2\ForEachExample.AssemblyInfoInputs.cache
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\obj\Debug\netcoreapp2.2\ForEachExample.AssemblyInfo.cs
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\obj\Debug\netcoreapp2.2\ForEachExample.dll
+C:\Users\Katriina\RiderProjects\c-sharp-exercizes\Loops\Examples\ForEachExample\obj\Debug\netcoreapp2.2\ForEachExample.pdb
