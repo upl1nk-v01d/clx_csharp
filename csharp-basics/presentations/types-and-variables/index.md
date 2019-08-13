@@ -31,7 +31,7 @@ Static typing
 @snapend
 
 @snap[west span-40]
-@code[java zoom-12](presentations/types-and-variables/types.cs)
+@code[c# zoom-12](presentations/types-and-variables/types.cs)
 @snapend
 
 @snap[west span-45 text-08]
@@ -131,7 +131,7 @@ Char
 @snapend
 
 @snap[midpoint]
-@code[java zoom-10](presentations/types-and-variables/strings.cs)
+@code[c# zoom-10](presentations/types-and-variables/strings.cs)
 @snapend
 
 +++
@@ -142,7 +142,7 @@ String concatenation
 @snapend
 
 @snap[midpoint span-100]
-@code[java zoom-10](presentations/types-and-variables/stringConcatenation.cs)
+@code[c# zoom-10](presentations/types-and-variables/stringConcatenation.cs)
 @snapend
 
 +++
@@ -153,7 +153,7 @@ String immutability
 @snapend
 
 @snap[midpoint span-100]
-@code[java zoom-10](presentations/types-and-variables/stringImmutability.cs)
+@code[c# zoom-10](presentations/types-and-variables/stringImmutability.cs)
 @snapend
 
 @snap[midpoint span-100 text-12]
@@ -162,7 +162,7 @@ String immutability
 @box[bg-orange text-white fragment](If String method returns String - although it may look similar but it is a new object)
 @snapend
 
-+++?image=presentation/types-and-variables/box.jpg&size=auto 50%
++++?image=presentations/types-and-variables/box.jpg&size=auto 50%
 @title[Comparison]
 
 @snap[south text-18]
@@ -184,14 +184,24 @@ Variable Declaration
 @ulend
 
 +++
-@title[How variables are stored in memory]
+@title[How variables are stored in memory?]
 
-@snap[north img-w-40 img-pt-3]
+@snap[north]
+How variables are stored in memory?
+@snapend
+
+@snap[midpoint img-w-40 img-pt-3]
 ![memory](presentations/types-and-variables/variables-in-memory.png)
 @snapend
 
-<br/>
-@ul[list-bullets-black south span-100](false)
++++
+@title[How variables are stored in memory?]
+
+@snap[north]
+How variables are stored in memory?
+@snapend
+
+@ul[midpoint list-bullets-black span-100](false)
 - The number *0x000abc26* stands for one memory address in [hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) (0-9, and a-f).
 - The variable *x* itself refers to *0x000abc26* in the program after compilation.
 @ulend
@@ -235,7 +245,7 @@ Recall box, it is when there is nothing in the box.
 @title[Example]
 
 @snap[midpoint]
-@code[java zoom-12](presentations/types-and-variables/nullExample.cs)
+@code[c# zoom-12](presentations/types-and-variables/nullExample.cs)
 @snapend
 
 +++
@@ -254,10 +264,10 @@ Variable scope
 +++
 @title[Variable scope - Class]
 
-@snap[span-100]
+@snap[north span-100]
 Class Level Scope
 @snapend
-@ul[list-bullets-black](false)
+@ul[list-bullets-black text-08](false)
  - Declaring the variables in a class but outside any method can be directly accessed anywhere in the class.
  - These variables are also termed as the fields or class members.
  - Class level scoped variable can be accessed by the non-static methods of the class in which it is declared.
@@ -268,16 +278,16 @@ Class Level Scope
 @title[Variable scope - Class Example]
 
 @snap[span-100]
-@code[java zoom-09](presentations/types-and-variables/classScope.cs)
+@code[c# zoom-08](presentations/types-and-variables/classScope.cs)
 @snapend
 
 +++
 @title[Variable scope - Method ]
 
-@snap[span-100]
+@snap[north span-100]
 Method Level Scope
 @snapend
-@ul[list-bullets-black](false)
+@ul[list-bullets-black text-08](false)
  - Variables that are declared inside a method have method level scope. These are not accessible outside the method.
  - However, these variables can be accessed by the nested code blocks inside a method.
  - These variables are termed as the local variables.
@@ -288,16 +298,16 @@ Method Level Scope
 @title[Variable scope - Method Example]
 
 @snap[span-100]
-@code[java zoom-09](presentations/types-and-variables/methodScope.cs)
+@code[c# zoom-05](presentations/types-and-variables/methodScope.cs)
 @snapend
 
 +++
 @title[Variable scope - Block ]
 
-@snap[span-100]
+@snap[north span-100]
 Block Level Scope
 @snapend
-@ul[list-bullets-black](false)[span-100]
+@ul[list-bullets-black text-08](false)[span-100]
  - These variables are generally declared inside the for, while statement etc.
  - These variables are also termed as the loop variables or statements variable as they have limited their scope up to the body of the statement in which it declared.
  - Generally, a loop inside a method has three level of nested code blocks(i.e. class level, method level, loop level).
@@ -308,7 +318,7 @@ Block Level Scope
 @title[Variable scope - Block Example]
 
 @snap[span-100]
-@code[java zoom-09](presentations/types-and-variables/blockScope.cs)
+@code[c# zoom-04](presentations/types-and-variables/blockScope.cs)
 @snapend
 
 +++
@@ -335,7 +345,7 @@ Naming rules
 Type Conversion and Compatibility
 @snapend
 <br/>
-@ul[list-bullets-black](false)
+@ul[list-bullets-black text-08](false)
 - Type conversion happens when we assign the value of one data type to another. 
 - If the data types are @css[text-orange](compatible), then C# does Automatic Type Conversion. 
 - If not comparable, then they need to be converted @css[text-orange](explicitly) which is known as Explicit Type conversion. 
@@ -366,13 +376,14 @@ Lossy Conversion
 @snapend
 <br/>
 @snap[span-100]
-@code[java zoom-09](presentations/types-and-variables/lossyConversion.cs)
+@code[c# zoom-07](presentations/types-and-variables/lossyConversion.cs)
 @snapend
 
-@snap[span-100]
+@snap[south span-100]
 @css[text-orange](Explanation:)
 Here due to lossy conversion, the value of i becomes 765 and there is a loss of 0.12 value.
 @snapend
+
 +++
 @title[Casting]
 
@@ -390,20 +401,21 @@ C# provides **built-in** methods for Type-Conversions as follows :
 Built-in casting
 @snapend
 <br/>
-@ul[list-bullets-black](false)
-- ToBoolean:	It will converts a type to Boolean value
-- ToChar:	It will converts a type to a character value
-- ToByte:	It will converts a value to Byte Value
-- ToDecimal:	It will converts a value to Decimal point value
-- ToDouble:	It will converts a type to double data type
-- ToInt16:	It will converts a type to 16-bit integer
-- ToInt32:	It will converts a type to 32 bit integer
-- ToInt64:	It will converts a type to 64 bit integer
-- ToString:	It will converts a given type to string
-- ToUInt16:	It will converts a type to unsigned 16 bit integer
-- ToUInt32:	It will converts a type to unsigned 32 bit integer
-- ToUInt64:	It will converts a type to unsigned 64 bit integer
+@ul[list-bullets-black text-08](false)
+- **ToBoolean**
+- **ToChar**
+- **ToByte**
+- **ToDecimal**
+- **ToDouble**
+- **ToInt16**
+- **ToInt32**
+- **ToInt64**
+- **ToString**
+- **ToUInt16**
+- **ToUInt32**
+- **ToUInt64**
 @ulend
+
 +++
 @title[Casting example]
 
@@ -412,9 +424,16 @@ Casting example
 @snapend
 <br/>
 @snap[span-100]
-@code[java zoom-12](presentations/types-and-variables/Casting.cs)
+@code[c# zoom-10](presentations/types-and-variables/Casting.cs)
 @snapend
 
++++
+@title[Type Checking]
+
+@snap[north span-100]
+Type Checking
+@snapend
+<br/>
 @ul[list-bullets-black](false)
 - Note that the C# compiler does only @css[text-orange](type-checking) but no real execution before compilation.
 - In other words, the values of variables are unknown until they are really executed.
@@ -431,7 +450,7 @@ QUIZ
 @title[Question #1]
 
 @snap[midpoint]
-@code[java zoom-10](presentations/types-and-variables/Floats.cs)
+@code[c# zoom-10](presentations/types-and-variables/Floats.cs)
 @snapend
 
 +++
@@ -452,14 +471,14 @@ In which of the following answers does the number of bits increase from fewest t
 @title[Question #3]
 
 @snap[midpoint]
-@code[java zoom-10](presentations/types-and-variables/Question1.cs)
+@code[c# zoom-10](presentations/types-and-variables/Question1.cs)
 @snapend
 
 +++
 @title[Question #4]
 
 @snap[midpoint]
-@code[java zoom-10](presentations/types-and-variables/Question2.cs)
+@code[c# zoom-10](presentations/types-and-variables/Question2.cs)
 @snapend
 
 +++
