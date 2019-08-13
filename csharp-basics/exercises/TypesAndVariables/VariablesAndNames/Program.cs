@@ -11,7 +11,7 @@ namespace VariablesAndNames
 
             cars = 100; //cars
             seats_in_a_car = 4.0; //seats in a car
-            drivers = 30; // drivers
+            drivers = 28; // drivers
             passengers = 90; // passengers
             cars_not_driven = cars - drivers; // free cars
             cars_driven = drivers; // cars driven at the moment
