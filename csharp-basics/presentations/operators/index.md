@@ -8,10 +8,10 @@ Operators
 +++
 @title[Lesson objective]
 
-@snap
+@snap[north span-100]
 After this lesson you will know:
 @snapend
-
+<br/>
 @ul[list-bullets-black](false)
 - What are and how to apply: 
   - arithmetic operators
@@ -54,7 +54,7 @@ C# does integer division, which basically is the same as regular real division, 
 Rational operators
 @snapend
 
-| Java operator | Mathematics symbol |
+| C# operator | Mathematics symbol |
 | --- | --- |
 | ```<``` | ```<``` |
 | ```<=``` | ```≤``` |
@@ -124,7 +124,7 @@ Example
 @snapend
 
 @snap[midpoint span-100]
-@code[java zoom-15](presentations/operators/Example1.cs)
+@code[c# zoom-15](presentations/operators/Example1.cs)
 @snapend
 
 +++
@@ -135,7 +135,7 @@ Example
 @snapend
 
 @snap[midpoint span-100]
-@code[java zoom-15](presentations/operators/Example2.cs)
+@code[c# zoom-15](presentations/operators/Example2.cs)
 @snapend
 
 +++?image=presentations/operators/operator-precedence.jpg&size=auto 75%
@@ -173,54 +173,26 @@ QUIZ
 @title[Question #1]
 
 @snap[midpoint span-100]
-@code[java zoom-15](presentation/operators/Question1.cs)
+@code[c# zoom-15](presentations/operators/Question1.cs)
 @snapend
 
 +++
 @title[Question #2]
 
 @snap[midpoint span-100]
-@code[java zoom-15](presentation/operators/Question2.cs)
+@code[c# zoom-15](presentations/operators/Question2.cs)
 @snapend
 
 +++
 @title[Question #3]
 
 @snap[midpoint span-100]
-@code[java zoom-15](presentation/operators/Question3.cs)
+@code[c# zoom-15](presentations/operators/Question3.cs)
 @snapend
 
 +++
 @title[Question #4]
 
 @snap[midpoint span-100]
-@code[java zoom-15](src/main/java/io/codelex/arithmetic/examples/PrePostIncrement.cs)
+@code[c# zoom-15](presentations/operators/PrePostIncrement.cs)
 @snapend
-
-+++
-@title[Must read]
-
-@snap[span-100 text-center]
-*Head First Java*
-@snapend
-@ul[list-bullets-black span-100](false)
-- Numbers Matter [Chapter 10]
-@ulend
-
-<br/>
-
-@snap[span-100 text-center]
-*Java for beginners*
-@snapend
-@ul[list-bullets-black span-100](false)
-- Mathematical Operators [9]
-@ulend
-
-<br/>
-
-@snap[span-100 text-center]
-*Java SE 8 Certification Guide*
-@snapend
-@ul[list-bullets-black span-100](false)
-- Operators [111 - 123] 
-@ulend
