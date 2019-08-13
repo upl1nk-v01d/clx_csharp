@@ -26,6 +26,8 @@ namespace MoreVariablesAndPrinting
 
             Console.WriteLine("If I add " + myAge + ", " + myHeight + ", and " + myWeight
                                + " I get " + (myAge + myHeight + myWeight) + ".");
+
+            Console.ReadKey();
         }
     }
 }
