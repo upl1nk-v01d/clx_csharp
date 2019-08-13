@@ -2,7 +2,13 @@
 
 ## Git
 
-You must have [Git](https://git-scm.com) installed on your machine. Follow steps mentioned on [Atlassian tutorial](https://www.atlassian.com/git/tutorials/install-git).
+Most of the time [Git](https://git-scm.com) will be used.
+
+Install following packages:
+
+ - [Git](https://www.atlassian.com/git/tutorials/install-git)
+ - [Git Extensions](https://sourceforge.net/projects/gitextensions)
+ - [KDiff3](https://sourceforge.net/projects/kdiff3)
 
 ## Visual Studio
 
