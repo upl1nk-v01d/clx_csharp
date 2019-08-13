@@ -8,7 +8,7 @@ What is C#?
 +++
 @title[Lesson objective]
 
-@snap
+@snap[north]
 After this lesson you will know:
 @snapend
 

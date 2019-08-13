@@ -8,7 +8,7 @@ Introduction to programming
 +++
 @title[Lesson objective]
 
-@snap
+@snap[north]
 After this lesson you will know:
 @snapend
 <br/>

@@ -8,3 +8,4 @@ Fundamentals of C#
 ---?include=presentations/introduction/index.md
 ---?include=presentations/what-is-csharp/index.md
 ---?include=presentations/types-and-variables/index.md
+---?include=presentations/operators/index.md
