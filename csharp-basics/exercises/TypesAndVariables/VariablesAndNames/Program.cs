@@ -24,6 +24,7 @@ namespace VariablesAndNames
             Console.WriteLine("We can transport " + carpool_capacity + " people today.");
             Console.WriteLine("We have " + passengers + " to carpool today.");
             Console.WriteLine("We need to put about " + average_passengers_per_car + " in each car.");
+            Console.ReadKey();
         }
     }
 }
