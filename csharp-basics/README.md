@@ -1,35 +1,47 @@
 # C# Basics
 
- - [Exercises](./exercises)
+# Types & Variables
 
-### Types & Variables
+ - [Exercises](./exercises/TypesAndVariables)
 
-### Arithmetic Operations
+# Arithmetic Operations
 
-### Classes & Objects
+ - [Exercises](./exercises/Arithmetic)
 
-### Flow of Control
+# Classes & Objects
 
-### Loops
+ - [Exercises](./exercises/ClassesAndObjects)
 
-### Arrays
+# Flow of Control
 
-### Collections
+ - [Exercises](./exercises/FlowOfControl)
 
-### Comparing
+# Loops
 
-### Polymorphism
+ - [Exercises](./exercises/Loops)
 
-### Packages & Access Control
+# Arrays
 
-### Exceptions
+ - [Exercises](./exercises/Loops)
 
-### Generics
+# Collections
 
-### Enums
+ - [Exercises](./exercises/Collections)
 
-### Multithreading
+# Comparing
 
-## Resources
+# Polymorphism
+
+# Packages & Access Control
+
+# Exceptions
+
+# Generics
+
+# Enums
+
+# Multithreading
+
+# Resources
 
  - [C# Tutorial @tutorialspoint.com](https://www.tutorialspoint.com/csharp/index.htm)
