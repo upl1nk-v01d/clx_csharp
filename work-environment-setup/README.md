@@ -18,6 +18,8 @@ Install [Visual Studio](https://visualstudio.microsoft.com/), include following 
  - Web Development & NodeJS
  - .NET Core
 
+Additionally install [ReSharper](https://www.jetbrains.com/resharper/) extension.
+
 ## Node.js
 
 Install [Node.js](https://nodejs.org/en)

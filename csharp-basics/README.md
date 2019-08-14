@@ -46,4 +46,8 @@
 
 # Resources
 
+ - [C# Guide @microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/)
+ - [C# Conventions @microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
  - [C# Tutorial @tutorialspoint.com](https://www.tutorialspoint.com/csharp/index.htm)
+ - [C# Programming Yellow Book @pdf](./resources/CSharpProgrammingYellowBook.pdf)
+ - [C# Notes for Professionals @pdf](./resources/CSharpNotesForProfessionals.pdf)
