@@ -2,10 +2,12 @@
 
 # Types & Variables
 
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/3)
  - [Exercises](./exercises/TypesAndVariables)
 
 # Arithmetic Operations
 
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/4)
  - [Exercises](./exercises/Arithmetic)
 
 # Classes & Objects
