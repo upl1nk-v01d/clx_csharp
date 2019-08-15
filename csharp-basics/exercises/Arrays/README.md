@@ -2,23 +2,23 @@
 
 ## Exercise #1
 
-See [Exercise1](./Exercise1)
+See [Exercise1](./Arrays/Exercise1)
 
 ## Exercise #2
 
-See [Exercise2](./Exercise2)
+See [Exercise2](./Arrays/Exercise2)
 
 ## Exercise #3
 
-See [Exercise3](./Exercise3)
+See [Exercise3](./Arrays/Exercise3)
 
 ## Exercise #4
 
-See [Exercise4](./Exercise4)
+See [Exercise4](./Arrays/Exercise4)
 
 ## Exercise #5
 
-See [Exercise5](./Exercise5)
+See [Exercise5](./Arrays/Exercise5)
 
 ## Exercise #6
 
@@ -41,7 +41,7 @@ Array 2: 45 87 39 32 93 86 12 44 75 50
 
 ## Exercise #7
 
-See [TicTacToe](./TicTacToe)
+See [TicTacToe](./Arrays/TicTacToe)
 
 Code an interactive, two-player game of Tic-Tac-Toe. You'll use a two-dimensional array of chars.
 

@@ -2,15 +2,15 @@
 
 ## Exercise #1
 
-See [Exercise1](./FlowControl/LargetsNumber/Program.cs)
+See [Exercise1](./FlowControl/LargetsNumber)
 
 ## Exercise #2
 
-See [Exercise2](./FlowControl/PositiveNegativeNumber/Program.cs)
+See [Exercise2](./FlowControl/PositiveNegativeNumber)
 
 ## Exercise #3
 
-See [Exercise3](./FlowControl/TenBillion/Program.cs)
+See [Exercise3](./FlowControl/TenBillion)
 
 ## Exercise #4
 
