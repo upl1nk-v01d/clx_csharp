@@ -12,14 +12,17 @@
 
 # Flow of Control
 
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/5)
  - [Exercises](./exercises/FlowOfControl)
-
-# Loops
-
- - [Exercises](./exercises/Loops)
 
 # Arrays
 
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/6)
+ - [Exercises](./exercises/Loops)
+
+# Loops
+
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/7)
  - [Exercises](./exercises/Loops)
 
 # Classes & Objects
