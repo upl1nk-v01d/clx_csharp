@@ -10,10 +10,6 @@
  - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/4)
  - [Exercises](./exercises/Arithmetic)
 
-# Classes & Objects
-
- - [Exercises](./exercises/ClassesAndObjects)
-
 # Flow of Control
 
  - [Exercises](./exercises/FlowOfControl)
@@ -25,6 +21,10 @@
 # Arrays
 
  - [Exercises](./exercises/Loops)
+
+# Classes & Objects
+
+ - [Exercises](./exercises/ClassesAndObjects)
 
 # Collections
 
