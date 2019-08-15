@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace LoopsExercise3
+namespace Exercise3
 {
     class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
             var integers = RandomIntegers(20);
             Console.Write("There are few integers given: ");
@@ -29,15 +28,18 @@ namespace LoopsExercise3
             }
         }
 
-        private static int[] RandomIntegers(int n) {
+        static int[] RandomIntegers(int n)
+        {
             var list = new List<int>(n);
             var random = new Random();
-            
-            
-            for (var i = 0; i < n; i++) {
-                var randomNumber = random.Next(0,99);
+
+
+            for (var i = 0; i < n; i++)
+            {
+                var randomNumber = random.Next(0, 99);
                 list.Add(randomNumber);
             }
+
             return list.ToArray();
         }
     }

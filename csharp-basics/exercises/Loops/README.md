@@ -2,19 +2,19 @@
 
 ## Exercise #1
 
-See [Exercise1](./Exercise1)
+See [Exercise1](./Loops/Exercise1)
 
 ## Exercise #2
 
-See [Exercise2](./Exercise2)
+See [Exercise2](./Loops/Exercise2)
 
 ## Exercise #3
 
-See [Exercise3](./Exercise3)
+See [Exercise3](./Loops/Exercise3)
 
 ## Exercise #4
 
-See [Exercise4](./Exercise4)
+See [Exercise4](./Loops/Exercise4)
 
 ## Exercise #5
 

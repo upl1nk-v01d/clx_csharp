@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace LoopsExercise1
+namespace Exercise1
 {
     class Program
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
             int i;
 
