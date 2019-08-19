@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Exercise13
+namespace Account
 {
     class Program
     {
         private static void Main(string[] args)
         {
-            var bartosAccount = new Account("Barto's account",100.00);
-            var bartosSwissAccount = new Account("Barto's account in Switzerland",1000000.00);
+            var bartosAccount = new Account("Barto's account", 100.00);
+            var bartosSwissAccount = new Account("Barto's account in Switzerland", 1000000.00);
 
             Console.WriteLine("Initial state");
             Console.WriteLine(bartosAccount);

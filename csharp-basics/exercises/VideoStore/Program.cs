@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace VideoStore
 {
@@ -8,7 +12,8 @@ namespace VideoStore
 
         private static void Main(string[] args)
         {
-            while (true) {
+            while (true)
+            {
                 Console.WriteLine("Choose the operation you want to perform ");
                 Console.WriteLine("Choose 0 for EXIT");
                 Console.WriteLine("Choose 1 to fill video store");
@@ -17,7 +22,8 @@ namespace VideoStore
 
                 int n = Convert.ToByte(Console.ReadLine());
 
-                switch (n) {
+                switch (n)
+                {
                     case 0:
                         return;
                     case 1:
@@ -41,19 +47,21 @@ namespace VideoStore
             {
                 Console.WriteLine("Enter movie name");
                 string movieName = Console.ReadLine();
-                
+
                 Console.WriteLine("Enter rating");
                 int rating = Convert.ToInt16(Console.ReadLine());
-                
+
                 //todo - add video
             }
         }
 
-        private static void RentVideo() {
+        private static void RentVideo()
+        {
             //todo - rent video
         }
 
-        private static void ReturnVideo() {
+        private static void ReturnVideo()
+        {
             //todo - return video
         }
     }
