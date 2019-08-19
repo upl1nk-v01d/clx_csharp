@@ -27,6 +27,7 @@
 
 # Classes & Objects
 
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/8)
  - [Exercises](./exercises/ClassesAndObjects)
 
 # Collections
