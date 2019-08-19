@@ -4,7 +4,7 @@
 
 ## [C# Basics](./csharp-basics)
 
-## Git
+## [Version Control Systems & Git @shared-syllabus](https://github.com/codelex-io/shared-syllabus/tree/master/vcs)
 
 ## [Databases](./databases)
 
