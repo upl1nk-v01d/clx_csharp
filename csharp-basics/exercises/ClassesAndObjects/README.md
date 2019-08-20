@@ -60,9 +60,9 @@ Add one more car in the same method, calculate the fuel consumption for both of 
 Modify the Car class of the chapter by adding two methods:
 
   - boolean GasHog()
-    - evaluates to true if the fuel consumption is higher than 15.0 l/km.
+    - evaluates to true if the fuel consumption is higher than 15.0 l / 100 km.
   - boolean EconomyCar()
-    - evaluates to true if the fuel consumption is lower than 5.0 l/km.
+    - evaluates to true if the fuel consumption is lower than 5.0 l / 100 km.
     
 The constructor and the CalculateConsumption() method remain unchanged.
 Each of these new methods should use the CalculateConsumption() to get the consumption,
