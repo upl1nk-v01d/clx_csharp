@@ -148,12 +148,11 @@ This class has the following three class variables:
  while the class variable rating is set to "PG".
  3. Write a method GetPG, which takes an array of base type Movie as its argument,
  and returns a new array of only those movies in the input array with a rating of "PG".
- You may assume the input array is full of Movie instances. The returned array need not be full.
+ You may assume the input array is full of Movie instances. The returned array may be empty.
  4. Write a piece of code that creates an instance of the class Movie:
-    - with the title “Casino Royale”, the studio “Eon Productions” and the rating “PG­13”.
-    - with the title “Glass”, the studio “Buena Vista International” and the rating “PG­13”.
-    - with the title “Spider-Man: Into the Spider-Verse”, the studio “Columbia Pictures” and
- the rating “PG”.
+    - with the title “Casino Royale”, the studio “Eon Productions” and the rating “PG­13”;
+    - with the title “Glass”, the studio “Buena Vista International” and the rating “PG­13”;
+    - with the title “Spider-Man: Into the Spider-Verse”, the studio “Columbia Pictures” and the rating “PG”.
 
 ## Exercise #5
 
