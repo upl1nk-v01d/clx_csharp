@@ -29,6 +29,10 @@
 
  - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/8)
  - [Exercises](./exercises/ClassesAndObjects)
+ 
+## Resources
+
+ - [Classes in JavaScript (idea is the same as in C#) @youtube.com/TheCodingTrain](https://www.youtube.com/watch?v=T-HGdc8L-7w)
 
 # Collections
 
