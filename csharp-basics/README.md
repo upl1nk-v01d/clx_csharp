@@ -42,6 +42,7 @@
 
 # Polymorphism
  - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/10)
+ - [Exercises](./exercises/Polymorphism)
 
 # Packages & Access Control
 
