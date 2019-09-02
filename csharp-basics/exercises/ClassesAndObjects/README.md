@@ -60,9 +60,9 @@ Add one more car in the same method, calculate the fuel consumption for both of 
 Modify the Car class of the chapter by adding two methods:
 
   - boolean GasHog()
-    - evaluates to true if the fuel consumption is higher than 15.0 l/km.
+    - evaluates to true if the fuel consumption is higher than 15.0 l / 100 km.
   - boolean EconomyCar()
-    - evaluates to true if the fuel consumption is lower than 5.0 l/km.
+    - evaluates to true if the fuel consumption is lower than 5.0 l / 100 km.
     
 The constructor and the CalculateConsumption() method remain unchanged.
 Each of these new methods should use the CalculateConsumption() to get the consumption,
@@ -148,12 +148,11 @@ This class has the following three class variables:
  while the class variable rating is set to "PG".
  3. Write a method GetPG, which takes an array of base type Movie as its argument,
  and returns a new array of only those movies in the input array with a rating of "PG".
- You may assume the input array is full of Movie instances. The returned array need not be full.
+ You may assume the input array is full of Movie instances. The returned array may be empty.
  4. Write a piece of code that creates an instance of the class Movie:
-    - with the title “Casino Royale”, the studio “Eon Productions” and the rating “PG­13”.
-    - with the title “Glass”, the studio “Buena Vista International” and the rating “PG­13”.
-    - with the title “Spider-Man: Into the Spider-Verse”, the studio “Columbia Pictures” and
- the rating “PG”.
+    - with the title “Casino Royale”, the studio “Eon Productions” and the rating “PG­13”;
+    - with the title “Glass”, the studio “Buena Vista International” and the rating “PG­13”;
+    - with the title “Spider-Man: Into the Spider-Verse”, the studio “Columbia Pictures” and the rating “PG”.
 
 ## Exercise #5
 
