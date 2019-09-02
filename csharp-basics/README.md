@@ -31,12 +31,13 @@
  - [Exercises](./exercises/ClassesAndObjects)
 
 # Collections
-
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/9)
  - [Exercises](./exercises/Collections)
 
 # Comparing
 
 # Polymorphism
+ - [Presentation](https://gitpitch.com/codelex_io/csharp-presentations/master?grs=bitbucket#/10)
 
 # Packages & Access Control
 

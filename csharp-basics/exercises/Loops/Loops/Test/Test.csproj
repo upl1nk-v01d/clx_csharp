@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CFA0561-C4D0-4419-AC65-C90E0AF2C6FC}</ProjectGuid>
+    <ProjectGuid>{6E5E8B39-8CFE-4C97-88D7-6EF558EBA8E3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FuelConsumptionCalculator</RootNamespace>
-    <AssemblyName>FuelConsumptionCalculator</AssemblyName>
+    <RootNamespace>Test</RootNamespace>
+    <AssemblyName>Test</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Car.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
