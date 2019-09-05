@@ -11,3 +11,4 @@
 */**/bin/*
 
 /**/.vs/*
+/csharp-basics/exercises/MiniProjects/Minesweeper/packages/*
