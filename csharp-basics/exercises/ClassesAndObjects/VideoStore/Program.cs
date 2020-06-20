@@ -8,8 +8,8 @@ namespace VideoStore
 {
     class Program
     {
-        private const int CountOfMovies = 3;
-
+        private const int _countOfMovies = 3;
+        private static VideoStore _videoStore = new VideoStore();
         private static void Main(string[] args)
         {
             while (true)
@@ -19,6 +19,7 @@ namespace VideoStore
                 Console.WriteLine("Choose 1 to fill video store");
                 Console.WriteLine("Choose 2 to rent video (as user)");
                 Console.WriteLine("Choose 3 to return video (as user)");
+                Console.WriteLine("Choose 4 to list inventory");
 
                 int n = Convert.ToByte(Console.ReadLine());
 
@@ -35,15 +36,23 @@ namespace VideoStore
                     case 3:
                         ReturnVideo();
                         break;
+                    case 4:
+                        ListInventory();
+                        break;
                     default:
                         return;
                 }
             }
         }
 
+        private static void ListInventory()
+        {
+            _videoStore.ListInventory();
+        }
+
         private static void FillVideoStore()
         {
-            for (var i = 0; i < CountOfMovies; i++)
+            for (var i = 0; i < _countOfMovies; i++)
             {
                 Console.WriteLine("Enter movie name");
                 string movieName = Console.ReadLine();
@@ -51,18 +60,23 @@ namespace VideoStore
                 Console.WriteLine("Enter rating");
                 int rating = Convert.ToInt16(Console.ReadLine());
 
-                //todo - add video
+                _videoStore.AddVideo(movieName);
+                _videoStore.TakeUsersRating(rating, movieName);
             }
         }
 
         private static void RentVideo()
         {
-            //todo - rent video
+            Console.WriteLine("Enter movie name");
+            string movieName = Console.ReadLine();
+            _videoStore.Checkout(movieName);
         }
 
         private static void ReturnVideo()
         {
-            //todo - return video
+            Console.WriteLine("Enter movie name");
+            string movieName = Console.ReadLine();
+            _videoStore.ReturnVideo(movieName);
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Exercise1
+﻿using System;
+
+namespace Exercise1
 {
     class Program
     {
@@ -19,17 +21,20 @@
                 "C Programming",
                 "C++"
             };
-
-            /*
-            fixme
-            Console.WriteLine("Original numeric array : " + .........);
-            ........... //Sort array
-            Console.WriteLine("Sorted numeric array : " + .........);
+            
+            
+            //fixme
+            Console.WriteLine("Original numeric array : " + string.Join("," , myArray1));
+            //........... //Sort array
+            Array.Sort(myArray1);
+            Console.WriteLine("Sorted numeric array : " + string.Join("," , myArray1));
     
-            Console.WriteLine("Original string array : " + .........);
-            ......... //Sort array
-            Console.WriteLine("Sorted string array : " + .........);
-            */
+            Console.WriteLine("Original string array : " + string.Join("," , myArray2));
+            //......... //Sort array
+            Array.Sort(myArray2);
+            Console.WriteLine("Sorted string array : " + string.Join("," , myArray2));
+            //*/
+            Console.ReadKey();
         }
     }
 }

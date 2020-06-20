@@ -13,6 +13,7 @@ namespace Exercise3
             Console.WriteLine("Which number index would you like to find?");
 
             int searchFor = Convert.ToInt16(Console.ReadLine());
+            
 
             int i;
             var foundIt = false;
@@ -30,7 +31,7 @@ namespace Exercise3
 
         static int[] RandomIntegers(int n)
         {
-            var list = new List<int>(n);
+            var list = new List<int>();
             var random = new Random();
 
 
