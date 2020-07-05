@@ -1,19 +1,16 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WordCount
 {
     class Program
     {
-        private const string Path = "../WordCount/lear.txt";
-
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
-            var readText = File.ReadAllLines(Path);
-            foreach (var s in readText)
-            {
-                Console.WriteLine(s);
-            }
+            Console.WriteLine("Hello World!");
         }
     }
 }

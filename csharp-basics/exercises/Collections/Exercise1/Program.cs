@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CollectionExercise1
+namespace Exercise1
 {
     class Program
     {
@@ -16,7 +20,7 @@ namespace CollectionExercise1
 
         private static void Main(string[] args)
         {
-            string[] array = {"Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla"};
+            string[] array = { "Audi", "BMW", "Honda", "Mercedes", "VolksWagen", "Mercedes", "Tesla" };
 
             //todo - replace array with an List and print out the results
 
@@ -24,7 +28,5 @@ namespace CollectionExercise1
 
             //todo - replace array with a Dictionary (use brand as key and origination as value) and print out the results
         }
-        
-        
     }
 }
