@@ -2,22 +2,19 @@
 {
     public class Car
     {
-        private double _currentMileage; // Starting odometer reading
-        private double _liters; // Liters of gas used between the readings
-
         public Car(double startOdo)
         {
-            _currentMileage = startOdo;
+            
         }
 
         public double CalculateConsumption()
         {
-            return _currentMileage / _liters;
+            return 0;
         }
 
         private double ConsumptionPer100Km()
         {
-            return (double) 100 / CalculateConsumption();
+            return 0;
         }
 
         public bool GasHog()
@@ -42,8 +39,6 @@
 
         public void FillUp(int mileage, double liters)
         {
-            _liters += liters;
-            _currentMileage += mileage;
         }
     }
 }

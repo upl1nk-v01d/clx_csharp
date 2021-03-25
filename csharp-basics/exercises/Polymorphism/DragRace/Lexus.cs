@@ -7,11 +7,11 @@ namespace DragRace
         private int currentSpeed = 0;
 
         public void SpeedUp() {
-            currentSpeed += 8;
+            currentSpeed;
         }
 
         public void SlowDown() {
-            currentSpeed += 8;
+            currentSpeed;
         }
 
         public string ShowCurrentSpeed() {
@@ -19,7 +19,7 @@ namespace DragRace
         }
 
         public void UseNitrousOxideEngine() {
-            currentSpeed += 30;
+            currentSpeed;
         }
 
         public void StartEngine() {

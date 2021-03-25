@@ -16,7 +16,7 @@ namespace ListExercise1
             //TODO: Add 5 colors to list
             colors.Add("Red");
 
-            Console.WriteLine(string.Join(",", colors));
+            Console.WriteLine();
         }
     }
 }

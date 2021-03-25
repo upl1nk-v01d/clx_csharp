@@ -6,18 +6,16 @@ namespace AdApp
         //per day
         private int numDays;
 
-        public Hoarding(int fee, int rate, int numDays) : base(fee)
+        public Hoarding(int fee) : base(fee)
         {
-            this.rate = rate;
-            this.numDays = numDays;
         }
 
         public new int Cost() {
-            return base.Cost() + rate * numDays;
+            return base.Cost();
         }
 
         public override string ToString() {
-            return base.ToString() + " Hoarding: Days=" + numDays + " Rate=" + rate;
+            return base.ToString();
         }
     }
 }

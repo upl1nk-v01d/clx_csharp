@@ -7,19 +7,17 @@
 
         public Account(string v1, double v2)
         {
-            _name = v1;
-            _money = v2;
+            
         }
 
         public double withdrawal(double i)
         {
-            _money -= i;
             return i;
         }
 
         public void deposit(double i)
         {
-            _money += i;
+            
         }
 
         public double balance()
@@ -34,8 +32,8 @@
 
         public string Name
         {
-            get { return _name; }
-            set { _name = value; }
+            get => _name;
+            set => _name = value;
         }
     }
 }
