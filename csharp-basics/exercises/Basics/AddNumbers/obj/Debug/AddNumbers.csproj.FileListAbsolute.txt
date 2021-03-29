@@ -1,0 +1,7 @@
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/bin/Debug/AddNumbers.exe.config
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/bin/Debug/AddNumbers.exe
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/bin/Debug/AddNumbers.pdb
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/obj/Debug/AddNumbers.csprojAssemblyReference.cache
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/obj/Debug/AddNumbers.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/obj/Debug/AddNumbers.exe
+/Users/mac/Desktop/codelex/csharp/c-sharp-syllabus/csharp-basics/exercises/Basics/AddNumbers/obj/Debug/AddNumbers.pdb
