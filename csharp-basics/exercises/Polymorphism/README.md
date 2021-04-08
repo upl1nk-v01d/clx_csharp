@@ -93,11 +93,11 @@ Think about the real world objects below, how you would design them?
 
 ## Exercise #1
 
-See [exercise1/DragRace.java](./exercise1/DragRace.java)
+See [DragRace](./DragRace.)
 
 ## Exercise #2
 
-See [exercise2/MakeSounds.java](./exercise2/MakeSounds.java)
+See [MakeSounds](./MakeSounds)
 
 Scenario: We have the idea that an object could also be associated with a Sound, which can be played when requested by a client program. We can capture this behaviour in an interface class. We will model the sound with a String description.
 
@@ -110,9 +110,9 @@ Then add few instances of each type in the list and make sounds while iterating 
 
 # Exercise #3
 
-Write Java code to implement the following inheritance hierarchy:
+Write C# code to implement the following inheritance hierarchy:
 
-![persons](./exercise3/persons.png)
+![persons](./Persons/persons.png)
 
 The two sub classes Student and Employee should override display() method.
  
@@ -125,7 +125,7 @@ Write a main program that should do the following:
 
 ## Exercise #4
 
-See [exercise4/Firm.java](./exercise4/Firm.java)
+See [Firm](./exercise4/Firm)
 
 The program illustrates inheritance and polymorphism. In this exercise you will add one more employee type to the class hierarchy. The employee will be one that is an hourly employee but also earns a commission on sales. Hence the class, which we'll name Commission, will be derived from the Hourly class.
 
@@ -180,7 +180,7 @@ of copies and cost per copy. Add it in the AdApp.
 Your task is to create a class hierarchy like the picture below. All the classes except Vegetable, Meat, Mouse,
 Tiger, Cat & Zebra should be abstract.
 
-![hierarchy](./exercise6/hierarchy.png)
+![hierarchy](./hierarchy.png)
 
 Input should be read from the console. Every even line will contain information about the Animal in following format:
 
