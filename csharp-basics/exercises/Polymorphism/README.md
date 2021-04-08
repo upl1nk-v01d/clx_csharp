@@ -146,7 +146,7 @@ pay from commission on sales. (See the pay method in the Executive class.) The t
 you don't need to set the hoursWorked back to 0—why not?).
   - The toString method needs to call the toString method of the parent class then add the total sales to that.
   
-To test your class, update Staff.java as follows:
+To test your class, update Staff.cs as follows:
 
   - Increase the size of the array to 8.
   - Add two commissioned employees to the staffList - make up your own names, addresses, phone numbers and social
