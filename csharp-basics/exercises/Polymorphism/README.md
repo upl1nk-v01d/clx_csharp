@@ -125,7 +125,7 @@ Write a main program that should do the following:
 
 ## Exercise #4
 
-See [Firm](./exercise4/Firm)
+See [Firm](./Firm)
 
 The program illustrates inheritance and polymorphism. In this exercise you will add one more employee type to the class hierarchy. The employee will be one that is an hourly employee but also earns a commission on sales. Hence the class, which we'll name Commission, will be derived from the Hourly class.
 
