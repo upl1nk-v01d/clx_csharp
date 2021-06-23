@@ -23,7 +23,8 @@ namespace Exercise2
 
             //TODO: iterate through all elements in set
             /*
-            for (...) {
+            for (...) 
+            {
                 Console.WriteLine(element);
             }
             */
@@ -41,5 +42,4 @@ namespace Exercise2
             Console.WriteLine(string.Join(",", mySet));
         }
     }
-}
 }

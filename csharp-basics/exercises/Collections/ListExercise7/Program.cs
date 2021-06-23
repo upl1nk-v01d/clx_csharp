@@ -20,9 +20,12 @@ namespace ListExercise7
             };
 
             //      TODO: Check if list contains "White" element
-            //        if (...) {
+            //        if (...) 
+            //        {
             //            Console.WriteLine("Found the element");
-            //        } else {
+            //        } 
+            //        else 
+            //        {
             //            Console.WriteLine("There is no such element");
             //        }
         }

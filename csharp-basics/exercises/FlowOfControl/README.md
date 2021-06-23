@@ -2,15 +2,15 @@
 
 ## Exercise #1
 
-See [Exercise1](./FlowControl/LargetsNumber)
+See [LargetsNumber](./FlowControl/LargetsNumber)
 
 ## Exercise #2
 
-See [Exercise2](./FlowControl/PositiveNegativeNumber)
+See [PositiveNegativeNumber](./FlowControl/PositiveNegativeNumber)
 
 ## Exercise #3
 
-See [Exercise3](./FlowControl/TenBillion)
+See [TenBillion](./FlowControl/TenBillion)
 
 ## Exercise #4
 
@@ -38,7 +38,8 @@ Hints
  2. In switch-case, you can handle multiple cases by omitting the break statement, e.g.,
  
 ```C#
-switch (inChar) {
+switch (inChar) 
+{
     case 'a': case 'b': case 'c':  // No break for 'a' and 'b', fall thru 'c'
        Console.WriteLine(2); break;
     case 'd': case 'e': case 'f':

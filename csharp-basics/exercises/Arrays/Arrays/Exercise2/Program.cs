@@ -3,8 +3,7 @@
 namespace Exercise2
 {
     class Program
-    {
-        
+    {       
         //TODO: Write a C# program to sum values of an array.
         private static void Main(string[] args)
         {

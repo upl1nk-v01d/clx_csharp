@@ -44,6 +44,7 @@ When creating tests, each test method should be in the form UsedMethod_WhatIsGiv
             Assert.AreEqual(false, result);
         }
 ```
+
 If you want to create similar tests with different given parameters. you can use 
 ```
 [DataTestMethod]

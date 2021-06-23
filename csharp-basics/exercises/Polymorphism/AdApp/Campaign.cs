@@ -7,11 +7,13 @@ namespace AdApp
     {
         private List<Advert> campaign;
 
-        public Campaign() {
+        public Campaign() 
+        {
             campaign = new List<Advert>();
         }
 
-        public void AddAdvert(Advert a) {
+        public void AddAdvert(Advert a) 
+        {
             campaign.Add(a);
         }
 

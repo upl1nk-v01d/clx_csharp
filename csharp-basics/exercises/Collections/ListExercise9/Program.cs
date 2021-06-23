@@ -18,6 +18,7 @@ namespace ListExercise9
                 "White",
                 "Pink"
             };
+
             Console.WriteLine(string.Join(",", firstList));
 
             var secondList = new List<string>

@@ -73,8 +73,6 @@ namespace CalculateArea
 
         public static void calculateCircleArea()
         {
-
-
             // Get input from user
             Console.WriteLine("What is the circle's radius? ");
             //todo

@@ -10,11 +10,13 @@ namespace AdApp
         {
         }
 
-        public new int Cost() {
+        public new int Cost() 
+        {
             return base.Cost();
         }
 
-        public override string ToString() {
+        public override string ToString() 
+        {
             return base.ToString();
         }
     }
