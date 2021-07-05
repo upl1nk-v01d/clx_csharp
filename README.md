@@ -7,3 +7,5 @@
 ## [Entity Framework](./entity-framework)
 
 ## [SOLID](./solid)
+
+## [Sql training](https://github.com/codelex-io/sql-training)
