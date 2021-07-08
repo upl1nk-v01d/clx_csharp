@@ -21,7 +21,8 @@ namespace ListExercise2
 
             /*
             fixme
-            for (...) {
+            for (...) 
+            {
               Console.WriteLine(element);
             }
             */

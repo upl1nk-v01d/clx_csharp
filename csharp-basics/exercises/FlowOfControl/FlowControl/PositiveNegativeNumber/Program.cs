@@ -10,11 +10,16 @@ namespace PositiveNegativeNumber
             var input = Console.ReadKey();
             /*
             fixme
-            if (?){
+            if (?)
+            {
                 Console.WriteLine("Number is positive");
-            } else if (?) {
+            } 
+            else if (?) 
+            {
                 Console.WriteLine("Number is negative");
-            } else {
+            } 
+            else 
+            {
                 Console.WriteLine("Number is zero");
             }
             */

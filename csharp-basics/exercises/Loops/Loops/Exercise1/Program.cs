@@ -12,7 +12,8 @@ namespace Exercise1
 
             /*
             todo - write a program in C# to display the first 10 natural numbers
-            for (......) {
+            for (......) 
+            {
               Console.WriteLine(i);
             }
             */

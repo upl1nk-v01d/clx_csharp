@@ -12,7 +12,6 @@ namespace FuelConsumptionCalculator
         {
             int startKilometers;
             int liters;
-
             
             Console.WriteLine();
 

@@ -9,14 +9,16 @@
 
             /*
             todo - use for
-            for (?) {
+            for (?) 
+            {
                 Console.WriteLine(vowels[i]);
             }
             */
 
             /*
             todo - use foreach
-            for (?) {
+            for (?) 
+            {
                 Console.WriteLine(vowel);
             }
             */
