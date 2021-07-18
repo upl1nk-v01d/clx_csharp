@@ -16,22 +16,11 @@ namespace Exercise2
             */
             for (i = 0; i < n; i++)
             {
-                Console.WriteLine(Pow(i,n));
+              //  Console.WriteLine(Pow(i,n));
             }
 
             Console.ReadKey();
 
-        }
-
-        static int Pow(int number, int times)
-        {
-            var a = number;
-            for (var i = times; i > 1; i--)
-            {
-                a *= number;
-            }
-
-            return a;
         }
     }
 }
