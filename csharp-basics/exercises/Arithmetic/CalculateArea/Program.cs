@@ -23,7 +23,7 @@ namespace CalculateArea
                     calculateCircleArea();
                     Console.ReadKey();
                 }
-                else if (choice == 1)
+                else if (choice == 2)
                 {
                     calculateRectangleArea();
                     Console.ReadKey();
