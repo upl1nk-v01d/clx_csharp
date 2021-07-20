@@ -10,14 +10,14 @@ namespace Casting
     {
         static void Main(string[] args)
         {
-            first();
-            second();
+            First();
+            Second();
             Console.ReadKey();
         }
 
-        static void first()
+        static void First()
         {
-            String a = "1";
+            string a = "1";
             int b = 2;
             int c = 3;
             double d = 4;
@@ -28,9 +28,9 @@ namespace Casting
             //Console.WriteLine(sum);
         }
 
-        static void second()
+        static void Second()
         {
-            String a = "1";
+            string a = "1";
             int b = 2;
             int c = 3;
             double d = 4.2;
