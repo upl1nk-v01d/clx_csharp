@@ -17,7 +17,6 @@
 - Exercise 5
 - Exercise 6
 - Exercise 8
-- Exercise 9
 
 ### Classes and Objects
 - Exercise 1
