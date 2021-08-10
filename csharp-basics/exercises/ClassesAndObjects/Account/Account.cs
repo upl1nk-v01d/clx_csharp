@@ -10,17 +10,17 @@
             
         }
 
-        public double withdrawal(double i)
+        public double Withdrawal(double i)
         {
             return i;
         }
 
-        public void deposit(double i)
+        public void Deposit(double i)
         {
             
         }
 
-        public double balance()
+        public double Balance()
         {
             return _money;
         }

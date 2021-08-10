@@ -124,3 +124,12 @@ Write a console program named Histogram that reads a list of exam scores from an
 ## Exercise #8
 
 Rewrite the [Phonebook](./Phonebook) class so that it uses a SortedDictionary to store directory entries, instead of an array.
+
+## Exercise #9
+
+Create a console app, where you:
+
+1. Add 5 string values to HashSet
+2. Dispaly all items
+3. Remove all values from the set
+4. Check if it is possible to add duplicated values
