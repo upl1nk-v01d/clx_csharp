@@ -30,14 +30,14 @@
 When creating tests, each test method should be in the form UsedMethod_WhatIsGiven_WhatIsExpected. Test example:
 ```
 	    [TestMethod]
-        public void CheckNumbers_InputNo15_ReturnsFalse()
+        public void IsNumber15_InputIsNot15_ReturnsFalse()
         {
             // Arrange
             int a = 1;
             int b = 1;
 
             // Act
-            var result = _test.CheckNumbers(a, b);
+            var result = _test.IsNumber15(a, b);
 
             // Assert
             Assert.AreEqual(false, result);
@@ -50,10 +50,10 @@ If you want to create similar tests with different given parameters. you can use
 [DataRow(12,3,4)]
 [DataRow(12,2,6)]
 [DataRow(12,4,3)]
-public void DivideTest(int n, int d, int q)
+public void DivideTest_PossibleToDivide_ExpectedOutputIsReturned(int n, int d, int q)
 {
 	// Act
-	var result = _calculation.Devide(a,b)
+	var result = _calculation.Divide(a,b)
 
 	// Assert
 	Assert.AreEqual(result, q);
