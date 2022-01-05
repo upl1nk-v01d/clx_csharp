@@ -2,7 +2,7 @@
 
 ## Picture Viewer
 
-Follow the instructions [here](https://github.com/MicrosoftDocs/visualstudio-docs/blob/master/docs/ide/tutorial-1-create-a-picture-viewer.md).
+Follow the instructions [here](https://docs.microsoft.com/en-us/visualstudio/ide/tutorial-windows-forms-picture-viewer-layout?view=vs-2022).
 
 ## Math Quiz
 
