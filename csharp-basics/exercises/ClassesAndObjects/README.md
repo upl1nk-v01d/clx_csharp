@@ -156,19 +156,6 @@ This class has the following three class variables:
 
 ## Exercise #5
 
-Create a class called *Date* that includes: three pieces of information as instance variables — a month, a
-day and a year.
- 
-Your class should have a constructor that initializes the three instance variables and assumes that
-the values provided are correct.
-Provide a set and a get for each instance variable.
-
-Provide a method DisplayDate that displays the month, day and year separated by forward slashes */*.
-
-Write a test application named DateTest that demonstrates class *Date* capabilities.
-
-## Exercise #6
-
 See [EnergyDrinks](./EnergyDrinks)
 
 A soft drink company recently surveyed 12,467 of its customers and found that approximately 14 percent of those surveyed purchase one or more energy drinks per week.
@@ -179,7 +166,7 @@ Write a program that displays the following:
  - The approximate number of customers in the survey who purchased one or more energy drinks per week
  - The approximate number of customers in the survey who prefer citrus flavored energy drinks
 
-## Exercise #7
+## Exercise #6
 
 The questions in this exercise all deal with a class Dog that you have to program from scratch. 
 
@@ -208,7 +195,7 @@ The questions in this exercise all deal with a class Dog that you have to progra
     - referenceToCoco.HasSameMotherAs(referenceToRocky). 
  Show that the new method works in the DogTest main method.
 
-## Exercise #8
+## Exercise #7
 
 Design a SavingsAccount class that stores a savings account’s annual interest rate and balance.
 
@@ -253,7 +240,7 @@ Interest earned: $29,977.72
 Ending balance: $42,030.72
 ```
 
-## Exercise #9
+## Exercise #8
 
 Write a method named SwapPoints that accepts two Points as parameters and swaps their x/y values.
 
@@ -274,7 +261,7 @@ The output produced from the above code should be:
 (5, 2)
 ```
 
-## Exercise #10
+## Exercise #9
 
 Finish [BankAccount](./BankAccount)
 
@@ -300,7 +287,7 @@ For example, if the same object had a balance of -17.5, your method should retur
 Benson, $17.50
 ```
 
-## Exercise #11
+## Exercise #10
 
 See [VideoStore](./VideoStore)
 
@@ -347,7 +334,7 @@ Summary of design specs:
     - the average rating,
     - and whether it is checked out or on the shelves.
 
-## Exercise #12
+## Exercise #11
 
 See [Account](./Account)
 
@@ -409,3 +396,103 @@ After completing the above, make sure that your main method does the following:
   - Creates an account "C" with the balance of 0.0
   - Transfers 50.0 from account A to account B
   - Transfers 25.0 from account B to account C
+
+  ## Exercise #12
+  Multiple Choice Tests
+  Your task is to write a program which allows teachers to create a multiple choice test in a class called Testpaper and also be able to assign a minimum pass mark. 
+  The Testpaper class should implement the ITestpaper interface given in the code template which has the following properties:
+  1. string Subject
+  2. string[] MarkScheme
+  3. string PassMark
+
+  Interfaces do not define constructors for classes which implement them so you will need to add a constructor method which takes the parameters (string subject, string[] markScheme, string passMark).
+  As well as that, we need to create student objects to take the test itself! 
+  Create another class called Student which implements the given IStudent interface which has the following members:
+
+  1. string[] TestsTaken
+  2. void TakeTest(ITestpaper paper, string[] answers)
+
+  Examples: 
+  ```C#
+  paper1 = new Testpaper("Maths", new string[] { "1A", "2C", "3D", "4A", "5A" }, "60%")
+  paper2 = new Testpaper("Chemistry", new string[] { "1C", "2C", "3D", "4A" }, "75%")
+  paper3 = new Testpaper("Computing", new string[] { "1D", "2C", "3C", "4B", "5D", "6C", "7A" }, "75%")
+
+  student1 = new Student()
+  student2 = new Student()
+  ```
+  ```C#
+  student1.TestsTaken ➞ { "No tests taken" }
+  student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" })
+  student1.TestsTaken ➞ { "Maths: Passed! (80%)" }
+
+  student2.TakeTest(paper2, { "1C", "2D", "3A", "4C" })
+  student2.TakeTest(paper3, { "1A", "2C", "3A", "4C", "5D", "6C", "7B" })
+  student2.TestsTaken ➞ { "Chemistry: Failed! (25%)", "Computing: Failed! (43%)" }
+  ```
+
+  ## Exercise #13
+  Fruit Smoothie
+
+  Create a class Smoothie and do the following:
+
+  - Create a property called Ingredients.
+  - Create a GetCost method which calculates the total cost of the ingredients used to make the smoothie.
+  - Create a GetPrice method which returns the number from GetCost plus the number from GetCost multiplied by 1.5. Round to two decimal places.
+  - Create a GetName method which gets the ingredients and puts them in alphabetical order into a nice descriptive sentence. 
+  If there are multiple ingredients, add the word "Fusion" to the end but otherwise, add "Smoothie". Remember to change "-berries" to "-berry". See the examples below.
+
+|Ingredient	 |Price
+--------------------
+|Strawberries|£1.50
+|Banana	     |£0.50
+|Mango	     |£2.50
+|Blueberries |£1.00
+|Raspberries |£1.00
+|Apple	     |£1.75
+|Pineapple	 |£3.50
+```C#
+s1 = Smoothie(new string[] { "Banana" })
+s1.Ingredients ➞ { "Banana" }
+s1.GetCost() ➞ "£0.50"
+s1.GetPrice() ➞ "£1.25"
+s1.GetName() ➞ "Banana Smoothie"
+```
+```C#
+s2 = Smoothie(new string[] { "Raspberries", "Strawberries", "Blueberries" })
+s2.ingredients ➞ { "Raspberries", "Strawberries", "Blueberries" }
+s2.GetCost() ➞ "£3.50"
+s2.GetPrice() ➞ "£8.75"
+s2.GetName() ➞ "Blueberry Raspberry Strawberry Fusion"
+```
+
+## Exercise #14
+# The day in dutch
+Write a class Date.
+Write a method that when passed a date as year/month/ day and returns the date's weekday name in the Dutch culture. The culture identifier to use is "nl-NL". Not "nl-BE".
+You can assume the specified date is valid.
+Looking at the tests and doing a switch statement or similar is considered cheating.
+```System.Globalization.CultureInfo``` should be used.
+The method may be used to get the name of the Dutch weekday of other memorable days too, like in the examples below:
+# Examples: 
+```C#
+WeekdayInDutch(1970, 9, 21)) ➞ "maandag"
+WeekdayInDutch(1945, 9, 2)) ➞ "zondag"
+WeekdayInDutch(2001, 9, 11)) ➞ "dinsdag"
+```
+# Hints:
+See [DateTime.DayOfWeek Property](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.dayofweek?view=netframework-4.8)
+docs.microsoft.com
+Gets the day of the week represented by this instance.
+See [Language Culture Names, Codes, and ISO Values](http://docwiki.embarcadero.com/RADStudio/Rio/en/Language_Culture_Names,_Codes,_and_ISO_Values)
+docwiki.embarcadero.com
+RAD Studio includes a suite of Translation Tools to facilitate localization and development of Win32 applications for different locales. When you add a new language to …
+[DateTimeFormatInfo.DayNames Property](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo.daynames?view=netframework-4.8)
+docs.microsoft.com
+Gets or sets a one-dimensional string array that contains the culture-specific full names of the days of the week.
+[Gobalization example with DateTime.DayOfWeek](https://stackoverflow.com/questions/5716762/datetime-now-dayofweek-tostring-with-cultureinfo)
+stackoverflow.com
+Example of how to make a culture and get the information from DateTime.
+[CultureInfo.GetCultureInfo Method](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo.getcultureinfo?view=netframework-4.8)
+docs.microsoft.com
+Retrieves a cached, read-only instance of a culture.

@@ -48,3 +48,22 @@ switch (inChar)
        ......
  }
  ```
+
+ # Exercise #6
+ See [GetTheCentury](./FlowControl/GetTheCentury/)
+ Create a function that takes in a year and returns the correct century.
+ ```C#
+Century(1756) ➞ "18th century"
+
+Century(1555) ➞ "16th century"
+
+Century(1000) ➞ "10th century"
+
+Century(1001) ➞ "11th century"
+
+Century(2005) ➞ "21st century"
+ ```
+Hints:
+1. All years will be between 1000 and 2010.
+2. The 11th century is between 1001 and 1100.
+3. The 18th century is between 1701-1800.

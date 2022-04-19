@@ -8,8 +8,11 @@ See [Exercise1](./Exercise1)
 
 Train your skills on List, complete all list exercises.
 
-
 ## Exercise #3
+
+Train your skills on Linq, complete all Linq exercises.
+
+## Exercise #4
 
 Write a console program that asks the user for a list of names (one per line) until the user enters a blank line (i.e., just presses Enter when asked for a name).
 At that point the program should print out the list of names entered,  where each name is listed only once (i.e., uniquely) no matter how many times the user entered the name in the program. For example, your program should behave as follows:
@@ -24,7 +27,7 @@ Enter name: Bob
 Unique name list contains: Alice Bob
 ```
   
-## Exercise #4
+## Exercise #5
 
 Write a console program that asks user for a number and prints whether a given integer is "happy". An integer is "happy" if repeatedly summing the squares of its digits eventually leads to the number 1.
 
@@ -52,7 +55,7 @@ By contrast, 4 is not happy because:
 ...
 ```
 
-## Exercise #5
+## Exercise #6
 
 See [WordCount](./WordCount)
 
@@ -68,7 +71,7 @@ Chars = 248
 
 For the purposes of this program, a word consists of a consecutive sequence of letters and/or digits, which you can test using the static method IsLetterOrDigit(Char).
 
-## Exercise #6
+## Exercise #7
 
 See [FlightPlanner](./FlightPlanner)
 
@@ -101,7 +104,7 @@ To select a city from which you would like to start press 1
 A critical issue in building this program is designing appropriate data structures to keep track of the information you'll need in order to produce flight plans. 
 You'll need to both have a way of keeping track of information on available flights that you read in from the flights.txt file, as well as a means for  keeping track of the flight routes that the user is choosing in constructing  their flight plan. Consider how both Lists and HashMaps might be useful to keep track of the information you care about.
 
-## Exercise #7
+## Exercise #8
 
 See [Histogram](./Histogram)
 
@@ -121,11 +124,11 @@ Write a console program named Histogram that reads a list of exam scores from an
   100: *
 ```
 
-## Exercise #8
+## Exercise #9
 
 Rewrite the [Phonebook](./Phonebook) class so that it uses a SortedDictionary to store directory entries, instead of an array.
 
-## Exercise #9
+## Exercise #10
 
 Create a console app, where you:
 

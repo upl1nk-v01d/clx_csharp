@@ -12,7 +12,7 @@ namespace TenBillion
             var input = Console.ReadLine();
 
             /*
-            todo - check if Long
+            todo - check if number
             if (?) 
             {
                 //todo - check if n is less than zero
