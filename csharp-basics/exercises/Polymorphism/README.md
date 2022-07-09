@@ -1,95 +1,3 @@
-# Practice
-
-## Group exercise
-
-Think about the real world objects below, how you would design them?
-
-### Animals
-
-  - Eagle
-  - Dog
-  - Cat
-  - Mouse
-  - Rat
-  - Owl
-  - Shark
-  - Dolphin
-  - Tuna
-  - German Shephard
-  - Korgi
-  - Tiger
-  - Lion
-  - Butterfly
-  - Crocodile
-
-### Employees
-
-  - Accountant
-  - Volunteer
-  - Intern
-  - Developer
-  - Marketing specialist
-  - Courier
-  - Designer
-  - Teacher
-  - Hairdresser
-  - Freelancer
-
-### Advertisements
-
-  - Billboard
-  - TV ad
-  - Website banner
-  - Facebook ad
-  - Radio ad
-  - Instagram ad
-  - Newspaper ad
-
-### Vehicles
-
-  - Bicycle
-  - Motorbike
-  - Car
-  - Toyota
-  - Lexus
-  - BMW
-  - School bus
-  - Train
-
-### Food
-
-  - Apple
-  - Salad
-  - Soup
-  - Maasdam Cheese
-  - Mushroom soup
-  - Orange
-  - Meat
-  - Burger
-  - Pasta
-  - Rice
-  - Snickers
-  - Cheese 
-  - Avocado
-  - Ice cream
-  - CocaCola
-  - Water
-  - Muesli
-
-### Countries
-
-  - Latvia
-  - Lithuania
-  - Russia
-  - USA
-  - Canada
-  - Sweden
-  - Switzerland
-  - Norway
-  - Germany
-  - Australia
-  - Japan
-  - China
 
 ## Exercise #1
 
@@ -222,3 +130,14 @@ Vegetable 1
 End
 > Cat[Gray, Persian, 1.1, Home, 4], Tiger[Typcho, 167.7, Asia, 0]
 ```
+
+## Exercise #7
+# Vending Machine
+See [Vending Machine](./VendingMachine/)
+You are given the Interface [IVendingMAchine](./VendingMachine/IVendingMachine.cs)
+You are given the Money struct [Money](./VendingMachine/Money.cs)
+You are given the Product struct [Product](./VendingMachine/Product.cs)
+You have to write all the logic and implement in Vending machine class.
+# Rules: 
+- Cant change any of given code
+- Valid money for Vending machine 0.10, 0.20, 0.50, 1.00, 2.00 coins.

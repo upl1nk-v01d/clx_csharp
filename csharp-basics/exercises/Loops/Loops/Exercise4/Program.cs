@@ -5,23 +5,12 @@
         //TODO: print all vowels using for and foreach
         static void Main(string[] args)
         {
-            char[] vowels = {'a', 'e', 'i', 'o', 'u'};
+            char[] vowels = { 'a', 'e', 'i', 'o', 'u' };
 
-            /*
-            todo - use for
-            for (?) 
-            {
-                Console.WriteLine(vowels[i]);
-            }
-            */
+            //todo - use for
 
-            /*
-            todo - use foreach
-            for (?) 
-            {
-                Console.WriteLine(vowel);
-            }
-            */
+            //todo - use foreach
+
         }
     }
 }

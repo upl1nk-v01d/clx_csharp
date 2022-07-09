@@ -24,7 +24,7 @@ The average is 50.5
 # Exercise #4
 
 Write a program called Product1ToN to compute the product of integers from 1 to 10 (i.e., 1×2×3×...×10), as an int. 
-Take not that It is the same as factorial of N.
+Take note that It is the same as factorial of N.
 
 # Exercise #5
 
@@ -144,3 +144,18 @@ Enter your choice (1-4):
 ```
 
 Display an error message if the user enters a number outside the range of 1 through 4 when selecting an item from the menu.
+
+## Exercise #11
+# Moran Numbers
+A Harshad number is a number which is divisible by the sum of its digits. For example, 132 is divisible by 6 (1+3+2).
+
+A subset of the Harshad numbers are the Moran numbers. Moran numbers yield a prime when divided by the sum of their digits. For example, 133 divided by 7 (1+3+3) yields 19, a prime.
+
+Create a function that takes a number and returns "M" if the number is a Moran number, "H" if it is a (non-Moran) Harshad number, or "Neither".
+
+# Examples:
+```C#
+  Moran(132) ➞ "H"
+  Moran(133) ➞ "M"
+  Moran(134) ➞ "Neither"
+```

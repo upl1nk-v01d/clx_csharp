@@ -1,32 +1,21 @@
 # Tests
 
 ## You should create tests for these exercises:
-
-### Arrays
-- Exercise 6
-
-### Arithmetics
-- Exercise 1
-- Exercise 2
-- Exercise 6
-- Exercise 7
-- Exercise 8
-- Exercise 10
-
-### Collections
-- Exercise 5
-- Exercise 6
-- Exercise 8
-
 ### Classes and Objects
 - Exercise 1
 - Exercise 5
+- Exercise 10
+- Exercise 11
 - Exercise 12
+- Exercise 13
 
 ### Polymorphism
 - Exercise 1
 - Exercise 6
-
+- Exercise 7
+### Scooter Rental
+ - (Scooter rental)[https://github.com/codelex-io/home-assignments/tree/main/assignments/if/if-scooters]
+ 
 When creating tests, each test method should be in the form UsedMethod_WhatIsGiven_WhatIsExpected. Test example:
 ```
 	    [TestMethod]
