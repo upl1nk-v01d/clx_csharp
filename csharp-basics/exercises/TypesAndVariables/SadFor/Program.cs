@@ -13,11 +13,11 @@ namespace SadFor
         {
             //fixme so I would compile
             /*
-            for (i = 0; i < 10; i++)
+            for (i = 0; i > 10; i++)
             {
-                if (Math.Sqrt(i) > 2.5)
+                if (Math.Sqrt(j) > 2.5)
                 {
-                    Console.WriteLine(i);
+                    Console.WriteLine(j);
                 }
             }
             */

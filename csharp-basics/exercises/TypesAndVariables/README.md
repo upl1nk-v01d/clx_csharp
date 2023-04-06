@@ -40,7 +40,9 @@ My name is Juan Valdez and I was born in 1995.
 
 ## Exercise #5
 
-Use several variables to store the names of your classes and their teachers. Then, display a nice little table displaying your schedule. FYI, my column of courses has a width of 26 characters, and the teacher column has a width of 15. The first and last lines are a plus sign, fifty dashes (a.k.a. minus signs) and another plus sign.
+Use several variables to store the names of your classes and their teachers. Then, display a nice little table displaying your schedule. 
+FYI, my column of courses has a width of 26 characters, and the teacher column has a width of 15. 
+The first and last lines are a plus sign, fifty dashes (a.k.a. minus signs) and another plus sign.
 
 Your table doesn't need to look exactly like this, or even line up.
 

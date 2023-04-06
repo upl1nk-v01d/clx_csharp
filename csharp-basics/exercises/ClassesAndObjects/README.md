@@ -1,5 +1,6 @@
 # Exercises
-
+ Consider coding conventions when working on tasks.
+ https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions
 ## Exercise #1
 
 Create a class Product that represents a product sold in a shop.
@@ -59,9 +60,9 @@ Add one more car in the same method, calculate the fuel consumption for both of 
 
 Modify the Car class of the chapter by adding two methods:
 
-  - boolean GasHog()
+  - boolean IsGasHog()
     - evaluates to true if the fuel consumption is higher than 15.0 l / 100 km.
-  - boolean EconomyCar()
+  - boolean IsEconomyCar()
     - evaluates to true if the fuel consumption is lower than 5.0 l / 100 km.
     
 The constructor and the CalculateConsumption() method remain unchanged.

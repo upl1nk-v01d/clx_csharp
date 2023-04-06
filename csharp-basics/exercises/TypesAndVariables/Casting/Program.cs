@@ -17,6 +17,7 @@ namespace Casting
 
         static void First()
         {
+            // can't change variable types.
             string a = "1";
             int b = 2;
             int c = 3;
@@ -30,6 +31,7 @@ namespace Casting
 
         static void Second()
         {
+            // can't change variable types.
             string a = "1";
             int b = 2;
             int c = 3;
