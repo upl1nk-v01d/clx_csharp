@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VendingMachine
+﻿namespace VendingMachine
 {
     public interface IVendingMachine
     {
@@ -15,7 +9,7 @@ namespace VendingMachine
         Money Amount { get; }
 
         Product[] Products { get; }
-        
+
         /// <summary>
         /// in case of valid coins returns 0.00.
         /// </summary>

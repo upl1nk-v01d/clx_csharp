@@ -67,3 +67,16 @@ Hints:
 1. All years will be between 1000 and 2010.
 2. The 11th century is between 1001 and 1100.
 3. The 18th century is between 1701-1800.
+
+# Exercise #7
+Write a program that simulates a game of Rock-Paper-Scissors. 
+The program should prompt the user to enter their move (Rock, Paper, or Scissors), and then randomly generate the computer's move. 
+The program should then display the winner (or a tie) based on the game's rules.
+
+# Exercise #8
+Write a program that simulates a simple calculator. 
+The program should prompt the user to enter two numbers and an operator (+, -, *, or /), and then perform the corresponding operation on the two numbers.
+
+# Exercise #9
+Write a program that simulates a simple calculator. 
+The program should prompt the user to enter two numbers and an operator (+, -, *, or /), and then perform the corresponding operation on the two numbers.

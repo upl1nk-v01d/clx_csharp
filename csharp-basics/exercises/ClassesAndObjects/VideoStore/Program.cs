@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VideoStore
 {
-    
+
     class Program
     {
         public static void Main(string[] args)
@@ -43,25 +39,25 @@ namespace VideoStore
                 }
             }
         }
-        
+
         private static void ListInventory()
         {
-            
+
         }
 
         private static void FillVideoStore()
         {
-            
+
         }
 
         private static void RentVideo()
         {
-            
+
         }
 
         private static void ReturnVideo()
         {
-            
+
         }
     }
 }

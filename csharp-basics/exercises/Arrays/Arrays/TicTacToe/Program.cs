@@ -4,7 +4,7 @@ namespace TicTacToe
 {
     class Program
     {
-        private static char[,] board = new char[3, 3];
+        private static char[,] _board = new char[3, 3];
 
         private static void Main(string[] args)
         {
@@ -18,18 +18,18 @@ namespace TicTacToe
             for (var r = 0; r < 3; r++)
             {
                 for (var c = 0; c < 3; c++)
-                    board[r, c] = ' ';
+                    _board[r, c] = ' ';
             }
-            
+
         }
 
         private static void DisplayBoard()
         {
-            Console.WriteLine("  0  " + board[0, 0] + "|" + board[0, 1] + "|" + board[0, 2]);
+            Console.WriteLine("  0  " + _board[0, 0] + "|" + _board[0, 1] + "|" + _board[0, 2]);
             Console.WriteLine("    --+-+--");
-            Console.WriteLine("  1  " + board[1, 0] + "|" + board[1, 1] + "|" + board[1, 2]);
+            Console.WriteLine("  1  " + _board[1, 0] + "|" + _board[1, 1] + "|" + _board[1, 2]);
             Console.WriteLine("    --+-+--");
-            Console.WriteLine("  2  " + board[2, 0] + "|" + board[2, 1] + "|" + board[2, 2]);
+            Console.WriteLine("  2  " + _board[2, 0] + "|" + _board[2, 1] + "|" + _board[2, 2]);
             Console.WriteLine("    --+-+--");
         }
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace Minesweeper.Core
 {
@@ -42,7 +37,7 @@ namespace Minesweeper.Core
 
         private void Cell_MouseClick(object sender, MouseEventArgs e)
         {
-            var cell = (Cell) sender;
+            var cell = (Cell)sender;
 
             if (cell.CellState == CellState.Opened)
                 return;
