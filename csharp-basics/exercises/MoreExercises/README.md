@@ -2,9 +2,9 @@
 
 ## Directories
 Write a program which lists all files in 
--Current directory
--Parent directory
--Desktop
+- Current directory
+- Parent directory
+- Desktop
 
 When writing the program, make sure that it will work also on other computers. It means that you need to use a relative path.
 
