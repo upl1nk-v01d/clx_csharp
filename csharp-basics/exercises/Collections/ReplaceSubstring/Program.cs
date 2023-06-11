@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ReplaceSubstring
+﻿namespace ReplaceSubstring
 {
     internal class Program
     {

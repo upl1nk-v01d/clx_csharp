@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SadFor
+﻿namespace SadFor
 {
     class Program
     {

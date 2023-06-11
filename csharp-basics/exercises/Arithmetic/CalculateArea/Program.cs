@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CalculateArea
 {
@@ -10,14 +6,13 @@ namespace CalculateArea
     {
         static void Main(string[] args)
         {
-           // Get the user's menu choice.
+            // Get the user's menu choice.
         }
 
         public static int GetMenu()
         {
-
             int userChoice;
-            
+
 
             // Display the menu.
             Console.WriteLine("Geometry Calculator\n");

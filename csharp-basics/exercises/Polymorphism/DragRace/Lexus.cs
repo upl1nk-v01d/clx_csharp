@@ -4,26 +4,26 @@ namespace DragRace
 {
     public class Lexus
     {
-        private int currentSpeed = 0;
+        private int _currentSpeed = 0;
 
         public void SpeedUp() 
         {
-            currentSpeed;
+            _currentSpeed;
         }
 
         public void SlowDown() 
         {
-            currentSpeed;
+            _currentSpeed;
         }
 
         public string ShowCurrentSpeed() 
         {
-            return currentSpeed.ToString();
+            return _currentSpeed.ToString();
         }
 
         public void UseNitrousOxideEngine() 
         {
-            currentSpeed;
+            _currentSpeed;
         }
 
         public void StartEngine() 

@@ -4,7 +4,7 @@ namespace DragRace
 {
     public class Tesla
     {
-        private int currentSpeed = 0;
+        private int _currentSpeed = 0;
 
         public void SpeedUp() 
         {

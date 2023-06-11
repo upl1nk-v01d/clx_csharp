@@ -1,9 +1,7 @@
-﻿using System.Collections.Generic;
-
-namespace VideoStore
+﻿namespace VideoStore
 {
     class Video
     {
-        
+
     }
 }

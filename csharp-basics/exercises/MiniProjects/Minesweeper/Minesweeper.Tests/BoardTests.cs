@@ -1,8 +1,4 @@
-﻿using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Xunit;
-
-namespace Minesweeper.Tests
+﻿namespace Minesweeper.Tests
 {
     [TestClass]
     public class BoardTests
