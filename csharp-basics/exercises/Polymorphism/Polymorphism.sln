@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persons", "Persons\Persons.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendingMachine", "VendingMachine\VendingMachine.csproj", "{8EF5CE43-0CC8-4C1E-A257-F915425898B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Breakfast", "Breakfast\Breakfast.csproj", "{3889C37E-B661-4367-A799-E9AA12E3C99C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8EF5CE43-0CC8-4C1E-A257-F915425898B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF5CE43-0CC8-4C1E-A257-F915425898B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF5CE43-0CC8-4C1E-A257-F915425898B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3889C37E-B661-4367-A799-E9AA12E3C99C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3889C37E-B661-4367-A799-E9AA12E3C99C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3889C37E-B661-4367-A799-E9AA12E3C99C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3889C37E-B661-4367-A799-E9AA12E3C99C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
