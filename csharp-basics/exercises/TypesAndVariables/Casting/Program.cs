@@ -20,9 +20,13 @@ namespace Casting
             double d = 4;
             float e = 5;
 
+            int convertedA = Convert.ToInt32(a);
+            int convertedD = Convert.ToInt32(d);
+            int convertedE = Convert.ToInt32(e);
+
             //fixme - should be 15 :|
-            //int sum = a + b + c + d + e;
-            //Console.WriteLine(sum);
+            int sum =  convertedA + b + c + convertedD + convertedE;
+            Console.WriteLine(sum);
         }
 
         static void Second()
@@ -35,8 +39,12 @@ namespace Casting
             float e = 5.3f;
 
             //fixme - should be 15.5 :| 
-            //float sum = a + b + c + d + e;
-            //Console.WriteLine(sum);
+            decimal convertedA = Convert.ToDecimal(a);
+            decimal convertedD = Convert.ToDecimal(d);
+            decimal convertedE = Convert.ToDecimal(e);
+
+            decimal sum = convertedA + b + c + convertedD + convertedE;
+            Console.WriteLine(sum);
         }
     }
 }
