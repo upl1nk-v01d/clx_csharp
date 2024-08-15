@@ -4,7 +4,7 @@
     {
         static void Main(string[] args){
             Console.Write("Please, enter your name: "); //prompt message
-            string name = Console.ReadLine(); //waiting for user input
+            string? name = Console.ReadLine(); //waiting for user input
             Console.Write("Please, enter your year of birth: "); //prompt message
             int birthYear;
 
