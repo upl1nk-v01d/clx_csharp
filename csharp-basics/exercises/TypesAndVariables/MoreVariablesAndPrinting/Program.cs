@@ -20,13 +20,14 @@ namespace MoreVariablesAndPrinting
             decimal w_kgs = Convert.ToDecimal(w_pounds) * k_kgs; //convertion to kilograms
 
             Console.WriteLine("Let's talk about " + name + ".");
-            Console.WriteLine("He's " + h_cms + " centimeters tall.");
-            Console.WriteLine("He's " + w_kgs + " kilograms heavy.");
+            Console.WriteLine("He's " + String.Format("{0:0.0#}",h_cms) + " centimeters tall.");
+            Console.WriteLine("He's " + String.Format("{0:0.0#}",w_kgs) + " kilograms heavy.");
             Console.WriteLine("Actually, that's not too heavy.");
             Console.WriteLine("He's got " + eyes + " eyes and " + hair + " hair.");
             Console.WriteLine("His teeth are usually " + teeth + " depending on the coffee.");
 
-            Console.WriteLine("If I add " + age + ", " + h_cms + ", and " 
+            Console.WriteLine("If I add " + age + ", " 
+                + String.Format("{0:0.0#}",h_cms) + ", and " 
                 + String.Format("{0:0.0#}",w_kgs)
                 + " I get " + String.Format("{0:0.0#}",age + h_cms + w_kgs) 
                 + ".");
