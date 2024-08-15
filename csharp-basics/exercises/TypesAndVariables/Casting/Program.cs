@@ -20,12 +20,12 @@ namespace Casting
             double d = 4;
             float e = 5;
 
-            int convertedA = Convert.ToInt32(a);
-            int convertedD = Convert.ToInt32(d);
-            int convertedE = Convert.ToInt32(e);
+            int convertedA = Convert.ToInt32(a); //convertion of variable 'a' to integer
+            int convertedD = Convert.ToInt32(d); //convertion of variable 'd' to integer
+            int convertedE = Convert.ToInt32(e); //convertion of variable 'e' to integer
 
             //fixme - should be 15 :|
-            int sum =  convertedA + b + c + convertedD + convertedE;
+            int sum =  convertedA + b + c + convertedD + convertedE;  // adding integer variables
             Console.WriteLine(sum);
         }
 
@@ -39,11 +39,11 @@ namespace Casting
             float e = 5.3f;
 
             //fixme - should be 15.5 :| 
-            decimal convertedA = Convert.ToDecimal(a);
-            decimal convertedD = Convert.ToDecimal(d);
-            decimal convertedE = Convert.ToDecimal(e);
+            decimal convertedA = Convert.ToDecimal(a); //convertion of variable 'a' to decimal
+            decimal convertedD = Convert.ToDecimal(d); //convertion of variable 'd' to decimal
+            decimal convertedE = Convert.ToDecimal(e); //convertion of variable 'e' to decimal
 
-            decimal sum = convertedA + b + c + convertedD + convertedE;
+            decimal sum = convertedA + b + c + convertedD + convertedE; // adding decimal variables
             Console.WriteLine(sum);
         }
     }
