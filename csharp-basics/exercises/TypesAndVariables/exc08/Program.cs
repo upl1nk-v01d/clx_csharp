@@ -7,7 +7,9 @@ namespace Exercise8
         //there was error with finding project file, just created new c# console app.
         static void Main(string[] args) 
         {
-            Console.WriteLine("ievadi minutes");
+            Console.Clear();
+            Console.WriteLine("To quit program press Ctrl and C keys together");
+            Console.Write("Please input minutes: ");
             var minutes = int.Parse(Console.ReadLine());
 
             decimal minutesInYear = 365 * 24 * 60;
