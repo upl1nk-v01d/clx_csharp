@@ -40,12 +40,13 @@ namespace exc09
                     Console.Write("And lastly, please enter seconds: ");
                 }
                 if(sw > 3){
-                    decimal speedMS = meters/seconds;
-                    decimal speedKMH = meters/seconds*3.6m;
-                    decimal speedMH = meters/seconds*2.2369m;
-                    Console.WriteLine($"Your speed in meters/second is {speedMS:0.000}");
-                    Console.WriteLine($"Your speed in km/h is {speedKMH:0.000}");
-                    Console.WriteLine($"Your speed in miles/h {speedMH:0.000}");
+                    decimal sumSeconds=seconds+minutes*60+hours*3600;
+                    decimal speedMS = meters/sumSeconds;
+                    decimal speedKMH = meters/sumSeconds*3.6m;
+                    decimal speedMH = meters/sumSeconds*2.2369m;
+                    Console.WriteLine($"Your speed in meters/second is {speedMS:0.00000000}");
+                    Console.WriteLine($"Your speed in km/h is {speedKMH:0.00000000}");
+                    Console.WriteLine($"Your speed in miles/h {speedMH:0.00000000}");
                     Console.WriteLine();
                     Console.WriteLine("Press any key to quit...");
                     Console.ReadKey();
