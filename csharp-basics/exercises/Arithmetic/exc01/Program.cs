@@ -10,7 +10,7 @@ class Program{
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
 
-        bool quit=false, err=false;
+        bool quit=false, err=false, detected=false;
         int sw=0;
         int num1=0, num2=0;
         string? prompt;
@@ -38,21 +38,29 @@ class Program{
                 if(num1 == 15){
                     Console.WriteLine($"Hey, your first number is {num1}");
                     Console.ReadKey();
+                    detected=true;
                 }
                 if(num2 == 15 && num1 != 15){
                     Console.WriteLine($"Hey, your second number is {num2}");
+                    detected=true;
                 }
                 if(num2 == 15 && num1 == 15){
                     Console.WriteLine($"Wow, your second number is {num2}, is that accidental?");
+                    detected=true;
                 }
                 if(num1 + num2 == 15){
                     Console.WriteLine($"Your both number added together is {num1+num2}");
                     Console.WriteLine($"That's interesting!");
+                    detected=true;
                 }
                 //using abs function to return absolute value
                 if(Math.Abs(num1 - num2) == 15){
                     Console.WriteLine($"Your both number difference is {Math.Abs(num1-num2)}");
                     Console.WriteLine($"That's interesting!");
+                    detected=true;
+                }
+                if(!detected){
+                    Console.WriteLine($"There's nothing more interesting! :d");
                 }
                 Console.WriteLine();
                 Console.WriteLine("Press any key to quit...");
