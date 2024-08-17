@@ -42,7 +42,6 @@ class Program{
 
                 Console.Clear(); 
                 Console.WriteLine($"Wanna try again? If not, press 'q' key.");
-                //prompt = Console.ReadKey();
 
                 if(Console.ReadKey(true).Key == ConsoleKey.Q){
                     quit=true;
