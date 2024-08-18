@@ -68,14 +68,10 @@ class Program{
 
                 //main procedure
                 decimal weightPounds = weightMetric*2.20462m;
-                decimal heightInches = heightMetric/100*39.3701m;
+                decimal heightInches = heightMetric*39.3701m;
 
-                //out of clue why output is astronomical numbers:(
-                //decimal BMI = weightPounds * 703 / ( ( heightInches / 100.0m ) * ( heightInches / 100.0m ) );
-                
-                //calculting in metric values:
-                decimal BMI = weightMetric / ( ( heightMetric / 100.0m ) * ( heightMetric / 100.0m ) );
-
+                //don't know why output is astronomical numbers:(
+                decimal BMI = weightPounds * 703 / heightInches * heightInches;
                 displayText($"{BMI:0.00}");
                 sleep(1000);
 
