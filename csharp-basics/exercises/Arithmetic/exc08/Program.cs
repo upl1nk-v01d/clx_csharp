@@ -188,7 +188,7 @@ class Program{
                         salary = decimal.Parse(employees[i1,1]) * decimal.Parse(employees[i1,2]);
                         salaryString = salary.ToString();
 
-                        if(double.Parse(employees[i1,1])<8.00){
+                        if(decimal.Parse(employees[i1,1])<8.00m){
                             errorString = "minimum wage exceeded!";
                         } else {
                             errorString = "";
