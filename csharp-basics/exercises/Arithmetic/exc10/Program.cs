@@ -41,7 +41,6 @@ class Program{
         Regex rx = new Regex("[^0-9]");
         bool quit=false, err=false;
         int[] menu={0,0};
-        //double area = 0, length = 0, width = 0;
 
         int choise = -1;
         string? prompt;
