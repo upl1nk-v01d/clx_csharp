@@ -37,8 +37,8 @@ class Program{
 
         bool quit=false, err=false, retry=false;
         int sw=0;
-        decimal weightMetric = 0;
-        decimal heightMetric = 0;
+        double weightMetric = 0;
+        double heightMetric = 0;
         string? prompt;
 
         while(!quit){
@@ -53,7 +53,7 @@ class Program{
            
             if(sw == 0){
                 displayText("To quit program just enter character 'q' in prompt");
-                displayText("Please enter weight in metric units: ",30,0);
+                displayText("Please enter weight in centimeters: ",30,0);
                 prompt = Console.ReadLine();
             }
             if(sw == 1){
@@ -62,28 +62,33 @@ class Program{
             }
             if(sw > 1){
                 clc();
-                //displayText("To continue program just press any key!");
                 displayText($"Body mass index is: ",30,0);
                 sleep(150);
 
                 //main procedure
-                decimal weightPounds = weightMetric*2.20462m;
-                decimal heightInches = heightMetric/100*39.3701m;
+                double weightPounds = weightMetric*2.20462;
+                double heightInches = heightMetric*0.393701;
+                double inchesSquare = heightInches*heightInches;
 
-                //out of clue why output is astronomical numbers:(
-                //decimal BMI = weightPounds * 703 / ( ( heightInches / 100.0m ) * ( heightInches / 100.0m ) );
+                //displayText(weightPounds.ToString()); //176
+                //displayText(heightInches.ToString()); //70
+                //displayText(inchesSquare.ToString()); //5022
+
+                //Finally!!! The correct calculation.
+                //href https://www.calculatorsoup.com/calculators/health/bmi-calculator.php
+                double BMI = (weightPounds / (heightInches*heightInches)) * 703;
                 
                 //calculting in metric values:
-                decimal BMI = weightMetric / ( ( heightMetric / 100.0m ) * ( heightMetric / 100.0m ) );
+                //decimal BMI = weightMetric / (( heightMetric / 100.0m) * (heightMetric / 100.0m));
 
                 displayText($"{BMI:0.00}");
                 sleep(1000);
 
-                if(BMI>=18.5m && BMI <=25m){
+                if(BMI>=18.5 && BMI <=25){
                     displayText("A sedentary person's weight is considered optimal.");
-                } else if(BMI<18.5m){
+                } else if(BMI<18.5){
                     displayText("A sedentary person's weight is considered underweight.");
-                } else if(BMI>25m){
+                } else if(BMI>25){
                     displayText("A sedentary person's weight is considered overweight.");
                 }
 
@@ -129,8 +134,8 @@ class Program{
                     displayText("Please enter number higher than 0");
                     sleep(2000);
                 } else {
-                    if(sw == 0){ weightMetric = Convert.ToDecimal(prompt); }
-                    if(sw == 1){ heightMetric = Convert.ToDecimal(prompt); }
+                    if(sw == 0){ weightMetric = double.Parse(prompt); }
+                    if(sw == 1){ heightMetric = double.Parse(prompt); }
                     sw++;
                 }
             }
