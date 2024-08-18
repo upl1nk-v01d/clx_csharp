@@ -1,4 +1,16 @@
 ﻿using System.Text.RegularExpressions;
+
+class Geometry{
+    public double areaCircle(double r){
+        return Math.PI * r * 2;
+    }
+    public double areaRectangle(double length, double width){
+        return length * width;
+    }
+    public double areaTriangle(double base_, double height){
+        return base_ * height * 0.5;
+    }
+}
 class Program{
 
     static void sleep(int delay=1){
@@ -22,114 +34,125 @@ class Program{
     }
     static void Main(string[] args){
 
-        Regex rx = new Regex("[^0-9]");
-
         clc();
-        sleep(22);
-        displayText("-= BMI =-");
         sleep(1000);
-        displayText("This program calculates human body mass index.");
-        sleep(22);
-        displayText("Note that weight is measured in pounds and height is measured in inches.");
-        sleep(22);
-        displayText("Press any key to start...");
-        Console.ReadKey();
+        displayText("-= geometry area calculation =-",0);
 
-        bool quit=false, err=false, retry=false;
-        int sw=0;
-        decimal weightMetric = 0;
-        decimal heightMetric = 0;
+        Regex rx = new Regex("[^0-9]");
+        bool quit=false, err=false;
+        int[] menu={0,0};
+        //double area = 0, length = 0, width = 0;
+
+        int choise = -1;
         string? prompt;
+
+        string[] opts1 = {
+            "Calculate the Area of a Circle",
+            "Calculate the Area of a Rectangle",
+            "Calculate the Area of a Triangle",
+            "Quit"
+        };
 
         while(!quit){
 
             if(!err){ 
-                Console.Clear(); 
+                clc(); 
             }
 
-            prompt = "";
             err = false;
-            retry=false;
-           
-            if(sw == 0){
-                displayText("To quit program just enter character 'q' in prompt");
-                displayText("Please enter weight in metric units: ",30,0);
-                prompt = Console.ReadLine();
-            }
-            if(sw == 1){
-                displayText("Now enter height in metric units: ",30,0);
-                prompt = Console.ReadLine();
-            }
-            if(sw > 1){
-                clc();
-                //displayText("To continue program just press any key!");
-                displayText($"Body mass index is: ",30,0);
-                sleep(150);
-
-                //main procedure
-                decimal weightPounds = weightMetric*2.20462m;
-                decimal heightInches = heightMetric*39.3701m;
-
-                //don't know why output is astronomical numbers:(
-                decimal BMI = weightPounds * 703 / heightInches * heightInches;
-                displayText($"{BMI:0.00}");
-                sleep(1000);
-
-                if(BMI>=18.5m && BMI <=25m){
-                    displayText("A sedentary person's weight is considered optimal.");
-                } else if(BMI<18.5m){
-                    displayText("A sedentary person's weight is considered underweight.");
-                } else if(BMI>25m){
-                    displayText("A sedentary person's weight is considered overweight.");
-                }
-
-                sleep(1000);
- 
-                Console.WriteLine($"Press 'q' key to exit program or any other key to continue.");
-
-                if(Console.ReadKey(true).Key == ConsoleKey.Q){
+            
+            if(menu[0]==0 && menu[1]==0){
+                if(choise == -1){
+                    for(int i1=0; i1<opts1.GetLength(0); i1++){
+                        displayText($"{i1+1}. {opts1[i1]}");
+                    }
+                    displayText();
+                    displayText("Enter your choice (1-4):");
+                    
+                    var key = Console.ReadKey(true);
+                    if(key.Key.ToString() == "D1"){ choise=1; menu[0]=1; menu[1]=0; }
+                    else if(key.Key.ToString() == "D2"){ choise=2; menu[0]=2; menu[1]=0; }
+                    else if(key.Key.ToString() == "D3"){ choise=3; menu[0]=3; menu[1]=0; }
+                    else if(key.Key.ToString() == "D4"){ choise=4; quit=true; }
+                    else { 
+                        displayText();
+                        displayText("Please choose available options.");
+                        sleep(1000);
+                        choise=-1; 
+                    }
                     clc();
-                    quit=true;
-                    displayText("Exiting program!");
-                    sleep(1000);
-                    exit(1);
-                } else {
-                    retry=true;
-                    sw=0;
                 }
             }
 
-            if(!retry){
-                if(prompt.ToLower() == "q"){
-                    Console.Clear();
-                    displayText("Exiting program!");
-                    quit = true;
-                    sleep(1000);
-                    exit(1);
-                } else if(rx.Matches(prompt).Count > 0){
+            if(menu[0]==1 && menu[1]==0){
+                displayText("Please enter circle radius: ",30, 0);
+                prompt = Console.ReadLine();
+                if(rx.Matches(prompt).Count > 0){
                     err = true;
-                    clc();
-                    displayText("Are you following or already tired? :/");
-                    sleep(1000);
-                    displayText("Please enter only digits! :)");
-                    sleep(1000);
+                    Console.Clear();
+                    Console.WriteLine("Please only digits!");
                 } else if(prompt.Length<=0){
                     err = true;
-                    clc();
-                    displayText("Eh?!");
-                    sleep(1000);
-                    displayText("Type in something...");
-                    sleep(1000);
-                } else if(int.Parse(prompt)<1){
-                    displayText();
-                    displayText("Please enter number higher than 0");
-                    sleep(2000);
+                    Console.Clear();
+                    Console.WriteLine("Input some whole numbers, please.");
                 } else {
-                    if(sw == 0){ weightMetric = Convert.ToDecimal(prompt); }
-                    if(sw == 1){ heightMetric = Convert.ToDecimal(prompt); }
-                    sw++;
+                    Geometry circle = new Geometry();
+                    double area = circle.areaCircle(double.Parse(prompt));
+                    displayText($"Area of circle is {area:0.00}");
+                    sleep(1000);
+                    displayText();
+                    displayText("Press any key to return to main menu!");
+                    Console.ReadKey(true);
+                    choise=-1;
+                    menu[0]=0; menu[1]=0;
                 }
             }
+
+            if(menu[0]==2 && menu[1]==0){
+                displayText("Please enter rectangle length: ",30, 0);
+                prompt = Console.ReadLine();
+                double length = double.Parse(prompt);
+                displayText("Please enter rectangle width: ",30, 0);
+                prompt = Console.ReadLine();
+                double width = double.Parse(prompt);
+                Geometry circle = new Geometry();
+                double area = circle.areaRectangle(length,width);
+                displayText($"Area of rectangle is {area:0.00}");
+                sleep(1000);
+                displayText();
+                displayText("Press any key to return to main menu!");
+                Console.ReadKey(true);
+                choise=-1;
+                menu[0]=0; menu[1]=0;
+            }
+
+            if(menu[0]==3 && menu[1]==0){
+                displayText("Please enter triangle length of base: ",30, 0);
+                prompt = Console.ReadLine();
+                double length = double.Parse(prompt);
+                displayText("Please enter triangle height: ",30, 0);
+                prompt = Console.ReadLine();
+                double width = double.Parse(prompt);
+                Geometry circle = new Geometry();
+                double area = circle.areaRectangle(length,width);
+                displayText($"Area of triangle is {area:0.00}");
+                sleep(1000);
+                displayText();
+                displayText("Press any key to return to main menu!");
+                Console.ReadKey(true);
+                choise=-1;
+                menu[0]=0; menu[1]=0;
+            }
+            
+            if(quit){
+                clc();
+                quit=true;
+                displayText("Exiting system...");
+                sleep(1000);
+                clc();
+                exit(1);
+            }
+            
         }
     }
 }
