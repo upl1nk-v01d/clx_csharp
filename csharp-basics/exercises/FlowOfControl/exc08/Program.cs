@@ -22,8 +22,8 @@ class Program{
         sleep(delay);
     }
 
-    static int Calculation(int n1, int n2, string op){
-        int r=0;
+    static double Calculation(double n1, double n2, string op){
+        double r=0;
 
         if(op == "+"){ r = n1 + n2; }
         if(op == "-"){ r = n1 - n2; }
@@ -41,10 +41,11 @@ class Program{
         displayText("This program does simple calculations.",delay:500);
 
         bool quit=false, err=false;
-        int sw=0, num1=0, num2=0;
+        int sw=0;
+        double num1=0, num2=0;
         string prompt;
 
-        Regex rxn = new Regex("[^0-9]");
+        Regex rxn = new Regex("[^0-9.]");
         Regex rxa = new Regex("[^-+*/]");
 
         while(!quit){
@@ -56,10 +57,10 @@ class Program{
             err = false;
 
             if(sw==0){
-                displayText("Please enter the first whole number: ",el:0);
+                displayText("Please enter the first decimal number: ",el:0);
             }
             if(sw==1){
-                displayText("Please enter the second whole number: ",el:0);
+                displayText("Please enter the second decimal number: ",el:0);
             }
             else if(sw==2){
                 displayText("Please enter an arithmetic operator '+' '-' '*' or '/' : ",el:0);
@@ -72,14 +73,14 @@ class Program{
                 if(rxa.Matches(prompt).Count > 0){
                     err = true;
                     clc();
-                    displayText("Input only an operator!",delay:1000);
+                    displayText("Input only an arithmetic operator!",delay:1000);
                     clc();
                 }
             } else {
                 if(rxn.Matches(prompt).Count > 0){
                     err = true;
                     clc();
-                    displayText("Use only numbers!",delay:1000);
+                    displayText("Use only decimal numbers!",delay:1000);
                     clc();
                 }
             }
@@ -87,25 +88,30 @@ class Program{
             if(prompt.Length<=0){
                 err = true;
                 clc();
-                if(sw==2){ displayText("Please input an operator.",delay:1000); }
+                if(sw==2){ displayText("Please input an arithmetic operator.",delay:1000); }
                 else{ displayText("Please input some numbers.",delay:1000); }
+                clc();
+            } else if(prompt == "."){
+                err = true;
+                clc();
+                displayText("Please use numbers too.",delay:1000);
                 clc();
             } else if(prompt.ToString().Length>1 && sw==2){
                 err = true;
                 clc();
-                displayText("Please input only one operator.",delay:1000);
+                displayText("Please input only one arithmetic operator.",delay:1000);
                 clc();
             } 
             
             if(!err) {
-                int result=0;
+                double result=0;
                 sleep(150);
-                if(sw==0){ num1 = int.Parse(prompt); }
-                if(sw==1){ num2 = int.Parse(prompt); }
+                if(sw==0){ num1 = double.Parse(prompt); }
+                if(sw==1){ num2 = double.Parse(prompt); }
                 if(sw==2){ result = Calculation(num1,num2,prompt); }
                 sw++;
                 if(sw>2){
-                    displayText($"The result is {result}");
+                    displayText($"The result is {result:0.00}");
                     sleep(1000);
                     displayText();
                     displayText("Press any key to retry!");
