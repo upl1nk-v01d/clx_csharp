@@ -25,18 +25,24 @@ namespace Exercise1
             };
             
             
-            //fixme
+            Console.Clear();
+            Console.WriteLine();
+
             Console.WriteLine("Original numeric array : " + string.Join("," , myArray1));
-            //........... //Sort array
-            
+            Array.Sort(myArray1);
             Console.WriteLine("Sorted numeric array : " + string.Join("," , myArray1));
-    
-            Console.WriteLine("Original string array : " + string.Join("," , myArray2));
-            //......... //Sort array
             
+            Console.WriteLine();
+            
+            Console.WriteLine("Original string array : " + string.Join("," , myArray2));
+            Array.Sort(myArray2);
             Console.WriteLine("Sorted string array : " + string.Join("," , myArray2));
-            //*/
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit program!");
+
             Console.ReadKey();
+            Console.Clear();       
         }
     }
 }
