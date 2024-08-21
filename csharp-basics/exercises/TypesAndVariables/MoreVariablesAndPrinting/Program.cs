@@ -6,26 +6,34 @@ namespace MoreVariablesAndPrinting
     {
         static void Main(string[] args)
         {
-            string myName, myEyes, myTeeth, myHair;
-            int myAge, myHeight, myWeight;
+            string name = "Zed A. Shaw";
+            int age = 35;
+            int heightInches = 74;  // height of inches
+            int weightPounds = 180; // weight of pounds (lbs)
+            string eyes = "Blue";
+            string teeth = "White";
+            string hair = "Brown";
+            decimal coefCentimeters = 2.54m; //coefficient of centimeters
+            decimal coefKilograms = 0.453592m; //coefficient of kilograms
 
-            myName = "Zed A. Shaw";
-            myAge = 35;
-            myHeight = 74;  // inches
-            myWeight = 180; // lbs
-            myEyes = "Blue";
-            myTeeth = "White";
-            myHair = "Brown";
+            //convertion to centimeters
+            decimal heightCentimeters = Convert.ToDecimal(heightInches) * coefCentimeters; 
 
-            Console.WriteLine("Let's talk about " + myName + ".");
-            Console.WriteLine("He's " + myHeight + " inches tall.");
-            Console.WriteLine("He's " + myWeight + " pounds heavy.");
+            //convertion to kilograms
+            decimal weightKilograms = Convert.ToDecimal(weightPounds) * coefKilograms; 
+
+            Console.WriteLine("Let's talk about " + name + ".");
+            Console.WriteLine("He's " + String.Format("{0:0.0#}",heightCentimeters) + " centimeters tall.");
+            Console.WriteLine("He's " + String.Format("{0:0.0#}",weightKilograms) + " kilograms heavy.");
             Console.WriteLine("Actually, that's not too heavy.");
-            Console.WriteLine("He's got " + myEyes + " eyes and " + myHair + " hair.");
-            Console.WriteLine("His teeth are usually " + myTeeth + " depending on the coffee.");
+            Console.WriteLine("He's got " + eyes + " eyes and " + hair + " hair.");
+            Console.WriteLine("His teeth are usually " + teeth + " depending on the coffee.");
 
-            Console.WriteLine("If I add " + myAge + ", " + myHeight + ", and " + myWeight
-                               + " I get " + (myAge + myHeight + myWeight) + ".");
+            Console.WriteLine("If I add " + age + ", " 
+                + String.Format("{0:0.0#}",coefCentimeters) + ", and " 
+                + String.Format("{0:0.0#}",weightKilograms)
+                + " I get " + String.Format("{0:0.0#}",age + heightCentimeters + weightKilograms) 
+                + ".");
 
             Console.ReadKey();
         }
