@@ -75,7 +75,6 @@ class Program
                     detected=true;
                 }
 
-                //using abs function to return absolute value
                 if(Math.Abs(num1 - num2) == 15)
                 {
                     Console.WriteLine($"Your both number difference is {Math.Abs(num1-num2)}");
