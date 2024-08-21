@@ -6,14 +6,18 @@ namespace LargestNumber
     class Program
     {
 
-        static double LargestNumber(double[] num){
-            double largest = 0;
-            foreach(double v in num){
-                if(v>largest){
-                    largest = v;
+        static double LargestNumber(double[] arrayNumbers)
+        {
+            double largestNumber = 0;
+
+            foreach(double element in arrayNumbers)
+            {
+                if(element > largestNumber)
+                {
+                    largestNumber = element;
                 }
             }
-            return largest;
+            return largestNumber;
         }
 
         static void Main(string[] args)
@@ -28,6 +32,7 @@ namespace LargestNumber
             var input3 = Console.ReadLine();
         
             List<double> numbers = new List<double>();
+            
             numbers.Add(double.Parse(input1));
             numbers.Add(double.Parse(input2));
             numbers.Add(double.Parse(input3));

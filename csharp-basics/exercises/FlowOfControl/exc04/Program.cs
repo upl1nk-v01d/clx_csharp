@@ -1,30 +1,41 @@
 ﻿using System.Text.RegularExpressions;
 
-class Program{
-
-    static void sleep(int delay=1){
+class Program
+{
+    static void Sleep(int delay = 1)
+    {
         System.Threading.Thread.Sleep(delay);
     }
-    static void clc(){
+
+    static void Clear()
+    {
         Console.Clear();
     }
-    static void exit(int p){
-        System.Environment.Exit(p);
+
+    static void Exit(int num)
+    {
+        System.Environment.Exit(num);
     }
 
-    static void displayText(string text="\n", int delay=30, int el=1){
-        for(int i1=0;i1<text.Length;i1++){
+    static void DisplayText(string text = "\n", int tick = 30, int newLine = 1)
+    {
+        for(int i1 = 0; i1 < text.Length; i1++)
+        {
             Console.Write(text[i1]);
-            sleep(delay);
-            if(el==1 && i1 == text.Length-1){
+            Sleep(tick);
+
+            if(newLine == 1 && i1 == text.Length - 1)
+            {
                 Console.Write("\n");
             }
         }
     }
 
-    static string weekDayCallback(int n){
+    static string weekDayCallback(int n)
+    {
         string d;
-        switch (n){
+        switch (n)
+        {
             case 1:
                 d = "Monday";
                 break;
@@ -54,60 +65,80 @@ class Program{
         return d;
     }
 
-    static void Main(string[] args){
+    static void Main(string[] args)
+    {
+        Clear();
+        Sleep(1000);
 
-        clc();
-        sleep(1000);
-        displayText("-= PrintDayInWord =-",0);
-        sleep(1000);
-        displayText("let's have some weekdays fun ;)",30);
-        sleep(1000);
+        DisplayText("-= PrintDayInWord =-", tick: 0);
+        Sleep(1000);
 
-        Regex rx = new Regex("[^0-9]");
-        bool quit=false, err=false;
-        string? prompt;
+        DisplayText("let's have some weekdays fun ;)");
+        Sleep(1000);
 
-        while(!quit){
+        Regex regexNotNumbers = new Regex("[^0-9]");
 
-            if(!err){ 
-                clc(); 
+        bool quit = false; 
+        bool error = false;
+
+        string prompt;
+
+        while(!quit)
+        {
+            if(!error)
+            { 
+                Clear(); 
             }
 
-            err = false;
+            error = false;
 
-            displayText("Please enter weekday number: ",30, 0);
+            DisplayText("Please enter weekday number: ", newLine: 0);
             prompt = Console.ReadLine()!; //added '!' to forgive null reference
-            if(rx.Matches(prompt).Count > 0){
-                err = true;
+            
+            if(regexNotNumbers.Matches(prompt).Count > 0)
+            {
+                error = true;
+
                 Console.Clear();
-                displayText("wtf? Please only a digit!");
-                displayText("Please please please...");
-            } else if(prompt.Length<=0){
-                err = true;
+                DisplayText("wtf? Please only a digit!");
+                DisplayText("Please please please...");
+            } 
+            
+            else if(prompt.Length <= 0)
+            {
+                error = true;
+
                 Console.Clear();
-                displayText("Oh com' on! :@");
-                sleep(1000);
-                displayText("Input a whole number, please!");
-            } else {
+                DisplayText("Oh com' on! :@");
+                Sleep(1000);
+
+                DisplayText("Input a whole number, please!");
+            } 
+            
+            else 
+            {
                 string callback = weekDayCallback(int.Parse(prompt));
-                displayText($"The number {prompt} of weekday is {callback}.");
-                displayText();
-                displayText("Press any key to retry!");
-                displayText("Press 'q' key to abort!");
-                if(Console.ReadKey(true).Key.ToString() == "Q"){
+
+                DisplayText($"The number {prompt} of weekday is {callback}.");
+                DisplayText();
+                DisplayText("Press any key to retry!");
+                DisplayText("Press 'q' key to abort!");
+
+                if(Console.ReadKey(true).Key.ToString() == "Q")
+                {
                     quit = true;
                 }
             }
             
-            if(quit){
-                clc();
-                quit=true;
-                displayText("Goodbye! :)");
-                sleep(1000);
-                clc();
-                exit(1);
+            if(quit)
+            {
+                Clear();
+                DisplayText("Goodbye! :)");
+                Sleep(1000);
+
+                Clear();
+                Exit(1);
             }
-            
         }
     }
 }
