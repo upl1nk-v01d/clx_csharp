@@ -14,7 +14,8 @@ namespace SumAverageRunningInt
 
             for (var number = lowerBound; number <= upperBound; ++number)
             {
-                sum += number; c++;
+                sum += number; 
+                c++;
             }
             Console.Clear();
             Console.WriteLine();
