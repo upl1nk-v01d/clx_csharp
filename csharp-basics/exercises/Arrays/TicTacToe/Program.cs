@@ -5,152 +5,228 @@ namespace TicTacToe
 {
     class Program
     {
-        static void sleep(int delay=1){
+        static void Sleep(int delay = 1)
+        {
             System.Threading.Thread.Sleep(delay);
         }
-        static void clc(){
+
+        static void Clear()
+        {
             Console.Clear();
         }
-        static void exit(int p){
-            System.Environment.Exit(p);
+
+        static void Exit(int num)
+        {
+            System.Environment.Exit(num);
         }
 
-        static void displayText(string text="\n", int tick=30, int newLines=1, int delay=0){
-             if(text.Length<1){
+        static void DisplayText(string text = "\n", int tick = 30, int newLines = 1, int delay = 0)
+        {
+             if(text.Length < 1)
+             {
                 Console.Write("\n");
-             } else {
-                for(int i1=0;i1<text.Length;i1++){
+             } 
+             
+             else 
+             {
+                for(int i1 = 0; i1 < text.Length; i1++)
+                {
                     Console.Write(text[i1]);
-                    sleep(tick);
-                    if(newLines>0 && i1 == text.Length-1){
-                        for(int i=0;i<newLines;i++){
+                    Sleep(tick);
+
+                    if(newLines > 0 && i1 == text.Length - 1)
+                    {
+                        for(int i2 = 0; i2 < newLines; i2++)
+                        {
                             Console.Write("\n");
                         }
                     }
                 }
             }
-            sleep(delay);
+
+            Sleep(delay);
         }
+
         //private static char[,] _board = new char[3, 3]; //what's this?
         public static string[,] theBoard = new string [3,3];
 
-        private static void Main(string[] args){
-            clc();
-            //displayText("-= TicTacToe =-",tick:0,delay:1000);
-            //displayText("The classic",delay:1000);
+        private static void Main(string[] args)
+        {
+            Clear();
+            //DisplayText("-= TicTacToe =-",tick:0,delay:1000);
+            //DisplayText("The classic",delay:1000);
 
-            Regex rx = new Regex("[^0-9]");
-            Random rnd = new Random();
-            bool quit=false, err;
+            Regex regexNotNumbers = new Regex("[^0-9]");
+            Random randomNumbers = new Random();
+
+            bool quit = false;
+            bool error;
+
             string prompt = "";
 
             InitBoard();
             DisplayBoard();
 
-            while(!quit){
+            while(!quit)
+            {
+                error = false;
 
-                err=false;
+                if(CheckBoardTurns() < 1)
+                {
+                    DisplayText("Game ended!");
+                } 
+                
+                else 
+                {
+                    DisplayText("Your turn!");
+                    DisplayText("Choose your cell: ", newLines: 0);
 
-                if(CheckBoardTurns()<1){
-                    displayText("Game ended!");
-                } else {
-                    displayText("Your turn!");
-                    displayText("Choose your cell: ",newLines:0);
                     prompt = Console.ReadLine();
-                    sleep(150);
-                    clc();
+
+                    Sleep(150);
+                    Clear();
                 }
 
-                if(rx.Matches(prompt).Count > 0){
-                    err = true;
+                if(regexNotNumbers.Matches(prompt).Count > 0)
+                {
+                    error = true;
+
                     Console.Clear();
-                    displayText("what?",delay:1000);
-                } else if(prompt.Length>1){
-                    err = true;
+                    DisplayText("what?", delay: 1000);
+                } 
+                
+                else if(prompt.Length > 1)
+                {
+                    error = true;
+
                     Console.Clear();
-                    displayText("Too many?",delay:1000);
-                 } else if(prompt.Length<=0){
-                    err = true;
+                    DisplayText("Too many?", delay: 1000);
+                 } 
+                 
+                else if(prompt.Length <= 0)
+                {
+                    error = true;
                     Console.Clear();
-                    displayText("eh?",delay:1000);
-                } else if(!err){
-                    ReplaceBoardCell(int.Parse(prompt),"X");
+                    DisplayText("eh?", delay: 1000);
+                } 
+                
+                else if(!error)
+                {
+                    ReplaceBoardCell(int.Parse(prompt), "X");
                     DisplayBoard();
-                    displayText("",delay:1000);
-                    displayText("Press any key to retry!");
-                    displayText("Press 'q' key to abort!");
+
+                    DisplayText("", delay: 1000);
+                    DisplayText("Press any key to retry!");
+                    DisplayText("Press 'q' key to abort!");
                     
-                    if(Console.ReadKey(true).Key.ToString() == "Q"){
+                    if(Console.ReadKey(true).Key.ToString() == "Q")
+                    {
                         quit = true;
-                    } else {
-                        clc();
+                    } 
+                    
+                    else 
+                    {
+                        Clear();
                     }
                 }
                 
-                if(quit){
-                    clc();
-                    quit=true;
-                    displayText("Goodbye! :)",delay:1000);
-                    clc();
-                    exit(1);
+                if(quit)
+                {
+                    Clear();
+                    DisplayText("Goodbye! :)", delay: 1000);
+
+                    Clear();
+                    Exit(1);
                 }
             }
         }
-        private static int CheckBoardTurns(){
-            int cells = 0;
-            for (int r = 0; r < theBoard.GetLength(0); r++){
-                for (int c = 0; c < theBoard.GetLength(1); c++){
-                    if (theBoard[r,c]!=" "){ cells++; }
+        private static int CheckBoardTurns()
+        {
+            int cellsCount = 0;
+
+            for (int row = 0; row < theBoard.GetLength(0); row++)
+            {
+                for (int column = 0; column < theBoard.GetLength(1); column++)
+                {
+                    if (theBoard[row, column] != " ")
+                    { 
+                        cellsCount++; 
+                    }
                 }
             }
-            return cells;
+
+            return cellsCount;
         }
 
-        private static void ReplaceBoardCell(int n, string symbol){
-            int cells = 0;
-            for (int r = 0; r < theBoard.GetLength(0); r++){
-                for (int c = 0; c < theBoard.GetLength(1); c++){
-                    if((n-1) == cells){ theBoard[r,c] = symbol; }
-                    cells++;
+        private static void ReplaceBoardCell(int num, string symbol)
+        {
+            int cellsCount = 0;
+
+            for (int row = 0; row < theBoard.GetLength(0); row++)
+            {
+                for (int column = 0; column < theBoard.GetLength(1); column++)
+                {
+                    if((num - 1) == cellsCount)
+                    { 
+                        theBoard[row, column] = symbol; 
+                    }
+
+                    cellsCount++;
                 }
             }
         }
-        private static void InitBoard(){
-            int cell=0;
-            for (int r = 0; r < theBoard.GetLength(0); r++){
-                for (int c = 0; c < theBoard.GetLength(1); c++){
+
+        private static void InitBoard()
+        {
+            int cell = 0;
+
+            for (int row = 0; row < theBoard.GetLength(0); row++)
+            {
+                for (int column = 0; column < theBoard.GetLength(1); column++)
+                {
                     cell++;
-                    theBoard[r,c]=cell.ToString();
+                    theBoard[row, column]=cell.ToString();
                 }
             }
         }
 
-        private static void DisplayBoard(){
+        private static void DisplayBoard()
+        {
             string board = "";
-            for (int r = 0; r < theBoard.GetLength(0); r++){
-                for (int i=0;i<theBoard.GetLength(0); i++){
+
+            for (int row = 0; row < theBoard.GetLength(0); row++)
+            {
+                for (int i = 0; i < theBoard.GetLength(0); i++)
+                {
                     board += "+---";
-                    if(i==theBoard.GetLength(0)-1){
+                    if(i == theBoard.GetLength(0) - 1)
+                    {
                         board += "+\n";
                     }
                 }
             
-                for (int c=0;c<theBoard.GetLength(0); c++){
-                    board += "| " + theBoard[r,c] + " ";
-                    if(c==theBoard.GetLength(0)-1){
+                for (int column = 0; column < theBoard.GetLength(0); column++)
+                {
+                    board += "| " + theBoard[row, column] + " ";
+                    if(column == theBoard.GetLength(0) - 1)
+                    {
                         board += "|\n";
                     }
                 }
-                if(r==theBoard.GetLength(0)-1){
-                    for (int i=0;i<theBoard.GetLength(0); i++){
+                if(row == theBoard.GetLength(0) - 1)
+                {
+                    for (int i = 0; i < theBoard.GetLength(0); i++)
+                    {
                         board += "+---";
-                        if(i==theBoard.GetLength(0)-1){
+                        if(i == theBoard.GetLength(0) - 1)
+                        {
                             board += "+\n";
                         }
                     }
                 }
             }
-            displayText(board,tick:1,newLines:0);
+
+            DisplayText(board, tick: 1, newLines: 0);
         }
     }
 }

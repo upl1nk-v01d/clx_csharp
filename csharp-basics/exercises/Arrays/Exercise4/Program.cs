@@ -6,25 +6,33 @@ namespace Exercise4
     class Program
     {
 
-        static void sleep(int delay=1){
+        static void Sleep(int delay = 1)
+        {
             System.Threading.Thread.Sleep(delay);
         }
-        static void clc(){
+
+        static void Clear()
+        {
             Console.Clear();
         }
-        static void exit(int p){
-            System.Environment.Exit(p);
+        
+        static void Exit(int num)
+        {
+            System.Environment.Exit(num);
         }
 
-        static void displayText(string text="\n", int tick=30, int endLine=1, int delay=0){
-            for(int i1=0;i1<text.Length;i1++){
+        static void DisplayText(string text = "\n",  int tick = 30, int newLine = 1, int delay = 0)
+        {
+            for(int i1 = 0; i1 < text.Length; i1++){
                 Console.Write(text[i1]);
-                sleep(tick);
-                if(endLine==1 && i1 == text.Length-1){
+                Sleep(tick);
+                
+                if(newLine == 1 && i1 == text.Length - 1){
                     Console.Write("\n");
                 }
             }
-            sleep(delay);
+            
+            Sleep(delay);
         }
         private static void Main(string[] args)
         {
@@ -36,72 +44,99 @@ namespace Exercise4
             };
 
             
-            Regex rx = new Regex("[^0-9]");
-            bool quit=false, err=false;
+            Regex regexNotNumbers = new Regex("[^0-9]");
+            
+            bool quit = false;
+            bool error = false;
+
             string prompt;
 
-            clc();
-            displayText("-= Array Number Catch =-",tick:0,delay:1000);
-            displayText("This program allow to detect specific number in array",delay:1000);
+            Clear();
+            DisplayText("-= Array Number Catch =-", tick: 0, delay: 1000);
+            DisplayText("This program allow to detect specific number in array", delay: 1000);
 
-            while(!quit){
+            while(!quit)
+            {
 
-                if(!err){ 
-                    clc(); 
+                if(!error)
+                { 
+                    Clear(); 
                 }
 
-                err = false;
+                error = false;
 
-                displayText("Please enter a whole number: ",endLine:0);
+                DisplayText("Please enter a whole number: ", newLine: 0);
+
                 prompt = Console.ReadLine()!; //added '!' to forgive null reference
-                if(rx.Matches(prompt).Count > 0){
-                    err = true;
+
+                if(regexNotNumbers.Matches(prompt).Count > 0)
+                {
+                    error = true;
                     Console.Clear();
-                    displayText("what?",delay:1000);
-                } else if(prompt.Length<=0){
-                    err = true;
+                    DisplayText("what?", delay: 1000);
+                } 
+                
+                else if(prompt.Length <= 0)
+                {
+                    error = true;
                     Console.Clear();
-                    displayText("eh?",delay:1000);
-                } else {
+                    DisplayText("eh?", delay: 1000);
+                } 
+                
+                else 
+                {
                     int detectedNumber = int.Parse(prompt);
                     bool detected = false;
 
-                    displayText("Detecting....",delay:1000);
-                    displayText("Reading array....",delay:500);
-                    displayText();
+                    DisplayText("Detecting....", delay: 1000);
+                    DisplayText("Reading array....", delay: 500);
+                    DisplayText();
 
-                    for(int i=0;i<myArray.GetLength(0);i++){
-                        displayText($"{myArray[i]} ",endLine:0);
-                        if((i+1) % 5 == 0){ displayText(); }
-                        if(myArray[i]==detectedNumber){
-                            detected=true;
+                    for(int i = 0; i< myArray.GetLength(0); i++)
+                    {
+                        DisplayText($"{myArray[i]} ", newLine: 0);
+                        
+                        if((i + 1) % 5 == 0)
+                        { 
+                            DisplayText(); 
+                        }
+
+                        if(myArray[i] == detectedNumber)
+                        {
+                            detected = true;
                         }
                     }
 
-                    displayText("\n",delay:1000);
+                    DisplayText("\n", delay: 1000);
 
-                    if(detected){
-                        displayText($"The number {detectedNumber} is detected!");
-                    } else {
-                        displayText($"Hmm... the number {detectedNumber} is not detected!");
+                    if(detected)
+                    {
+                        DisplayText($"The number {detectedNumber} is detected!");
+                    } 
+                    
+                    else 
+                    {
+                        DisplayText($"Hmm... the number {detectedNumber} is not detected!");
                     }
                     
-                    displayText();
-                    displayText("Press any key to retry!");
-                    displayText("Press 'q' key to abort!");
-                    if(Console.ReadKey(true).Key.ToString() == "Q"){
+                    DisplayText();
+                    DisplayText("Press any key to retry!");
+                    DisplayText("Press 'q' key to abort!");
+                    
+                    if(Console.ReadKey(true).Key.ToString() == "Q")
+                    {
                         quit = true;
                     }
                 }
                 
-                if(quit){
-                    clc();
-                    quit=true;
-                    displayText("Goodbye! :)",delay:1000);
-                    clc();
-                    exit(1);
+                if(quit)
+                {
+                    Clear();
+                    DisplayText("Goodbye! :)",delay:1000);
+
+                    Clear();
+                    Exit(1);
                 }
-                
             }
         }
     }
