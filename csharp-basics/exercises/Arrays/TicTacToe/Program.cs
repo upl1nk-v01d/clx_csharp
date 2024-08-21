@@ -47,22 +47,26 @@ namespace TicTacToe
             Sleep(delay);
         }
 
-        //private static char[,] _board = new char[3, 3]; //what's this?
         public static string[,] theBoard = new string [3,3];
 
         private static void Main(string[] args)
         {
             Clear();
-            //DisplayText("-= TicTacToe =-",tick:0,delay:1000);
-            //DisplayText("The classic",delay:1000);
+            DisplayText("-= TicTacToe =-", tick:0, delay: 1000);
+            DisplayText("The classic", delay: 1000);
 
             Regex regexNotNumbers = new Regex("[^0-9]");
             Random randomNumbers = new Random();
 
             bool quit = false;
             bool error;
+            bool gameEnded = false;
+
+            string playerTurn = "X";
+            string winner = "";
 
             string prompt = "";
+            int chosenNumber = -1;
 
             InitBoard();
             DisplayBoard();
@@ -71,27 +75,61 @@ namespace TicTacToe
             {
                 error = false;
 
-                if(CheckBoardTurns() < 1)
+                if(!gameEnded)
                 {
-                    DisplayText("Game ended!");
-                } 
-                
-                else 
-                {
-                    DisplayText("Your turn!");
-                    DisplayText("Choose your cell: ", newLines: 0);
+                    if(playerTurn == "X")
+                    {
+                        DisplayText("");
+                        DisplayText("Your turn!");
 
-                    prompt = Console.ReadLine();
+                        for(int i = 0; i < 9; i++)
+                        {                        
+                            DisplayText("Choose your cell: ", newLines: 0);
+                            prompt = Console.ReadLine();
 
-                    Sleep(150);
-                    Clear();
+                            if(CheckBoardCell(int.Parse(prompt)) != "X" && CheckBoardCell(int.Parse(prompt)) != "0")
+                            {
+                                break;
+                            }
+                            
+                            else
+                            {
+                                DisplayText("You chose wrong cell!", delay: 500);
+                                DisplayText("Try again!");
+                            }
+                        }
+
+                        Sleep(150);
+                        Clear();
+                    }
+
+                    else if(playerTurn == "0")
+                    {
+                        DisplayText("");
+                        DisplayText("Computer's turn!", delay: 1000);
+
+                        for(int i = 0; i < 9; i++)
+                        {
+                            chosenNumber = randomNumbers.Next(0, 9);
+
+                            if(CheckBoardCell(chosenNumber) != "X" && CheckBoardCell(chosenNumber) != "0")
+                            {
+                                break;
+                            }
+                        }
+
+                        DisplayText($"Computer chose cell: {chosenNumber + 1}", newLines: 0);
+
+                        Sleep(1000);
+                        Clear();
+                    }
                 }
 
                 if(regexNotNumbers.Matches(prompt).Count > 0)
                 {
                     error = true;
 
-                    Console.Clear();
+                    Clear();
                     DisplayText("what?", delay: 1000);
                 } 
                 
@@ -99,24 +137,51 @@ namespace TicTacToe
                 {
                     error = true;
 
-                    Console.Clear();
+                    Clear();
                     DisplayText("Too many?", delay: 1000);
                  } 
                  
                 else if(prompt.Length <= 0)
                 {
                     error = true;
-                    Console.Clear();
+                    Clear();
                     DisplayText("eh?", delay: 1000);
                 } 
                 
                 else if(!error)
                 {
-                    ReplaceBoardCell(int.Parse(prompt), "X");
+                    if(playerTurn == "X")
+                    {
+                        ReplaceBoardCell(int.Parse(prompt), "X");
+                        playerTurn = "0";
+                    }
+
+                    else if(playerTurn == "0")
+                    {
+                        ReplaceBoardCell(chosenNumber, "0");
+                        playerTurn = "X";
+                    }
+                    
                     DisplayBoard();
 
+                    winner = CheckWinner();
+
+                    if(winner == "X" || winner == "0")
+                    {
+                        gameEnded = true;
+                        DisplayText("", delay: 1000);
+                        DisplayText($"We have a winner '{winner}'!");
+                    }
+
+                    else if(CheckBoardTurns() < 1)
+                    {
+                        gameEnded = true;
+                        DisplayText("", delay: 1000);
+                        DisplayText("Game ended!");
+                    } 
+                
                     DisplayText("", delay: 1000);
-                    DisplayText("Press any key to retry!");
+                    DisplayText("Press any key to continue!");
                     DisplayText("Press 'q' key to abort!");
                     
                     if(Console.ReadKey(true).Key.ToString() == "Q")
@@ -140,6 +205,7 @@ namespace TicTacToe
                 }
             }
         }
+        
         private static int CheckBoardTurns()
         {
             int cellsCount = 0;
@@ -156,6 +222,70 @@ namespace TicTacToe
             }
 
             return cellsCount;
+        }
+
+        private static string CheckWinner()
+        {
+            if(theBoard[0,0] == theBoard[0,1] && theBoard[0,0] == theBoard[0,2])
+            {
+                return theBoard[0,0];
+            }
+
+            else if(theBoard[1,0] == theBoard[1,1] && theBoard[1,0] == theBoard[1,2])
+            {
+                return theBoard[1,0];
+            }
+
+            else if(theBoard[2,0] == theBoard[2,1] && theBoard[2,0] == theBoard[2,2])
+            {
+                return theBoard[2,0];
+            }
+
+            else if(theBoard[0,0] == theBoard[1,0] && theBoard[0,0] == theBoard[2,0])
+            {
+                return theBoard[0,0];
+            }
+
+            else if(theBoard[0,1] == theBoard[1,1] && theBoard[0,1] == theBoard[2,1])
+            {
+                return theBoard[0,1];
+            }
+
+            else if(theBoard[0,2] == theBoard[1,2] && theBoard[0,2] == theBoard[2,2])
+            {
+                return theBoard[0,2];
+            }
+
+            else if(theBoard[0,0] == theBoard[1,1] && theBoard[0,0] == theBoard[2,2])
+            {
+                return theBoard[0,0];
+            }
+            
+            else if(theBoard[2,0] == theBoard[1,1] && theBoard[0,0] == theBoard[0,2])
+            {
+                return theBoard[2,0];
+            }
+
+            return "";
+        }
+
+        private static string CheckBoardCell(int num)
+        {
+            int cellsCount = 0;
+
+            for (int row = 0; row < theBoard.GetLength(0); row++)
+            {
+                for (int column = 0; column < theBoard.GetLength(1); column++)
+                {
+                    if((num - 1) == cellsCount)
+                    { 
+                        return theBoard[row, column];
+                    }
+
+                    cellsCount++;
+                }
+            }
+            return "";
         }
 
         private static void ReplaceBoardCell(int num, string symbol)
