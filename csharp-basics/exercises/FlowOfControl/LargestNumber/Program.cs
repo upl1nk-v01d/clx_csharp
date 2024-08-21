@@ -1,10 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace LargestNumber
 {
     class Program
     {
-        //TODO: Write a C# program to to find the largest of three numbers.
+
+        static double LargestNumber(double[] arrayNumbers)
+        {
+            double largestNumber = 0;
+
+            foreach(double element in arrayNumbers)
+            {
+                if(element > largestNumber)
+                {
+                    largestNumber = element;
+                }
+            }
+            return largestNumber;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Input the 1st number: ");
@@ -16,12 +31,14 @@ namespace LargestNumber
             Console.WriteLine("Input the 3rd number: ");
             var input3 = Console.ReadLine();
         
-            /*
-            todo - expected output:
-            Input the 1st number: 25
-            Input the 2nd number: 78
-            Input the 3rd number: 87
-             */
+            List<double> numbers = new List<double>();
+            
+            numbers.Add(double.Parse(input1));
+            numbers.Add(double.Parse(input2));
+            numbers.Add(double.Parse(input3));
+
+            Console.WriteLine();
+            Console.WriteLine($"Your largest number is {LargestNumber(numbers.ToArray())}");
         }
     }
 }
