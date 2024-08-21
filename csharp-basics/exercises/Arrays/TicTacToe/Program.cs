@@ -110,7 +110,7 @@ namespace TicTacToe
 
                         for(int i = 0; i < 9; i++)
                         {
-                            chosenNumber = randomNumbers.Next(0, 9);
+                            chosenNumber = randomNumbers.Next(1, 10);
 
                             if(CheckBoardCell(chosenNumber) != "X" && CheckBoardCell(chosenNumber) != "0")
                             {
@@ -118,7 +118,7 @@ namespace TicTacToe
                             }
                         }
 
-                        DisplayText($"Computer chose cell: {chosenNumber + 1}", newLines: 0);
+                        DisplayText($"Computer chose cell: {chosenNumber}", newLines: 0);
 
                         Sleep(1000);
                         Clear();
