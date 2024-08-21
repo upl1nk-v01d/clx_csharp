@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 class Program
 {
 
-    static void Sleep(int delay=1)
+    static void Sleep(int delay = 1)
     {
         System.Threading.Thread.Sleep(delay);
     }
@@ -18,9 +18,9 @@ class Program
         System.Environment.Exit(num);
     }
 
-    static void DisplayText(string text="\n", int delay=30)
+    static void DisplayText(string text="\n", int delay = 30)
     {
-        for(int i1=0;i1<text.Length;i1++)
+        for(int i1 = 0; i1 < text.Length; i1++)
         {
             Console.Write(text[i1]);
             Sleep(delay);
@@ -40,15 +40,15 @@ class Program
 
         Regex rx = new Regex("[^0-9]");
 
-        bool quit=false; 
-        bool error=false;
+        bool quit = false; 
+        bool error = false;
         
         int cols = 47; 
         int rightIndent1 = 16; 
         int rightIndent2 = 28; 
         int rightIndent3 = 45;
 
-        int[] menu={0,0};
+        int[] menu = {0,0};
         int choise = -1;
 
         string[] opts1 = 
@@ -86,13 +86,13 @@ class Program
 
             error = false;
             
-            if(menu[0]==0 && menu[1]==0)
+            if(menu[0] == 0 && menu[1] == 0)
             {
                 if(choise == -1)
                 {
-                    for(int i1=0; i1<opts1.GetLength(0); i1++)
+                    for(int i1 = 0; i1 < opts1.GetLength(0); i1++)
                     {
-                        DisplayText($"{i1+1}. {opts1[i1]}");
+                        DisplayText($"{i1 + 1}. {opts1[i1]}");
                     }
 
                     DisplayText();
@@ -102,15 +102,15 @@ class Program
 
                     if(key.Key.ToString() == "D1")
                     { 
-                        choise=1; 
-                        menu[0]=1; 
-                        menu[1]=0; 
+                        choise = 1; 
+                        menu[0] = 1; 
+                        menu[1] = 0; 
                     }
 
                     else if(key.Key.ToString() == "D2")
                     { 
-                        choise=5; 
-                        quit=true; 
+                        choise = 5; 
+                        quit = true; 
                     }
 
                     else 
@@ -119,25 +119,25 @@ class Program
                         DisplayText("Please choose available options.");
                         Sleep(1000);
 
-                        choise=-1; 
+                        choise =- 1; 
                     }
 
                     Clear();
                 }
             }
 
-            if(menu[0]==1 && menu[1]==1)
+            if(menu[0] == 1 && menu[1] == 1)
             {
                 cols = 47;
                 rightIndent3 = 45;
 
-                for(int i1=0; i1<employees.GetLength(0); i1++)
+                for(int i1 = 0; i1 < employees.GetLength(0); i1++)
                 {
-                    if(i1==0)
+                    if(i1 == 0)
                     {
-                        for(int i3=0; i3<cols;i3++)
+                        for(int i3 = 0; i3 < cols; i3++)
                         {
-                            if(i3==0 || i3 == cols-1)
+                            if(i3 == 0 || i3 == cols-1)
                             { 
                                 Console.Write("+"); 
                             }
@@ -151,34 +151,34 @@ class Program
                         Console.WriteLine();
                     }
 
-                    for(int i2=0; i2<cols; i2++)
+                    for(int i2 = 0; i2 < cols; i2++)
                     {
-                        if(i2>=(rightIndent1-employees[i1,0].Length-1) && i2<rightIndent1-1)
+                        if(i2 >= (rightIndent1 - employees[i1,0].Length - 1) && i2 < rightIndent1 - 1)
                         {
-                            Console.Write(employees[i1,0][i2-(rightIndent1-employees[i1,0].Length-1)]);
+                            Console.Write(employees[i1,0][i2 - (rightIndent1 - employees[i1,0].Length - 1)]);
                         } 
                         
-                        else if(i2>=(rightIndent1-employees[i1,0].Length-1) && i2<rightIndent1-1)
+                        else if(i2 >= (rightIndent1 - employees[i1,0].Length - 1) && i2 < rightIndent1 - 1)
                         {
-                            Console.Write(employees[i1,0][i2-(rightIndent1-employees[i1,0].Length-1)]);
+                            Console.Write(employees[i1,0][i2 - (rightIndent1-employees[i1,0].Length - 1)]);
                         } 
                         
-                        else if(i2>=(rightIndent2-employees[i1,1].Length-1) && i2<rightIndent2-1)
+                        else if(i2 >= (rightIndent2 - employees[i1,1].Length - 1) && i2 < rightIndent2 - 1)
                         {
-                            Console.Write(employees[i1,1][i2-(rightIndent2-employees[i1,1].Length-1)]);
+                            Console.Write(employees[i1,1][i2 - (rightIndent2-employees[i1,1].Length - 1)]);
                         } 
                         
-                        else if(i2>=(rightIndent3-employees[i1,2].Length-1) && i2<rightIndent3-1)
+                        else if(i2 >= (rightIndent3 - employees[i1,2].Length - 1) && i2 < rightIndent3 - 1)
                         {
-                            Console.Write(employees[i1,2][i2-(rightIndent3-employees[i1,2].Length-1)]);
+                            Console.Write(employees[i1,2][i2 - (rightIndent3 - employees[i1,2].Length - 1)]);
                         } 
                         
-                        else if(i2==0 || i2==rightIndent1 || i2==rightIndent2 || i2==rightIndent3 || i2==cols-1)
+                        else if(i2 == 0 || i2 == rightIndent1 || i2 == rightIndent2 || i2 == rightIndent3 || i2 == cols - 1)
                         {
                             Console.Write(" "); 
                         }
                         
-                        else if(i1>0 && i2==2)
+                        else if( i1 > 0 && i2 == 2)
                         {
                             Console.Write(i1); 
                         } 
@@ -189,13 +189,13 @@ class Program
                         }
                     }
 
-                    if(i1==employees.GetLength(0)-1)
+                    if(i1 == employees.GetLength(0) - 1)
                     {
                         Console.WriteLine();
 
-                        for(int i3=0; i3<cols;i3++)
+                        for(int i3 = 0; i3 < cols; i3++)
                         {
-                            if(i3==0 || i3 == cols-1)
+                            if(i3 == 0 || i3 == cols - 1)
                             { 
                                 Console.Write("+"); 
                             }
@@ -214,16 +214,16 @@ class Program
                 DisplayText("To continue program just press any key!");
                 Console.ReadKey(true);
 
-                choise=-1;
-                menu[0]=1; 
-                menu[1]=0;
+                choise = -1;
+                menu[0] = 1; 
+                menu[1] = 0;
 
                 Clear();
             }
 
-            if(menu[0]==1 && menu[1]==0)
+            if(menu[0] == 1 && menu[1] == 0)
             {
-                for(int i1=0; i1<opts2.GetLength(0); i1++)
+                for(int i1 = 0; i1 < opts2.GetLength(0); i1++)
                 {
                     DisplayText($"{i1+1}. {opts2[i1]}");
                 }
@@ -235,16 +235,16 @@ class Program
 
                 if(key.Key.ToString() == "D1")
                 { 
-                    choise=1; 
-                    menu[0]=1; 
-                    menu[1]=1; 
+                    choise = 1; 
+                    menu[0] = 1; 
+                    menu[1] = 1; 
                 }
 
                 else if(key.Key.ToString() == "D2")
                 { 
-                    choise=2;
-                    menu[0]=1; 
-                    menu[1]=2; 
+                    choise = 2;
+                    menu[0] = 1; 
+                    menu[1] = 2; 
                 }
 
                 else if(key.Key.ToString() == "D3")
@@ -259,9 +259,9 @@ class Program
 
                 else if(key.Key.ToString() == "D5")
                 { 
-                    choise=-1;
+                    choise = -1;
                     menu[0]--; 
-                    menu[1]=0; 
+                    menu[1] = 0; 
                 }
                 
                 if(error)
@@ -269,29 +269,29 @@ class Program
                     DisplayText("Please choose available option.");
                     Sleep(1000);
 
-                    choise=-1; 
+                    choise = -1; 
                 }
 
                 Clear();
             }
 
-            if(menu[0]==1 && menu[1]==2)
+            if(menu[0] == 1 && menu[1] == 2)
             {
                 rightIndent3 = 61;
                 cols = 63;
 
-                for(int i1=0; i1<employees.GetLength(0); i1++)
+                for(int i1 = 0; i1 < employees.GetLength(0); i1++)
                 {
 
-                    if(i1==0)
+                    if(i1 == 0)
                     {
                         salaries[i1,0] = "<NAME>";
                         salaries[i1,1] = "<SALARY>";
                         salaries[i1,2] = "<NOTES>";
 
-                        for(int i3=0; i3<cols;i3++)
+                        for(int i3 = 0; i3 < cols; i3++)
                         {
-                            if(i3==0 || i3 == cols-1)
+                            if(i3 == 0 || i3 == cols - 1)
                             { 
                                 Console.Write("+"); 
                             }
@@ -304,16 +304,16 @@ class Program
                         Console.WriteLine();
                     }
 
-                    if(i1>0)
+                    if(i1 > 0)
                     {
-                        decimal salary=0m;
+                        decimal salary = 0m;
                         string salaryString = "";
                         string errorString = "";
 
                         salary = decimal.Parse(employees[i1,1]) * decimal.Parse(employees[i1,2]);
                         salaryString = salary.ToString();
 
-                        if(decimal.Parse(employees[i1,1])<8.00m)
+                        if(decimal.Parse(employees[i1,1]) < 8.00m)
                         {
                             errorString = "minimum wage exceeded!";
                         } 
@@ -328,29 +328,29 @@ class Program
                         salaries[i1,2] = errorString;
                     }
 
-                    for(int i2=0; i2<cols; i2++)
+                    for(int i2 = 0; i2 < cols; i2++)
                     {
-                        if(i2>=(rightIndent1-salaries[i1,0].Length-1) && i2<rightIndent1-1)
+                        if(i2 >= (rightIndent1 - salaries[i1,0].Length - 1) && i2 < rightIndent1 - 1)
                         {
-                            Console.Write(salaries[i1,0][i2-(rightIndent1-salaries[i1,0].Length-1)]);
+                            Console.Write(salaries[i1,0][i2 - (rightIndent1-salaries[i1,0].Length - 1)]);
                         } 
                         
-                        else if(i2>=(rightIndent2-salaries[i1,1].Length-1) && i2<rightIndent2-1)
+                        else if(i2 >= (rightIndent2 - salaries[i1,1].Length - 1) && i2 < rightIndent2 - 1)
                         {
-                            Console.Write(salaries[i1,1][i2-(rightIndent2-salaries[i1,1].Length-1)]);
+                            Console.Write(salaries[i1,1][i2 - (rightIndent2 - salaries[i1,1].Length - 1)]);
                         } 
                         
-                        else if(i2>=(rightIndent3-salaries[i1,2].Length-1) && i2<rightIndent3-1)
+                        else if(i2 >= (rightIndent3 - salaries[i1,2].Length - 1) && i2 < rightIndent3 - 1)
                         {
-                            Console.Write(salaries[i1,2][i2-(rightIndent3-salaries[i1,2].Length-1)]);
+                            Console.Write(salaries[i1,2][i2 - (rightIndent3 - salaries[i1,2].Length - 1)]);
                         } 
                         
-                        else if(i2==0 || i2==rightIndent1 || i2==rightIndent2 || i2==rightIndent3 || i2==cols-1)
+                        else if(i2 == 0 || i2 == rightIndent1 || i2 == rightIndent2 || i2 == rightIndent3 || i2 == cols - 1)
                         {
                             Console.Write(" "); 
                         } 
                         
-                        else if(i1>0 && i2==2)
+                        else if(i1 > 0 && i2 == 2)
                         {
                             Console.Write(i1); 
                         } 
@@ -361,13 +361,13 @@ class Program
                         }  
                     }
 
-                    if(i1==employees.GetLength(0)-1)
+                    if(i1 == employees.GetLength(0) - 1)
                     {
                         Console.WriteLine();
 
-                        for(int i3=0; i3<cols;i3++)
+                        for(int i3 = 0; i3 < cols; i3++)
                         {
-                            if(i3==0 || i3 == cols-1)
+                            if(i3 == 0 || i3 == cols - 1)
                             { 
                                 Console.Write("+"); 
                             }
@@ -386,9 +386,9 @@ class Program
                 DisplayText("To continue program just press any key!");
                 Console.ReadKey(true);
 
-                choise=-1;
-                menu[0]=1; 
-                menu[1]=0;
+                choise = -1;
+                menu[0] = 1; 
+                menu[1] = 0;
 
                 Clear();
             }

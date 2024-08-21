@@ -20,7 +20,7 @@ class Geometry
 class Program
 {
 
-    static void Sleep(int delay=1)
+    static void Sleep(int delay = 1)
     {
         System.Threading.Thread.Sleep(delay);
     }
@@ -30,17 +30,17 @@ class Program
         Console.Clear();
     }
 
-    static void Exit(int p)
+    static void Exit(int num)
     {
-        System.Environment.Exit(p);
+        System.Environment.Exit(num);
     }
 
-    static void DisplayText(string text="\n", int delay=30, int newLine=1){
-        for(int i1=0;i1<text.Length;i1++){
+    static void DisplayText(string text = "\n", int delay = 30, int newLine = 1){
+        for(int i1 = 0; i1 < text.Length; i1++){
             Console.Write(text[i1]);
             Sleep(delay);
             
-            if(newLine==1 && i1 == text.Length-1)
+            if(newLine == 1 && i1 == text.Length - 1)
             {
                 Console.Write("\n");
             }
@@ -51,15 +51,15 @@ class Program
 
         Clear();
         Sleep(1000);
-        DisplayText("-= geometry area calculation =-",newLine:0);
+        DisplayText("-= geometry area calculation =-",newLine: 0);
         Sleep(1000);
 
         Regex regex = new Regex("[^0-9]");
 
-        bool quit=false;
-        bool error=false;
+        bool quit = false;
+        bool error = false;
 
-        int[] menu={0,0};
+        int[] menu = {0,0};
         int choise = -1;
 
         string prompt;
@@ -81,11 +81,11 @@ class Program
 
             error = false;
             
-            if(menu[0]==0 && menu[1]==0)
+            if(menu[0] == 0 && menu[1] == 0)
             {
                 if(choise == -1)
                 {
-                    for(int i1=0; i1<opts1.GetLength(0); i1++)
+                    for(int i1 = 0; i1 < opts1.GetLength(0); i1++)
                     {
                         DisplayText($"{i1+1}. {opts1[i1]}");
                     }
@@ -97,29 +97,29 @@ class Program
 
                     if(key.Key.ToString() == "D1")
                     { 
-                        choise=1; 
-                        menu[0]=1; 
-                        menu[1]=0; 
+                        choise = 1; 
+                        menu[0] = 1; 
+                        menu[1] = 0; 
                     }
 
                     else if(key.Key.ToString() == "D2")
                     { 
-                        choise=2; 
-                        menu[0]=2; 
-                        menu[1]=0; 
+                        choise = 2; 
+                        menu[0] = 2; 
+                        menu[1] = 0; 
                     }
 
                     else if(key.Key.ToString() == "D3")
                     { 
-                        choise=3; 
-                        menu[0]=3; 
-                        menu[1]=0; 
+                        choise = 3; 
+                        menu[0] = 3; 
+                        menu[1] = 0; 
                     }
 
                     else if(key.Key.ToString() == "D4")
                     { 
-                        choise=4; 
-                        quit=true; 
+                        choise = 4; 
+                        quit = true; 
                     }
 
                     else 
@@ -128,16 +128,16 @@ class Program
                         DisplayText("Please choose available options.");
                         Sleep(1000);
 
-                        choise=-1; 
+                        choise = -1; 
                     }
 
                     Clear();
                 }
             }
 
-            if(menu[0]==1 && menu[1]==0)
+            if(menu[0] == 1 && menu[1] == 0)
             {
-                DisplayText("Please enter circle radius: ",newLine:0);
+                DisplayText("Please enter circle radius: ",newLine: 0);
                 prompt = Console.ReadLine()!;
                 
                 if(regex.Matches(prompt).Count > 0)
@@ -148,7 +148,7 @@ class Program
                     Console.WriteLine("Please only digits!");
                 } 
                 
-                else if(prompt.Length<=0)
+                else if(prompt.Length <= 0)
                 {
                     error = true;
 
@@ -169,26 +169,26 @@ class Program
 
                     Console.ReadKey(true);
 
-                    choise=-1;
-                    menu[0]=0; 
-                    menu[1]=0;
+                    choise = -1;
+                    menu[0] = 0; 
+                    menu[1] = 0;
                 }
             }
 
-            if(menu[0]==2 && menu[1]==0)
+            if(menu[0] == 2 && menu[1] == 0)
             {
-                DisplayText("Please enter rectangle length: ", newLine:0);
+                DisplayText("Please enter rectangle length: ", newLine: 0);
                 prompt = Console.ReadLine()!;
 
                 double length = double.Parse(prompt);
-                DisplayText("Please enter rectangle width: ", newLine:0);
+                DisplayText("Please enter rectangle width: ", newLine: 0);
                 prompt = Console.ReadLine()!;
 
                 double width = double.Parse(prompt);
 
                 Geometry circle = new Geometry();
 
-                double area = circle.areaRectangle(length,width);
+                double area = circle.areaRectangle(length, width);
 
                 DisplayText($"Area of rectangle is {area:0.00}");
                 Sleep(1000);
@@ -197,25 +197,25 @@ class Program
                 DisplayText("Press any key to return to main menu!");
                 Console.ReadKey(true);
 
-                choise=-1;
-                menu[0]=0; 
-                menu[1]=0;
+                choise = -1;
+                menu[0] = 0; 
+                menu[1] = 0;
             }
 
-            if(menu[0]==3 && menu[1]==0)
+            if(menu[0] == 3 && menu[1] == 0)
             {
-                DisplayText("Please enter triangle length of base: ", newLine:0);
+                DisplayText("Please enter triangle length of base: ", newLine: 0);
                 prompt = Console.ReadLine()!;
 
                 double length = double.Parse(prompt);
 
-                DisplayText("Please enter triangle height: ", newLine:0);
+                DisplayText("Please enter triangle height: ", newLine: 0);
                 prompt = Console.ReadLine()!;
 
                 double width = double.Parse(prompt);
 
                 Geometry circle = new Geometry();
-                double area = circle.areaRectangle(length,width);
+                double area = circle.areaRectangle(length, width);
 
                 DisplayText($"Area of triangle is {area:0.00}");
                 Sleep(1000);
@@ -224,14 +224,14 @@ class Program
                 DisplayText("Press any key to return to main menu!");
                 Console.ReadKey(true);
 
-                choise=-1;
-                menu[0]=0; 
-                menu[1]=0;
+                choise = -1;
+                menu[0] = 0; 
+                menu[1] = 0;
             }
             
             if(quit)
             {
-                quit=true;
+                quit = true;
 
                 Clear();
                 DisplayText("Exiting system...");

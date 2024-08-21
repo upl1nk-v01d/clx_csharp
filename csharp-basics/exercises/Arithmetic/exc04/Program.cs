@@ -14,13 +14,13 @@ class Program
         
         Console.ReadKey();
 
-        bool quit=false;
-        bool error=false; 
-        bool retry=false;
+        bool quit = false;
+        bool error = false; 
+        bool retry = false;
 
-        int sw=0;
-        int num=0; 
-        int fact=1;
+        int sw = 0;
+        int num = 0; 
+        int fact = 1;
 
         string prompt;
 
@@ -33,7 +33,7 @@ class Program
             }
 
             error = false;
-            retry=false;
+            retry = false;
 
             Console.WriteLine("To quit program just enter character 'q' in prompt");
             
@@ -49,9 +49,9 @@ class Program
                 Console.WriteLine($"Your input number is {num}.");
 
                 //main procedure
-                for(int i=0;i<num;i++)
+                for(int i = 0; i < num; i++)
                 {
-                    fact *= i+1;
+                    fact *= i + 1;
                 }
 
                 Console.WriteLine($"So your factorial number !{num} is {fact}.");
@@ -62,7 +62,7 @@ class Program
 
                 if(Console.ReadKey(true).Key == ConsoleKey.Q)
                 {
-                    quit=true;
+                    quit = true;
 
                     Console.WriteLine("bb! :)");
                     System.Environment.Exit(1);
@@ -71,9 +71,9 @@ class Program
                 else 
                 {
                     retry=true;
-                    sw=0;
-                    num=0;
-                    fact=1;
+                    sw = 0;
+                    num = 0;
+                    fact = 1;
                 }
             }
 
@@ -98,7 +98,7 @@ class Program
                     Console.WriteLine("Please only digits! :)");
                 } 
 
-                else if(prompt.Length<=0)
+                else if(prompt.Length <= 0)
                 {
                     error = true;
 

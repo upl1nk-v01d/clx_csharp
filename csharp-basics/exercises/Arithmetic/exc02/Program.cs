@@ -12,12 +12,12 @@ class Program
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
 
-        bool quit=false;
-        bool error=false;
-        bool retry=false;
+        bool quit = false;
+        bool error = false;
+        bool retry = false;
 
-        int sw=0;
-        int num=0;
+        int sw = 0;
+        int num = 0;
 
         string prompt;
 
@@ -30,7 +30,7 @@ class Program
             }
 
             error = false;
-            retry=false;
+            retry = false;
 
             Console.WriteLine("To quit program just enter character 'q' in prompt");
             
@@ -62,7 +62,7 @@ class Program
 
                 if(Console.ReadKey(true).Key == ConsoleKey.Q)
                 {
-                    quit=true;
+                    quit = true;
 
                     Console.WriteLine("bye! :)");
                     System.Environment.Exit(1);
@@ -70,8 +70,8 @@ class Program
 
                 else 
                 {
-                    retry=true;
-                    sw=0;
+                    retry = true;
+                    sw = 0;
                 }
             }
 
@@ -95,7 +95,7 @@ class Program
                     Console.WriteLine("Please enter only digits! :/");
                 }
 
-                else if(prompt.Length<=0)
+                else if(prompt.Length <= 0)
                 {
                     error = true;
                     
@@ -110,7 +110,6 @@ class Program
                     }
 
                     sw++;
-
                 }
             }
         }

@@ -15,7 +15,7 @@ namespace GravityCalculator
 
             Console.Clear();
             Console.WriteLine("The object's position after " + fallingTime 
-            + " seconds is " + String.Format("{0:0.0}",finalPosition) + " m.");
+            + " seconds is " + String.Format("{0:0.0}", finalPosition) + " m.");
             Console.ReadKey(true);
         }
     }

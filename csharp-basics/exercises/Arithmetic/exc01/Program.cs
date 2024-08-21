@@ -12,13 +12,13 @@ class Program
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
 
-        bool quit=false;
-        bool error=false;
-        bool detected=false;
+        bool quit = false;
+        bool error = false;
+        bool detected = false;
 
-        int sw=0;
-        int num1=0; 
-        int num2=0;
+        int sw = 0;
+        int num1 = 0; 
+        int num2 = 0;
         
         string prompt;
 
@@ -53,19 +53,19 @@ class Program
                 {
                     Console.WriteLine($"Hey, your first number is {num1}");
                     Console.ReadKey();
-                    detected=true;
+                    detected = true;
                 }
 
                 if(num2 == 15 && num1 != 15)
                 {
                     Console.WriteLine($"Hey, your second number is {num2}");
-                    detected=true;
+                    detected = true;
                 }
 
                 if(num2 == 15 && num1 == 15)
                 {
                     Console.WriteLine($"Wow, your second number is {num2}, is that accidental?");
-                    detected=true;
+                    detected = true;
                 }
 
                 if(num1 + num2 == 15)

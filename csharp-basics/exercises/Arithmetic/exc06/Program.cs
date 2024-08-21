@@ -3,25 +3,25 @@
 class Program
 {
 
-    static void Sleep(int delay=1)
+    static void Sleep(int delay = 1)
     {
         System.Threading.Thread.Sleep(delay);
     }
 
-    static void DisplayText(string text, int delay=30)
+    static void DisplayText(string text, int delay = 30)
     {
-        for(int i1=0;i1<text.Length;i1++)
+        for(int i1 = 0; i1 < text.Length; i1++)
         {
             Console.Write(text[i1]);
             Sleep(delay);
         }
     }
 
-    static void DisplayTextArray(string[] text, int delay=30)
+    static void DisplayTextArray(string[] text, int delay = 30)
     {
-        for(int i1=0;i1<text.Length;i1++)
+        for(int i1 = 0;i1 < text.Length; i1++)
         {
-            for(int i2=0;i2<text[i1].Length;i2++)
+            for(int i2 = 0; i2 < text[i1].Length; i2++)
             {
                 Console.Write(text[i1][i2]);
                 Sleep(delay);
@@ -51,7 +51,7 @@ class Program
 
         Console.ReadKey(true);
 
-        bool quit=false;
+        bool quit = false;
 
         while(!quit)
         {
@@ -60,14 +60,14 @@ class Program
 
             if(Console.ReadKey(true).Key == ConsoleKey.Q)
             {
-                quit=true;
+                quit = true;
             }
 
             if(!quit)
             {
                 //main procedure
                 string output = "";
-                for(int i=1;i<111;i++)
+                for(int i = 1; i < 111; i++)
                 {
                     if(i % 7 == 0 && i % 5 == 0 && i % 3 == 0)
                     { 
@@ -119,7 +119,7 @@ class Program
 
                 if(Console.ReadKey(true).Key == ConsoleKey.Q)
                 {
-                    quit=true;
+                    quit = true;
                 }
             }
 

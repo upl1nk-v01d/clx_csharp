@@ -19,14 +19,14 @@ class Program
         Console.WriteLine("Press any key to start...");
         Console.ReadKey();
 
-        bool quit=false; 
-        bool err=false; 
-        bool retry=false;
+        bool quit = false; 
+        bool err = false; 
+        bool retry = false;
 
-        int sw=0;
-        int num=0;
-        int guessesInit=3;
-        int guesses=guessesInit;
+        int sw = 0;
+        int num = 0;
+        int guessesInit = 3;
+        int guesses = guessesInit;
 
         string prompt;
 
@@ -39,7 +39,7 @@ class Program
             }
 
             err = false;
-            retry=false;
+            retry = false;
 
             Console.WriteLine("To quit program just enter character 'q' in prompt");
             
@@ -77,25 +77,25 @@ class Program
 
                 else 
                 {
-                    if(num>randomNum)
+                    if(num > randomNum)
                     {
                         Console.WriteLine($"Sorry, but it's Too High!");
                         System.Threading.Thread.Sleep(1000);
                     }
 
-                    else if(num<randomNum)
+                    else if(num < randomNum)
                     {
                         Console.WriteLine($"Sorry, but it's Too Low!");
                         System.Threading.Thread.Sleep(1000);
                     }
 
-                    if(Math.Abs(num-randomNum) < 4)
+                    if(Math.Abs(num - randomNum) < 4)
                     {
                         Console.WriteLine($"YOU ALMOST HAD IT!! :o");
                         System.Threading.Thread.Sleep(1000);
                     } 
                     
-                    else if(Math.Abs(num-randomNum) < 11)
+                    else if(Math.Abs(num - randomNum) < 11)
                     {
                         Console.WriteLine($"But you almost had it! :)");
                         System.Threading.Thread.Sleep(1000);
@@ -106,7 +106,7 @@ class Program
                     System.Threading.Thread.Sleep(1000);
                 }
 
-                if(guesses<1)
+                if(guesses < 1)
                 {
                     Console.WriteLine($"You run out of guesses!! :(");
                     System.Threading.Thread.Sleep(1000);
@@ -114,7 +114,7 @@ class Program
                     Console.WriteLine($"But don't give up!");
                     System.Threading.Thread.Sleep(1000);
 
-                    guesses=guessesInit;
+                    guesses = guessesInit;
                 }
                 
                 System.Threading.Thread.Sleep(2000);
@@ -124,7 +124,7 @@ class Program
                 if(Console.ReadKey(true).Key == ConsoleKey.Q)
                 {
                     Console.Clear();
-                    quit=true;
+                    quit = true;
 
                     Console.WriteLine("bb! :)");
                     System.Threading.Thread.Sleep(1000);
@@ -134,8 +134,8 @@ class Program
 
                 else 
                 {
-                    retry=true;
-                    sw=0;
+                    retry = true;
+                    sw = 0;
                 }
             }
 
@@ -166,7 +166,7 @@ class Program
                     System.Threading.Thread.Sleep(1000);
                 } 
                 
-                else if(prompt.Length<=0)
+                else if(prompt.Length <= 0)
                 {
                     err = true;
                     Console.Clear();
@@ -177,14 +177,14 @@ class Program
                     System.Threading.Thread.Sleep(1000);
                 }
                 
-                else if(int.Parse(prompt)<1)
+                else if(int.Parse(prompt) < 1)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Please enter number higher than 0");
                     System.Threading.Thread.Sleep(2000);
                 } 
                 
-                else if(int.Parse(prompt)>100)
+                else if(int.Parse(prompt) > 100)
                 {
                     Console.WriteLine();
                     Console.WriteLine("Please enter number lower than 101");

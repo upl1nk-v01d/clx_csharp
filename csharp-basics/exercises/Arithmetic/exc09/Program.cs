@@ -2,7 +2,7 @@
 class Program
 {
 
-    static void Sleep(int delay=1)
+    static void Sleep(int delay = 1)
     {
         System.Threading.Thread.Sleep(delay);
     }
@@ -17,14 +17,14 @@ class Program
         System.Environment.Exit(num);
     }
 
-    static void DisplayText(string text="\n", int delay=30, int newLine=1)
+    static void DisplayText(string text = "\n", int delay = 30, int newLine = 1)
     {
-        for(int i1=0;i1<text.Length;i1++){
+        for(int i1 = 0; i1 < text.Length; i1++){
 
             Console.Write(text[i1]);
             Sleep(delay);
             
-            if(newLine==1 && i1 == text.Length-1)
+            if(newLine == 1 && i1 == text.Length - 1)
             {
                 Console.Write("\n");
             }
@@ -51,14 +51,14 @@ class Program
         
         Console.ReadKey();
 
-        bool quit=false; 
-        bool error=false; 
-        bool retry=false;
+        bool quit = false; 
+        bool error = false; 
+        bool retry = false;
 
         double weightMetric = 0;
         double heightMetric = 0;
 
-        int sw=0;
+        int sw = 0;
 
         string prompt;
 
@@ -72,31 +72,31 @@ class Program
 
             prompt = "";
             error = false;
-            retry=false;
+            retry = false;
            
             if(sw == 0)
             {
                 DisplayText("To quit program just enter character 'q' in prompt");
-                DisplayText("Please enter weight in centimeters: ",newLine:0);
+                DisplayText("Please enter weight in centimeters: ",newLine: 0);
                 prompt = Console.ReadLine()!;
             }
 
             if(sw == 1)
             {
-                DisplayText("Now enter height in metric units: ",newLine:0);
+                DisplayText("Now enter height in metric units: ",newLine: 0);
                 prompt = Console.ReadLine()!;
             }
 
             if(sw > 1)
             {
                 Clear();
-                DisplayText($"Body mass index is: ",newLine:0);
+                DisplayText($"Body mass index is: ",newLine: 0);
                 Sleep(150);
 
                 //main procedure
-                double weightPounds = weightMetric*2.20462;
-                double heightInches = heightMetric*0.393701;
-                double inchesSquare = heightInches*heightInches;
+                double weightPounds = weightMetric * 2.20462;
+                double heightInches = heightMetric * 0.393701;
+                double inchesSquare = heightInches * heightInches;
 
                 //DisplayText(weightPounds.ToString()); //176
                 //DisplayText(heightInches.ToString()); //70
@@ -112,17 +112,17 @@ class Program
                 DisplayText($"{BMI:0.00}");
                 Sleep(1000);
 
-                if(BMI>=18.5 && BMI <=25)
+                if(BMI >= 18.5 && BMI <= 25)
                 {
                     DisplayText("A sedentary person's weight is considered optimal.");
                 } 
                 
-                else if(BMI<18.5)
+                else if(BMI < 18.5)
                 {
                     DisplayText("A sedentary person's weight is considered underweight.");
                 } 
                 
-                else if(BMI>25)
+                else if(BMI > 25)
                 {
                     DisplayText("A sedentary person's weight is considered overweight.");
                 }
@@ -133,7 +133,7 @@ class Program
 
                 if(Console.ReadKey(true).Key == ConsoleKey.Q)
                 {
-                    quit=true;
+                    quit = true;
                     
                     Clear();                    
                     DisplayText("Exiting program!");
@@ -143,8 +143,8 @@ class Program
                 
                 else 
                 {
-                    retry=true;
-                    sw=0;
+                    retry = true;
+                    sw = 0;
                 }
             }
 
@@ -152,7 +152,7 @@ class Program
             {
                 if(prompt.ToLower() == "q")
                 {
-                    quit=true;
+                    quit = true;
 
                     Console.Clear();
                     DisplayText("Exiting program!");
@@ -173,7 +173,7 @@ class Program
                     Sleep(1000);
                 } 
 
-                else if(prompt.Length<=0)
+                else if(prompt.Length <= 0)
                 {
                     error = true;
 
@@ -185,7 +185,7 @@ class Program
                     Sleep(1000);
                 } 
                 
-                else if(int.Parse(prompt)<1)
+                else if(int.Parse(prompt) < 1)
                 {
                     DisplayText();
                     DisplayText("Please enter number higher than 0");
