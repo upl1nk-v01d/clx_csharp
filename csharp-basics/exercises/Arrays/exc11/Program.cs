@@ -47,63 +47,56 @@ namespace TicTacToe
             Sleep(delay);
         }
 
-        private static int[] numbers1 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 };
-        
-        private static int[] numbers2 = { 92, 6, 73, -77, 81, -90, 99, 8, -85, 34 };
-        
-        private static int[] numbers3 = { 91, -4, 80, -73, -28 };
-        
-        private static int[] numbers4 = {  };
-
-        private static int[] CountPosSumNeg(int[] array)
+        private static void FindNemo(string str)
         {
-            int[] arraySummary = new int[2];
-            int countPositiveNumbers = 0;
-            int sumOfNegativeNumbers = 0;
+            DisplayText($"{str}", newLines: 2, delay: 1000);
+                                
+            bool parsed = true;
 
-            for(int i = 0; i < array.GetLength(0); i++)
+            if(str.IndexOf("Nemo") < 0)
             {
-                if(array[i] >= 0)
-                {
-                    countPositiveNumbers++;
-                } 
-                
-                else 
-                {
-                    sumOfNegativeNumbers += array[i];
-                }
-                
+                parsed = false;
             }
 
-            arraySummary[0] = countPositiveNumbers;
-            arraySummary[1] = sumOfNegativeNumbers;
-            
-            return arraySummary;
-        }
-
-        private static void CheckArrayContent(string varName, int[] array)
-        {
-            DisplayText($"Displaying variable '{varName}' content...", newLines: 2);
-                    
-            int i = 0;
-
-            foreach(int item in array)
+            else
             {
-                DisplayText(item + "\t", newLines: 0);
-
-                i++;
-
-                if(i % 4 == 0)
+                if(str.IndexOf("Nemo") == 0)
                 {
-                    DisplayText("");
+                    if(str[str.IndexOf("Nemo")+4].ToString() != " ")
+                    {
+                        parsed = false;
+                    }
+                }
+
+                else if(str.IndexOf("Nemo") + 4 == str.Length)
+                {
+                    if(str[str.IndexOf("Nemo")-1].ToString() != " ")
+                    {
+                        parsed = false;
+                    }
+                }
+
+                else if(str.IndexOf("Nemo") + 6 < str.Length)
+                {
+                    if(str[str.IndexOf("Nemo")-1].ToString() != " " || str[str.IndexOf("Nemo")+4].ToString() != " ")
+                    {
+                        parsed = false;
+                    }
+                }
+
+                if(parsed) 
+                {
+                    string[] array = str.Split(' ');
+                    int idx = Array.FindIndex(array, i => i.Contains("Nemo"));
+                    DisplayText($"I found Nemo at {idx + 1}", delay: 1000);
                 }
             }
 
-            int[] arraySummary =  CountPosSumNeg(array);
-
-            DisplayText("\n", delay: 1000);
-            DisplayText($"count of variable '{varName}' positive numbers is {arraySummary[0]}");
-            DisplayText($"sum of variable '{varName}' negative numbers is {arraySummary[1]}", newLines: 2);
+            if(!parsed)
+            {
+                parsed = false;
+                DisplayText("I can't find Nemo :(", delay: 1000);
+            }
 
             DisplayText("\n", delay: 1000);
             DisplayText("Press any key to continue!");
@@ -114,9 +107,8 @@ namespace TicTacToe
         private static void Main(string[] args)
         {
             Clear();
-            DisplayText("-= Capitalize Array's firsts =-", tick: 0, delay: 1000, newLines: 2);
-            DisplayText("This program counts arrays positive numbers");
-            DisplayText("and sums arrays negative numbers", delay: 1000, newLines: 2);
+            DisplayText("-= Finding Nemo purely =-", tick: 0, delay: 1000, newLines: 2);
+            DisplayText("This program finds word 'Nemo' alone or incapsulated in whitespaces");
             DisplayText("", delay: 1000);
             DisplayText("Press any key to continue!");
             
@@ -127,11 +119,15 @@ namespace TicTacToe
 
             while(!quit)
             {                              
-                CheckArrayContent("numbers1", numbers1); 
-                CheckArrayContent("numbers2", numbers2); 
-                CheckArrayContent("numbers3", numbers3); 
-                CheckArrayContent("numbers4", numbers4); 
+                FindNemo("I am finding Nemo !"); 
+                FindNemo("where is NeMo ?"); 
+                FindNemo("Nemo is me");                 
+                FindNemo("NemoNemo is me"); 
+                FindNemo("and _Nemo_ is me"); 
+                FindNemo("and also +Nemo is me"); 
+                FindNemo("I Nemo am");
 
+                DisplayText("That's it for now! :-)", newLines: 2, delay: 500);
                 DisplayText("Press 'q' key to quit!");
                 DisplayText("Press any key to restart!");
             
