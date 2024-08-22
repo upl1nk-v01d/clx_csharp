@@ -117,7 +117,6 @@ namespace TicTacToe
                             else if(CheckBoardCell(int.Parse(prompt)) != "X" && CheckBoardCell(int.Parse(prompt)) != "0")
                             {
                                 FillBoardCells(false);
-                                //DisplayBoard();
                                 break;
                             }
                             
