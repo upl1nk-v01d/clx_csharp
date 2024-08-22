@@ -16,7 +16,8 @@ namespace Exercise2
             Console.WriteLine("Please enter a max number");
             int maxNumber = int.Parse(Console.ReadLine());
 
-            for(int i = minNumber; i <= maxNumber; i++){
+            for(int i = minNumber; i <= maxNumber; i++)
+            {
                 sum += i;
             }
 

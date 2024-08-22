@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text.RegularExpressions;
-
-namespace Exercise5
+﻿namespace exc06
 {
     class Program
     {
@@ -23,7 +20,7 @@ namespace Exercise5
 
         static void DisplayText(string text = "\n", int tick = 30, int newLines = 1, int delay = 0)
         {
-             if(text.Length<1)
+             if(text.Length < 1)
              {
                 Console.Write("\n");
              } 
@@ -98,6 +95,7 @@ namespace Exercise5
 
                         DisplayText("");
                     }
+
                     if(sw == 1)
                     {
                         Console.ReadKey(true);
@@ -121,7 +119,7 @@ namespace Exercise5
                         DisplayText("");
                         DisplayText($"Original array content...", newLines: 2, delay: 500); 
 
-                        for(int i=0;i<arr1.GetLength(0);i++)
+                        for(int i = 0; i < arr1.GetLength(0); i++)
                         {
                             DisplayText($"{arr1[i]}\t", newLines: 0);
 
@@ -138,7 +136,7 @@ namespace Exercise5
                     {
                         Console.ReadKey(true);
                         Clear();
-                        DisplayText($"Changing second array last element value...", newLines: 2, delay: 500); 
+                        DisplayText($"Changing second array's last element value...", newLines: 2, delay: 500); 
                         
                         arr2[arr2.GetLength(0) - 1] = randomNumbers.Next(1, 101);
 
@@ -157,7 +155,7 @@ namespace Exercise5
                         DisplayText("");
                         DisplayText($"Modified array content...", newLines: 2, delay: 500); 
 
-                        for(int i=0;i<arr2.GetLength(0);i++)
+                        for(int i = 0; i < arr2.GetLength(0); i++)
                         {
                             DisplayText($"{arr2[i]}\t", newLines: 0);
 
@@ -195,7 +193,8 @@ namespace Exercise5
                     }
                 }
                     
-                if(quit){
+                if(quit)
+                {
                     Clear();
                     DisplayText("Goodbye! :)", delay: 1000);
 

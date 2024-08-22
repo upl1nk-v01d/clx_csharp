@@ -23,11 +23,13 @@ namespace Exercise4
 
         static void DisplayText(string text = "\n",  int tick = 30, int newLine = 1, int delay = 0)
         {
-            for(int i1 = 0; i1 < text.Length; i1++){
+            for(int i1 = 0; i1 < text.Length; i1++)
+            {
                 Console.Write(text[i1]);
                 Sleep(tick);
                 
-                if(newLine == 1 && i1 == text.Length - 1){
+                if(newLine == 1 && i1 == text.Length - 1)
+                {
                     Console.Write("\n");
                 }
             }
@@ -92,7 +94,7 @@ namespace Exercise4
                     DisplayText("Reading array....", delay: 500);
                     DisplayText();
 
-                    for(int i = 0; i< myArray.GetLength(0); i++)
+                    for(int i = 0; i < myArray.GetLength(0); i++)
                     {
                         DisplayText($"{myArray[i]} ", newLine: 0);
                         

@@ -152,7 +152,8 @@ namespace Exercise5
                             DisplayText($"The number {num2} index is {idx2}!");
                         } 
                         
-                        else {
+                        else 
+                        {
                             DisplayText($"Aaah... no index for {num2}!");
                         }
 
@@ -180,7 +181,6 @@ namespace Exercise5
                     Clear();
                     Exit(1);
                 }
-                
             }
         }
     }

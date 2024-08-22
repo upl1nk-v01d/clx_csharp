@@ -12,7 +12,8 @@ namespace Exercise3
             int counter = 0;
             double average;
 
-            for (int i = 0; i < numbers.GetLength(0); i++){
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
                 sum += numbers[i];
                 counter++;
             }
