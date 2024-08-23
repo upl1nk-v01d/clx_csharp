@@ -49,6 +49,8 @@ namespace TicTacToe
 
         public static List<char> theBoard = new List<char>(); 
 
+        private static string playerTurn = "Human";
+
         private static string[] words = 
         {
             "superman",
@@ -64,9 +66,10 @@ namespace TicTacToe
         {
             Clear();
             DisplayText("-= Guess the worD =-", tick: 0, delay: 1000);
-            DisplayText("Like goog old Hangman game", delay: 1000, newLines: 2);
+            DisplayText("the good old Hangman like game", delay: 1000, newLines: 2);
 
             Regex regexNotNumbers = new Regex("[^0-9]");
+            Regex regexNotLetters = new Regex("[^a-zA-Z]");
             Random randomNumbers = new Random();
 
             bool quit = false;
@@ -75,7 +78,6 @@ namespace TicTacToe
 
             int sw = 0;
 
-            string playerTurn = "Human";
             string winner = "";
 
             string prompt = "";
@@ -93,7 +95,6 @@ namespace TicTacToe
                     if(playerTurn == "Human")
                     {
                         DisplayText("");
-                        DisplayText("Your turn!", delay: 1000);
 
                         while(sw < 2)
                         {            
@@ -104,6 +105,7 @@ namespace TicTacToe
                                 Clear();
                                 DisplayBoard();
                                 DisplayText("");
+                                DisplayText("Your turn!", delay: 1000);
                                 DisplayText("Choose your cell: ", newLines: 0);
                             }
 
@@ -126,6 +128,17 @@ namespace TicTacToe
 
                                     Clear();
                                     DisplayText("Enter only a number!", delay: 1000);
+                                } 
+                            } 
+
+                            if(sw == 1)
+                            {
+                                if(regexNotLetters.Matches(prompt).Count > 0)
+                                {
+                                    error = true;
+
+                                    Clear();
+                                    DisplayText("Enter only a letter!", delay: 1000);
                                 } 
                             } 
                             
@@ -151,6 +164,14 @@ namespace TicTacToe
                                 if(sw == 1)
                                 {
                                     chosenNumber = int.Parse(prompt);
+
+                                    if(theBoard[chosenNumber-1] != '_')
+                                    {
+                                        error = true;
+                                        DisplayText("You chose wrong cell!", delay: 500);
+                                        DisplayText("Try again!");
+                                        sw--;
+                                    }
                                 }
 
                                 if(sw == 2)
@@ -159,18 +180,25 @@ namespace TicTacToe
                                     {                                        
                                         chosenLetter = char.Parse(prompt);
 
-                                        break;
-                                    }
+                                        if(chosenLetter == chosenWord[chosenNumber-1])
+                                        {
+                                            DisplayText("You chose the right letter!", delay: 1000);
+                                        } 
 
-                                    else
-                                    {
-                                        error = true;
-                                        DisplayText("You chose wrong cell!", delay: 500);
-                                        DisplayText("Try again!");
+                                        else
+                                        {
+                                            DisplayText("You chose wrong letter!", delay: 1000);
+                                            chosenLetter = '_';
+                                        }
+                                        
+                                        break;
                                     }
                                 }
                             }
                         }
+
+                        DisplayText("", delay: 1000);
+                        DisplayText("Press any key to continue!");
 
                         Sleep(150);
                         Clear();
@@ -195,16 +223,30 @@ namespace TicTacToe
 
                         DisplayText($"Computer chose cell: {chosenNumber}", newLines: 0, delay: 1000);
 
-                        string letters = "abcdefghijklmnopqrstuvwxyz";
                         Random randomLetter = new Random();
-                        int num = randomLetter.Next(0, letters.Length);
+                        int num = randomLetter.Next(0, chosenWord.Length);
 
-                        chosenLetter = letters[num];
+                        chosenLetter = chosenWord[num];
                         
                         DisplayText("");
-                        DisplayText($"Computer chose letter: {chosenLetter}", newLines: 0, delay: 1000);
+                        DisplayText($"Computer chose letter: {chosenLetter}", delay: 1000);
 
-                        Sleep(1000);
+                        chosenLetter = char.Parse(prompt);
+
+                        if(chosenLetter == chosenWord[chosenNumber-1])
+                        {
+                            DisplayText("Computer chose the right letter!", delay: 1000);
+                        } 
+
+                        else
+                        {
+                            DisplayText("Computer chose wrong letter!", delay: 1000);
+                            chosenLetter = '_';
+                        }
+                        
+                        DisplayText("");
+                        DisplayText("Press any key to continue!");
+                        Console.ReadKey(true);
                         Clear();
                     }
                 }
@@ -228,7 +270,7 @@ namespace TicTacToe
 
                     winner = CheckWinner();
 
-                    if(winner == "X" || winner == "0")
+                    if(winner == "Human" || winner == "Computer")
                     {
                         gameEnded = true;
                         DisplayText("", delay: 1000);
@@ -242,16 +284,26 @@ namespace TicTacToe
                         DisplayText("Game ended!");
                     } 
                 
-                    DisplayText("", delay: 1000);
-                    DisplayText("Press any key to continue!");
-                    DisplayText("Press 'q' key to abort!");
-                    
-                    if(Console.ReadKey(true).Key.ToString() == "Q")
+                    if(gameEnded)
                     {
-                        quit = true;
-                    } 
-                    
-                    else 
+
+                        DisplayText("", delay: 1000);
+                        DisplayText("Press any key to continue!");
+                        DisplayText("Press 'q' key to abort!");
+                        
+                        if(Console.ReadKey(true).Key.ToString() == "Q")
+                        {
+                            quit = true;
+                        } 
+                        
+                        else 
+                        {
+                            gameEnded = false;
+                            Clear();
+                        }
+                    }
+
+                    else
                     {
                         Clear();
                     }
@@ -323,7 +375,10 @@ namespace TicTacToe
 
         private static string CheckWinner()
         {
-
+            if(chosenWord == String.Join("", theBoard.ToArray()))
+            {
+                return playerTurn;
+            }
             return "";
         }
 
