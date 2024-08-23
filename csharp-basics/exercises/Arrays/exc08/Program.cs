@@ -103,7 +103,9 @@ namespace TicTacToe
                             if(sw == 0)
                             {
                                 Clear();
+
                                 DisplayBoard();
+
                                 DisplayText("");
                                 DisplayText("Your turn!", delay: 1000);
                                 DisplayText("Choose your cell: ", newLines: 0);
@@ -112,7 +114,9 @@ namespace TicTacToe
                             if(sw == 1)
                             {
                                 Clear();
+
                                 DisplayBoard();
+                                
                                 DisplayText("");
                                 DisplayText("Choose your letter: ", newLines: 0);
                             }
@@ -128,7 +132,7 @@ namespace TicTacToe
 
                                     Clear();
                                     DisplayText("Enter only a number!", delay: 1000);
-                                } 
+                                }
                             } 
 
                             if(sw == 1)
@@ -140,21 +144,21 @@ namespace TicTacToe
                                     Clear();
                                     DisplayText("Enter only a letter!", delay: 1000);
                                 } 
-                            } 
-                            
-                            else if(prompt.Length > 1)
-                            {
-                                error = true;
 
-                                Clear();
-                                DisplayText("Too many chars", delay: 1000);
-                            } 
+                                if(prompt.Length > 1 && sw == 1)
+                                {
+                                    error = true;
+
+                                    Clear();
+                                    DisplayText("You entered more than one letter!", delay: 1000);
+                                } 
+                            }  
                             
                             else if(prompt.Length <= 0)
                             {
                                 error = true;
                                 Clear();
-                                DisplayText("No chars", delay: 1000);
+                                DisplayText("Your entered nothing!", delay: 1000);
                             } 
 
                             if(!error)
@@ -165,11 +169,18 @@ namespace TicTacToe
                                 {
                                     chosenNumber = int.Parse(prompt);
 
-                                    if(theBoard[chosenNumber-1] != '_')
+                                    if(chosenNumber > chosenWord.Count() || chosenNumber < 1)
+                                    {
+                                        DisplayText("You chose wrong cell!", delay: 500);
+                                        DisplayText("Try again!", delay: 1000);
+                                        sw--;
+                                    }
+
+                                    else if(theBoard[chosenNumber-1] != '_')
                                     {
                                         error = true;
                                         DisplayText("You chose wrong cell!", delay: 500);
-                                        DisplayText("Try again!");
+                                        DisplayText("Try again!", delay: 1000);
                                         sw--;
                                     }
                                 }
@@ -196,9 +207,6 @@ namespace TicTacToe
                                 }
                             }
                         }
-
-                        DisplayText("", delay: 1000);
-                        DisplayText("Press any key to continue!");
 
                         Sleep(150);
                         Clear();
@@ -246,7 +254,9 @@ namespace TicTacToe
                         
                         DisplayText("");
                         DisplayText("Press any key to continue!");
+
                         Console.ReadKey(true);
+
                         Clear();
                     }
                 }
@@ -266,8 +276,6 @@ namespace TicTacToe
                         playerTurn = "Human";
                     }
                     
-                    DisplayBoard();
-
                     winner = CheckWinner();
 
                     if(winner == "Human" || winner == "Computer")
@@ -283,30 +291,6 @@ namespace TicTacToe
                         DisplayText("", delay: 1000);
                         DisplayText("Game ended!");
                     } 
-                
-                    if(gameEnded)
-                    {
-
-                        DisplayText("", delay: 1000);
-                        DisplayText("Press any key to continue!");
-                        DisplayText("Press 'q' key to abort!");
-                        
-                        if(Console.ReadKey(true).Key.ToString() == "Q")
-                        {
-                            quit = true;
-                        } 
-                        
-                        else 
-                        {
-                            gameEnded = false;
-                            Clear();
-                        }
-                    }
-
-                    else
-                    {
-                        Clear();
-                    }
                 }
 
                 if(gameEnded)
@@ -323,6 +307,7 @@ namespace TicTacToe
                     else
                     {
                         gameEnded = false;
+
                         InitGame();
                     }
                 }
@@ -379,6 +364,7 @@ namespace TicTacToe
             {
                 return playerTurn;
             }
+            
             return "";
         }
 
@@ -395,6 +381,7 @@ namespace TicTacToe
 
                 cellsCount++;
             }
+
             return '_';
         }
 
