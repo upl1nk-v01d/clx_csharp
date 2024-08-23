@@ -1,5 +1,4 @@
-﻿// Write a program that asks which number position out of 20 random numbers you want to know.
-class Program
+﻿class Program
 {
     static void Main(string[] args)
     {
