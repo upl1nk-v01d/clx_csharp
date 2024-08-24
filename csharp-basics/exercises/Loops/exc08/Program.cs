@@ -3,7 +3,7 @@
 class Program
 {
 
-    private static string drawConstant(string symbol, int con = 1)
+    private static string DrawConstant(string symbol, int con = 1)
     {
         string output = "";
         
@@ -23,22 +23,22 @@ class Program
         {
             for(int i2 = 0; i2 < i1; i2++)
             {
-                output += drawConstant("/", con);
+                output += DrawConstant("/", con);
             }
             
             for(int i3 = 0; i3 < num - i1; i3++)
             {
-                output += drawConstant("*", con);
+                output += DrawConstant("*", con);
             }
 
             for(int i4 = 0; i4 < num - i1; i4++)
             {
-                output += drawConstant("*", con);
+                output += DrawConstant("*", con);
             }
 
             for(int i5 = num; i5 > num - i1; i5--)
             {
-                output += drawConstant("\\", con);
+                output += DrawConstant("\\", con);
             }
 
             output += "\n";
