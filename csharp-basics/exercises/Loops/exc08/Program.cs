@@ -2,7 +2,6 @@
 
 class Program
 {
-
     private static string DrawConstant(string symbol, int con = 1)
     {
         string output = "";

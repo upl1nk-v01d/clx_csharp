@@ -2,7 +2,6 @@
 
 class Program
 {
-
     private static string Validation(string prompt)
     { 
         Regex regexNotNumbers = new Regex("[^0-9]");
@@ -38,7 +37,6 @@ class Program
         {
             return prompt;
         }
-        
     }
 
     private static string DrawNumbers(int minNumber, int maxNumber)
@@ -58,7 +56,6 @@ class Program
                 {
                     output += i2 + i1;
                 }
-                
             }
 
             output += "\n";

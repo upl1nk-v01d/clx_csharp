@@ -13,6 +13,7 @@ class Program
 
         Console.WriteLine();
         Console.Write("Please enter desired max value of whole number: ");
+        
         string prompt = Console.ReadLine()!;
 
         int chosenNumber = int.Parse(prompt);

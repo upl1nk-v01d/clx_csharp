@@ -9,10 +9,12 @@
         Console.WriteLine("\n");
 
         Console.Write("Please enter first word: ");
+
         string chosenWord1 = Console.ReadLine()!;
         Console.WriteLine();
 
         Console.Write("Please enter second word: ");
+        
         string chosenWord2 = Console.ReadLine()!;
         Console.WriteLine();
 

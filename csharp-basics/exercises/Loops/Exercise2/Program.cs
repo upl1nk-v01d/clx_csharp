@@ -9,6 +9,7 @@ namespace Exercise2
             int i, n;
             
             Console.WriteLine("Input number of terms : ");
+            
             n = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine();

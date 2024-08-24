@@ -2,7 +2,6 @@
 
 class Program
 {
-
     private static string CheckCapitalization(string letter)
     {
         Regex regexCapitalLetters = new Regex("[A-Z]");
@@ -69,7 +68,6 @@ class Program
         
         Console.Clear();
         Console.WriteLine("Goodbye! :-)");
-        
     }
 }
              

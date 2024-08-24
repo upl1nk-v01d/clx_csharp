@@ -29,6 +29,7 @@
         while(!quit)
         {
             Console.Write("Please enter a number: ");
+
             string prompt = Console.ReadLine()!;
             Console.WriteLine();
 
@@ -49,7 +50,6 @@
                 Console.WriteLine($"The element nr. {prompt}: value is {arrayNumbers[chosenNumber]}");
                 quit = true;
             }
-
         }
     }
 }

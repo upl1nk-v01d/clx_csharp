@@ -2,7 +2,6 @@
 
 class Program
 {
-
     private static string Validation(string prompt)
     { 
         Regex regexNotNumbers = new Regex("[^0-9]");
@@ -38,7 +37,6 @@ class Program
         {
             return prompt;
         }
-        
     }
 
     private static int RollingDices(int dices)
@@ -81,7 +79,7 @@ class Program
         int desiredSum = 0;
         int dicesQuantity = 0;
 
-        string prompt = "";
+        string prompt;
 
         while(!stop)
         {
