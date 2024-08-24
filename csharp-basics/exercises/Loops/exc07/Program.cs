@@ -15,7 +15,7 @@ class Program
         Console.Clear();
         Console.WriteLine();
         Console.WriteLine("Press any key to roll a dice...");
-        Console.ReadLine();
+        Console.ReadKey();
 
         bool stop = false;
 
