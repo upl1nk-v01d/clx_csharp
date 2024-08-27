@@ -90,17 +90,14 @@ class Program
             {
                 Console.WriteLine($"Cannot be empty!");
             }
-
             else if(regexNotNumbers.Matches(prompt).Count > 0)
             {
                 Console.WriteLine("Please enter just digits!");
             }
-
             else if(int.Parse(prompt) < 1)
             {
                 Console.WriteLine("Please enter a number above zero!");
             }
-            
             else
             {
                 if(sw == 0)
@@ -130,7 +127,6 @@ class Program
                         Console.Clear();
                         Console.WriteLine("Goodbye! :-)");
                     }
-
                     else 
                     {
                         sw = 0;

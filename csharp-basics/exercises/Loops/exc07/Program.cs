@@ -36,7 +36,6 @@ class Program
                 score = 0;
                 Console.WriteLine($"You got 0 points, oink:0\n");
             }
-
             else
             {
                 score += rolledDiceNumber;

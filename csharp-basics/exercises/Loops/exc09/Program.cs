@@ -15,13 +15,11 @@ class Program
             error = true;
             Console.WriteLine($"Cannot be empty!");
         }
-
         else if(regexNotNumbers.Matches(prompt).Count > 0)
         {
             error = true;
             Console.WriteLine("Please enter just digits!");
         }
-
         else if(int.Parse(prompt) < 1)
         {
             error = true;
@@ -32,7 +30,6 @@ class Program
         {
             return "";
         }
-
         else
         {
             return prompt;
@@ -121,7 +118,6 @@ class Program
                     {
                         Console.WriteLine($"WOW! You got lucky with {dicesSum} your chosen {desiredSum} sum!");
                     }
-                    
                     else
                     {
                         Console.WriteLine($"Aaah! You missed lucky {dicesSum} sum with your chosen {desiredSum} sum!");
@@ -135,7 +131,6 @@ class Program
                         Console.Clear();
                         Console.WriteLine("Goodbye! :-)");
                     }
-
                     else 
                     {
                         sw = 0;

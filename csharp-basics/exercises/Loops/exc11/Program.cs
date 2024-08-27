@@ -11,7 +11,6 @@ class Program
         {
             return letter.ToLower();
         }
-        
         else if(regexNotCapitalLetters.Matches(letter).Count > 0)
         {
             return letter.ToUpper();

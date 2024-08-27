@@ -30,12 +30,10 @@
             {
                 Console.Write(chosenWord1[i]);
             }
-
             else if(i + 1 > maxColumns - chosenWord2.Length)
             {
                 Console.Write(chosenWord2[i - maxColumns + chosenWord2.Length]);
             }
-
             else
             {
                 Console.Write(".");

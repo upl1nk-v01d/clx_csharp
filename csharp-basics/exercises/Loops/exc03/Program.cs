@@ -39,12 +39,10 @@
             {
                 Console.WriteLine("You chose number that is greater than array's length!");
             }
-
             else if(chosenNumber < 0)
             {
                 Console.WriteLine("You chose number that is less than zero!");
             }
-
             else
             {
                 Console.WriteLine($"The element nr. {prompt}: value is {arrayNumbers[chosenNumber]}");
