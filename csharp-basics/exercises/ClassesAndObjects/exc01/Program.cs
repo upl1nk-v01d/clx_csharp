@@ -1,6 +1,4 @@
-﻿namespace ClassProductList;
-
-class Program
+﻿class Program
 {
     static private void Main(string[] args)
     {
