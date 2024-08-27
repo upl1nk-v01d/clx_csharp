@@ -45,6 +45,7 @@ class ProductList
             Console.WriteLine($"old Name value: {propName}");
             Console.WriteLine("Leave blank and press 'Enter' key if you want to discard changes");
             Console.WriteLine("Please enter new value of Name: ");
+
             string promptPropName = Console.ReadLine();
             Console.Clear();
             
@@ -53,6 +54,7 @@ class ProductList
             Console.WriteLine($"old PriceAtStart value: {propPriceAtStart}");
             Console.WriteLine("Leave blank and press 'Enter' key if you want to discard changes");
             Console.WriteLine("Please enter new value of Name: ");
+
             string promptPriceAtStart = Console.ReadLine();
             Console.Clear();
 
@@ -61,6 +63,7 @@ class ProductList
             Console.WriteLine($"old AmountAtStart value: {propAmountAtStart}");
             Console.WriteLine("Leave blank and press 'Enter' key if you want to discard changes");
             Console.WriteLine("Please enter new value of Name: ");
+
             string promptAmountAtStart = Console.ReadLine();
             Console.Clear();
 
@@ -90,7 +93,6 @@ class ProductList
 
             this.PrintProducts();
         }
-
         else
         {
             Console.Clear();

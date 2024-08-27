@@ -6,57 +6,82 @@ class Car
 {
     public string Name { get; set; }
 
-    public double StartKilometers { get; set; }
+    public int StartKilometers { get; set; }
 
-    public double EndKilometers { get; set; }
+    public int EndKilometers { get; set; }
 
     public double Liters { get; set; }
+
+    public static bool IsGasHog(double mileage, double liters)
+    {
+        return CarTest.CalculateConsumption100KM(mileage, liters) > 15;
+    }
+
+    public static bool IsEconomyCar(double mileage, double liters)
+    {
+        return CarTest.CalculateConsumption100KM(mileage, liters) <= 5;
+    }
 }
 
 class CarList
 {
     public List<object> cars = new List<object>();
 
-    public void AddCar(string name, double startKilometers, double endKilometers, double liters)
+    public void AddCar(string name, int startKilometers, int endKilometers, double liters)
     {
-        cars.Add( new { Name = name, StartKilometers = startKilometers, 
+        cars.Add( new Car { Name = name, StartKilometers = startKilometers, 
         EndKilometers = endKilometers, Liters = liters });
     }
 
-    public void ChangeProductInfo()
+    public object SearchCar(string searchName, double addLiters = 0.0)
     { 
         int i = 0;
         int detected = -1;
-        
-        Console.WriteLine("Please enter a car name to search: ");
 
-        string searchName = Console.ReadLine()!;
-
-        foreach(object o in cars)
+        foreach(var o in cars)
         {
-            if(o.GetType().GetProperty("Name").GetValue(o).ToString() == searchName)
+            if(o.GetType().GetProperty("Name").GetValue(o).ToString().ToLower() == searchName.ToLower())
             {
                 detected = i;
+                Console.WriteLine(detected);
             }
 
             i++;
         }
 
-        if (detected != -1)
-        {
-            Console.Clear();
-
-            var car = cars[detected];
-
-            Console.WriteLine(car);
-
-        }
-
-        else
+        if (detected == -1)
         {
             Console.Clear();
             Console.WriteLine($"car with name {searchName} is not found!");
         }
+        else
+        {
+            Console.Clear();
+            Console.WriteLine($"car with name {searchName} is found!");
+
+            if(addLiters != 0)
+            {
+                object car = new Car()
+                {
+                    Name = Convert.ToString(cars[detected].GetType().GetProperty("Name").GetValue(cars[detected])),
+                    StartKilometers = Convert.ToInt32(cars[detected].GetType().GetProperty("StartKilometers").GetValue(cars[detected])),
+                    EndKilometers = Convert.ToInt32(cars[detected].GetType().GetProperty("EndKilometers").GetValue(cars[detected])),
+                    Liters = addLiters,
+                };
+
+                Console.WriteLine($"car with name {searchName} added liters {addLiters}!");
+                
+                cars[detected] = car;
+            } 
+            else
+            {
+                object car = cars[detected];
+            }
+            
+            return cars[detected];
+        }
+
+        return null;
     }
 
     public void Report()
@@ -80,8 +105,23 @@ class CarList
         }
     }
 
-    public CarList(string name, double startKilometers, double endKilometers, double liters)
+    public void FillUp(string carName, int mileage, double liters)
     {
-        AddCar(name, startKilometers, endKilometers, liters);
+        object car = SearchCar(carName);
+
+        double Liters = Convert.ToDouble(car.GetType().GetProperty("Liters").GetValue(car));
+        double fillUpLiters = CarTest.CalculateConsumption100KM(mileage, liters);
+
+        SearchCar(carName, fillUpLiters);
+
+        Console.WriteLine(Liters);
+    }
+
+    public CarList(string carName, int startKilometers, int endKilometers, double liters)
+    {
+        AddCar(carName, startKilometers, endKilometers, liters);
+
+        int mileage = endKilometers - startKilometers;
+        FillUp(carName, mileage, liters);
     }
 }

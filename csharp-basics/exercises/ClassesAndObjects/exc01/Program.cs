@@ -24,7 +24,6 @@
             {
                 quit = true;
             } 
-
             else
             {
                 Console.Clear();
@@ -37,6 +36,5 @@
                 Console.Clear();
             }
         }
-        
     }
 }
