@@ -18,7 +18,7 @@ class Program
 
         foreach(var f in filteredMovies)
         {
-            Console.WriteLine($"Movie with PG rating is {f}");
+            Console.WriteLine($"Movie with PG rating is {f.Title}");
         }
     }
 }
