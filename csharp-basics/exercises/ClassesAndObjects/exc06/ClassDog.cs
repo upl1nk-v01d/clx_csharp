@@ -18,7 +18,12 @@
 
     public bool HasSameMotherAs(Dog otherDog)
     {
-        return true;
+        if(this.mother == otherDog.mother)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
 

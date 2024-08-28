@@ -63,8 +63,10 @@
             {
                 if(dogToCheck != dog && dogToCheck.mother != null)
                 {
-                    dogToCheck.HasSameMotherAs(dog);
-                    Console.WriteLine($"{dogToCheck.Name} has same mother {dogToCheck.mother} with {dog.Name}");
+                    if(dogToCheck.HasSameMotherAs(dog))
+                    {
+                        Console.WriteLine($"{dogToCheck.Name} has same mother {dogToCheck.mother} with {dog.Name}");
+                    }
                 }
             }
         }
