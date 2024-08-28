@@ -10,15 +10,15 @@ class Program
         carList.AddCar("Bentley", 0, 130, 8.1); 
         carList.AddCar("Audi", 0, 90, 4.8); 
 
-        //carList.Report();
+        carList.Report();
 
         bool quit = false;
+
+        string prompt;
         
         while(!quit)
-        {
-            string prompt = "";
-            
-            Console.Write("Please enter a car name: ");
+        {          
+            Console.Write("\n\nPlease enter a car name: ");
             prompt = Console.ReadLine();
 
             if(prompt != "")
@@ -33,13 +33,39 @@ class Program
                     int endKilometers = Convert.ToInt32(car.GetType().GetProperty("EndKilometers").GetValue(car));
                     double liters = Convert.ToDouble(car.GetType().GetProperty("Liters").GetValue(car));
                 
-                    Console.Write("Press any key to watch odometer changing...");
+                    Console.WriteLine("\n\nPress any key to watch odometer changing...");
                     Console.ReadKey(true);
 
                     for(int i = 0; i < 5; i++)
                     {
                         CarOdometer.ChangeOdometer(carName, 1);
                     }
+
+                    Console.WriteLine("\n\nPress any key to watch fuel gauge adding...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    CarFuelGauge.ChangeFuelGauge(carName, 1.1);
+
+                    Console.WriteLine("\n\nPress any key to see cars report...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    carList.Report();
+
+                    Console.WriteLine("\n\nPress any key to watch fuel gauge decreasing...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    
+                        CarFuelGauge.ChangeFuelGauge(carName, -1.1);
+                    
+
+                    Console.WriteLine("\n\nPress any key to see again cars report...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    carList.Report();
                 }
 
                 Console.WriteLine();

@@ -27,6 +27,7 @@ class CarList
         });
 
         CarOdometer.AddOdometer(carName, endKilometers);
+        CarFuelGauge.AddFuelGauge(carName, liters);
     }
 
     public static object SearchCar(string searchName, double addLiters = 0.0)
@@ -44,6 +45,7 @@ class CarList
             {
                 detected = i;
                 Console.WriteLine(detected);
+                break;
             }
 
             i++;
@@ -69,7 +71,7 @@ class CarList
                     Liters = addLiters,
                 };
 
-                Console.WriteLine($"car with name {propName} added liters {addLiters}!");
+                Console.WriteLine($"car with name {propName} added liters {addLiters:0.0}!");
             } 
             else
             {
@@ -94,7 +96,15 @@ class CarList
             foreach (PropertyInfo p in cars[i].GetType().GetProperties())
             {
                 Console.Write(p.Name + ": ");
-                Console.WriteLine(p.GetValue(cars[i])); 
+                if(p.GetValue(cars[i]) is Double)
+                {
+                    Console.WriteLine($"{Convert.ToDouble(p.GetValue(cars[i])):0.0}");
+                }
+                else
+                {
+                    Console.WriteLine($"{p.GetValue(cars[i])}");
+                }
+                
             }
      
             Console.WriteLine();
