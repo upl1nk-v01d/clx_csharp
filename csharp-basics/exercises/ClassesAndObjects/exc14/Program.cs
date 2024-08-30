@@ -1,24 +1,15 @@
-﻿using System;
+﻿using System.Globalization;
 
 class WeekdayInDutch()
 {
-    int Year;
-    int Month;
-    int Day;
-    public WeekdayInDutch(int year, int month, int day) : this() //why ': this()' ????
+    public static string GetDate(int year, int month, int day)
     {
-        Day = day;
-        Month = month;
-        Year = year;
+        DateTime date = new DateTime(year, month, day);
+        CultureInfo culture = new CultureInfo("nl-NL");
 
-        GetDate(year, month, day);
-    }
+        string weekdayNameInDutch = date.ToString("dddd", culture);
 
-    public static void GetDate(int year, int month, int day)
-    {
-        var culture = new System.Globalization.CultureInfo("nl-NL");
-        var _day = culture.DateTimeFormat.GetDayName(DateTime.Today.DayOfWeek);
-        Console.WriteLine();
+        return weekdayNameInDutch;
     }
 }
 
@@ -26,9 +17,8 @@ class Program
 {
     public static void Main(string[] args)
     {
-        WeekdayInDutch(1970, 9, 21);
-        WeekdayInDutch(1945, 9, 2);
-        WeekdayInDutch(2001, 9, 11);
+        Console.WriteLine(WeekdayInDutch.GetDate(1970, 9, 21));
+        Console.WriteLine(WeekdayInDutch.GetDate(1945, 9, 2));
+        Console.WriteLine(WeekdayInDutch.GetDate(2001, 9, 11));
     }
 }
-
