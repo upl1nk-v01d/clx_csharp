@@ -30,7 +30,9 @@ class CarOdometer
             string propCarName = Convert.ToString(odometer.GetType().GetProperty("CarName").GetValue(odometer));
             int propReadingOdometer = Convert.ToInt32(odometer.GetType().GetProperty("ReadingOdometer").GetValue(odometer));
             
-            readingOdometer = propReadingOdometer;
+            readingOdometer = propReadingOdometer % 999999 > 0 ? (propReadingOdometer - 1) % 999999 : propReadingOdometer;
+
+            //readingOdometer % 999999 > 0 ? readingOdometer % 999999 : 0;
 
             if(propCarName == carName)
             {
