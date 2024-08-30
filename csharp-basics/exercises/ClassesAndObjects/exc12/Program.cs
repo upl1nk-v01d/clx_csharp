@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Testpaper
+﻿namespace Testpaper
 {
     class Program
     {
@@ -14,18 +11,16 @@ namespace Testpaper
             Student student1 = new Student();
             Student student2 = new Student();
 
-            Console.WriteLine(paper1);
-
-            student1.TestsTaken;
-            //student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" });
+            //student1.TestsTaken; //throws error: Only assignment, call, increment, decrement, await, and new object expressions can be used as a statement (CS0201)
             
-            //student1.TestsTaken ➞ { "No tests taken" }
-            //student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" })
-            //student1.TestsTaken ➞ { "Maths: Passed! (80%)" }
-
-            //student2.TakeTest(paper2, { "1C", "2D", "3A", "4C" })
-            //student2.TakeTest(paper3, { "1A", "2C", "3A", "4C", "5D", "6C", "7B" })
-            //student2.TestsTaken ➞ { "Chemistry: Failed! (25%)", "Computing: Failed! (43%)" }
+            student1.GetTakenTests(student1.TestsTaken);
+            student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" });
+            student1.GetTakenTests(student1.TestsTaken);
+            
+            student2.GetTakenTests(student2.TestsTaken);
+            student2.TakeTest(paper2, new string[] { "1C", "2D", "3A", "4C" });
+            student2.TakeTest(paper3, new string[] { "1A", "2C", "3A", "4C", "5D", "6C", "7B" });
+            student2.GetTakenTests(student2.TestsTaken);
         }
     }
 }
