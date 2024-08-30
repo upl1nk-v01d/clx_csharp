@@ -13,22 +13,25 @@ class Smoothie
         Price = price;
     }
     
+    public string GetIngredients()
+    {
+        return String.Join(" ", Ingredients);
+    }
+
     public double GetCost()
     {
-        Console.WriteLine ("£" + Convert.ToString(Price));
-
         return Price;
     }
 
-    public void GetPrice()
+    public double GetPrice()
     {
         double price = this.GetCost();
         double calc = price + price * 1.5;
 
-        Console.WriteLine ("£" + Convert.ToString(calc));
+        return calc;
     }
 
-    public void GetName()
+    public string GetName()
     {
         string output = "";
         Array.Sort(this.Ingredients);
@@ -47,7 +50,7 @@ class Smoothie
             output += this.Ingredients[0] + " Smoothie";
         }
 
-        Console.WriteLine(output);
+        return output;
     }
 }
 
@@ -61,11 +64,12 @@ class Program
         Console.ReadKey(true);
 
         var smoothie1 = new Smoothie(new string[] { "Banana" }, 0.5);
-        smoothie1.GetCost();
-        smoothie1.GetPrice();
-        smoothie1.GetName();
-
-        Console.WriteLine("As we can see a smoothie is created!");
+        Console.WriteLine ("The smoothie's ingredients are " + smoothie1.GetIngredients());
+        Console.WriteLine ("Cost is £" + Convert.ToString(smoothie1.GetCost()));
+        Console.WriteLine ("Price is £" + Convert.ToString(smoothie1.GetPrice()));
+        Console.WriteLine ("Name of smoothie is " + smoothie1.GetName());
+        
+        Console.WriteLine("\nAs we can see a smoothie is created!");
         Console.WriteLine("\nPress any key to continue...");
         Console.ReadKey(true);
 
@@ -75,11 +79,12 @@ class Program
         Console.ReadKey(true);
 
         var smoothie2 = new Smoothie(new string[] { "Raspberries", "Strawberries", "Blueberries"  }, 3.50);
-        smoothie2.GetCost();
-        smoothie2.GetPrice();
-        smoothie2.GetName();
+        Console.WriteLine ("The smoothie's ingredients are " + smoothie2.GetIngredients());
+        Console.WriteLine ("Cost is £" + Convert.ToString(smoothie2.GetCost()));
+        Console.WriteLine ("Price is £" + Convert.ToString(smoothie2.GetPrice()));
+        Console.WriteLine ("Name of smoothie is " + smoothie2.GetName());
         
-        Console.WriteLine("We created our second smoothie!");
+        Console.WriteLine("\nWe created our second smoothie!");
         Console.WriteLine("\nPress any key to quit program...");
         Console.ReadKey(true);
     }
