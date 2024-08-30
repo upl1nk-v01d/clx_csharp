@@ -10,13 +10,32 @@ namespace Testpaper
         string PassMark { get; set; }
     }
 
+    class Testpaper : ITestpaper
+    {
+        public string Subject { get; set; }
+
+        public string[] MarkScheme { get; set; }
+
+        public string PassMark { get; set; }
+
+        public Testpaper(string subject, string[] markScheme, string passMark)
+        {
+            Subject = subject;
+            MarkScheme = markScheme;
+            PassMark = passMark;
+        }
+    }
+
     public interface IStudent
     {
-        string[] TestsTaken { get; set; }
+        string[] TestsTaken { 
+            get { return TestsTaken; }
+            set {  }
+        }
 
         void TakeTest(ITestpaper paper, string[] answers)
         {
-            this.TestsTaken[TestsTaken.Length-1] = {paper, answers};
+            //this.TestsTaken[TestsTaken.Length-1] = {paper, answers};
         }
     }
     
@@ -34,22 +53,6 @@ namespace Testpaper
             {
 
             }
-        }
-    }
-
-    class Testpaper : ITestpaper
-    {
-        public string Subject { get; set; }
-
-        public string[] MarkScheme { get; set; }
-
-        public string PassMark { get; set; }
-
-        public Testpaper(string subject, string[] markScheme, string passMark)
-        {
-            Subject = subject;
-            MarkScheme = markScheme;
-            PassMark = passMark;
         }
     }
 }

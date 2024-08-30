@@ -14,8 +14,10 @@ namespace Testpaper
             Student student1 = new Student();
             Student student2 = new Student();
 
-            Console.WriteLine(student1.TestsTaken);
-            student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" });
+            Console.WriteLine(paper1);
+
+            student1.TestsTaken;
+            //student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" });
             
             //student1.TestsTaken ➞ { "No tests taken" }
             //student1.TakeTest(paper1, new string[] { "1A", "2D", "3D", "4A", "5A" })
