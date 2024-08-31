@@ -44,7 +44,6 @@ class CarList
             if(propName.ToLower() == searchName.ToLower())
             {
                 detected = i;
-                Console.WriteLine(detected);
                 break;
             }
 
@@ -53,13 +52,12 @@ class CarList
 
         if (detected == -1)
         {
-            Console.Clear();
-            Console.WriteLine($"car with name {searchName} is not found!");
+            //Console.Clear();
+            Console.WriteLine($"A car with name {searchName} is not found!");
         }
         else
         {
-            Console.Clear();
-            Console.WriteLine($"car with name {propName} is found!");
+            Console.WriteLine($"A car with name {propName} is found!");
 
             if(addLiters != 0)
             {
@@ -69,9 +67,7 @@ class CarList
                     StartKilometers = Convert.ToInt32(cars[detected].GetType().GetProperty("StartKilometers").GetValue(cars[detected])),
                     EndKilometers = Convert.ToInt32(cars[detected].GetType().GetProperty("EndKilometers").GetValue(cars[detected])),
                     Liters = addLiters,
-                };
-
-                Console.WriteLine($"car with name {propName} added liters {addLiters:0.0}!");
+                };        
             } 
             else
             {

@@ -43,14 +43,22 @@ class CarFuelGauge
                 };
 
                 CarList.SearchCar(carName, current);
+                if(added < 0)
+                {
+                    Console.WriteLine($"Car with name {propCarName} decreased by {added:0.0} liters!");
+                }
+                else if(added > 0)
+                {
+                    Console.WriteLine($"Car with name {propCarName} increased by {added:0.0} liters!");
+                }     
+
+                Console.WriteLine($"Car with name {propCarName} fuel now has {current:0.0} liters!");
                 
                 break;
             }
 
             i++;
-        }
-
-        Console.WriteLine($"Fuel gauge of a car {carName} changed and is {current:0.0} liters");
+        }   
     }
 
     public static void ReportFuelGaugeReadings()

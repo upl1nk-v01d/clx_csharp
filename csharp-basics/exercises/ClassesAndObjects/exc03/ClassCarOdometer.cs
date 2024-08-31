@@ -3,6 +3,8 @@ class Odometer
     public string CarName { get; set; }
 
     public int ReadingOdometer { get; set; }
+
+    public int InitialReadingOdometer { get; set; }
 }
 
 class CarOdometer
@@ -14,7 +16,8 @@ class CarOdometer
         odometers.Add(new Odometer
         {
             CarName = carName,
-            ReadingOdometer = readingOdometer
+            ReadingOdometer = readingOdometer,
+            InitialReadingOdometer = readingOdometer
         });
 
         Console.WriteLine($"Odometers to car {carName} added with mileage {readingOdometer}");
@@ -29,10 +32,14 @@ class CarOdometer
         {
             string propCarName = Convert.ToString(odometer.GetType().GetProperty("CarName").GetValue(odometer));
             int propReadingOdometer = Convert.ToInt32(odometer.GetType().GetProperty("ReadingOdometer").GetValue(odometer));
+            int _InitialReadingOdometer = Convert.ToInt32(odometer.GetType().GetProperty("InitialReadingOdometer").GetValue(odometer));
             
             readingOdometer = propReadingOdometer % 999999 > 0 ? (propReadingOdometer - 1) % 999999 : propReadingOdometer;
-
-            //readingOdometer % 999999 > 0 ? readingOdometer % 999999 : 0;
+            
+            if(readingOdometer % 10 == 0)
+            {
+                CarFuelGauge.ChangeFuelGauge(propCarName, -1); //decreasing fuel by 1 liter
+            }
 
             if(propCarName == carName)
             {

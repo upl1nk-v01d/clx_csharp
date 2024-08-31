@@ -36,7 +36,7 @@ class Program
                     Console.WriteLine("\n\nPress any key to watch odometer changing...");
                     Console.ReadKey(true);
 
-                    for(int i = 0; i < 5; i++)
+                    for(int i = 0; i < 15; i++)
                     {
                         CarOdometer.ChangeOdometer(carName, 1);
                     }
