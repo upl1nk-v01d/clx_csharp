@@ -7,20 +7,23 @@ namespace ListExercise3
     {
         static void Main(string[] args)
         {
-            //TODO: Write a C# program to insert an element into the array list at the first position.
-
             var colors = new List<string>();
+
             colors.Add("Red");
             colors.Add("Green");
             colors.Add("Orange");
             colors.Add("White");
             colors.Add("Black");
 
+            Console.Clear();
+            
+            colors.Insert(0, "Tan");
+
             Console.WriteLine(string.Join(",", colors));
 
-            //TODO: Add new color at the first and third position of the list
+            colors.Insert(0, "Blue");
+            colors.Insert(2, "Violet");
 
-            //Print the list
             Console.WriteLine(string.Join(",", colors));
         }
     }
