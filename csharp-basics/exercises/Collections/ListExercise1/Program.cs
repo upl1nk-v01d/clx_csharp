@@ -1,15 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ListExercise1
 {
     class Program
     {
-        private static void Main(string[] args)
-        {
-            //TODO: Write a C# program to create a new list, add some elements (string) and print out the collection.
-            //TODO: Add 5 colors to list
+        public static List<string> listColors = new List<string>();
 
-            Console.WriteLine();
+        private static void Main(string[] args)
+        {            
+            listColors.Add("Red"); 
+            listColors.Add("Green"); 
+            listColors.Add("Blue"); 
+            listColors.Add("White"); 
+            listColors.Add("Tan"); 
+
+            Console.Clear();
+            Console.WriteLine("\nPrinting List items...\n");
+
+            foreach(var item in listColors)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
