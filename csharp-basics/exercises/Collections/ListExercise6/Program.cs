@@ -16,11 +16,13 @@ namespace ListExercise6
                 "Black"
             };
 
+            Console.Clear();
+
             Console.WriteLine(string.Join(",", colors));
 
-            //TODO: Remove the third element from the list.
+            colors.RemoveAt(2);
 
-            Console.WriteLine("After removing third element from the list:");
+            Console.WriteLine("\nAfter removing third element from the list:\n");
             Console.WriteLine(string.Join(",", colors));
         }
     }
