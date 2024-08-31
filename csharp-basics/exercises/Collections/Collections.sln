@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReplaceSubstring", "Replace
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniqueValues", "UniqueValues\UniqueValues.csproj", "{0C3C99BF-7B23-4573-B285-2FAE43DA51FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exc04", "exc04\exc04.csproj", "{D609D151-D5AC-4DA2-967C-6762A93F78CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,10 @@ Global
 		{0C3C99BF-7B23-4573-B285-2FAE43DA51FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C3C99BF-7B23-4573-B285-2FAE43DA51FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C3C99BF-7B23-4573-B285-2FAE43DA51FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D609D151-D5AC-4DA2-967C-6762A93F78CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D609D151-D5AC-4DA2-967C-6762A93F78CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D609D151-D5AC-4DA2-967C-6762A93F78CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D609D151-D5AC-4DA2-967C-6762A93F78CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
