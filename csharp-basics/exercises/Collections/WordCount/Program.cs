@@ -38,7 +38,7 @@ namespace WordCount
             foreach(var line in lines)
             {
                 string strippedLine = regex.Replace(line, "");
-                Console.WriteLine(strippedLine);
+
                 chars += strippedLine.ToCharArray().Length;
             }
 
@@ -47,9 +47,10 @@ namespace WordCount
 
         static void Main(string[] args)
         {
-            Console.WriteLine(ReadLines("lear.txt"));
-            Console.WriteLine(ReadWords("lear.txt"));
-            Console.WriteLine(ReadChars("lear.txt"));
+            Console.Clear();
+            Console.WriteLine("Lines = " + ReadLines("lear.txt"));
+            Console.WriteLine("Words = " + ReadWords("lear.txt"));
+            Console.WriteLine("Chars = " + ReadChars("lear.txt"));
         }
     }
 }
