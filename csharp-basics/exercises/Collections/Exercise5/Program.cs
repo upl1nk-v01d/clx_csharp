@@ -13,25 +13,25 @@ namespace Exercise5
             List<int> squaredNumbers = new List<int>();
             int length = passedNumber.ToString().ToCharArray().ToList().Count();
 
-            for(int i = 0; i < length; i++)
+            while(passedNumber > 1)
             {
-                Console.WriteLine(passedNumber);
+                if(passedNumber == 4)
+                {
+                    return squared;
+                }
+
+                squared = 0;
 
                 while (passedNumber != 0)
                 {
-                    Console.WriteLine("passedNumber: " + passedNumber);
                     int digit = passedNumber % 10;
-                    Console.WriteLine("digit: " + digit);
                     squared += digit * digit;
-                    Console.WriteLine("squared: " + squared);
                     passedNumber /= 10;
-                    Console.WriteLine("passedNumber: " + passedNumber + "\n");
                 }
 
                 squaredNumbers.Add(squared);
 
                 passedNumber = squared;
-                squared = 0;
             }
             
             return squared;
@@ -57,9 +57,9 @@ namespace Exercise5
             
             int number = Convert.ToInt32(Console.ReadLine());
 
-            string happy = IsHappyNumber(number) == true ? "" : "not";
+            string happy = IsHappyNumber(number) == true ? "is" : "is not";
 
-            Console.WriteLine($"The number {number} is {happy} happy number!");            
+            Console.WriteLine($"The number {number} {happy} happy number!");            
         }
     }
 }
