@@ -4,7 +4,7 @@ namespace Account;
 
 class Program
 {
-    public static void Transfer(Account from, Account to, double howMuch)
+    private static void Transfer(Account from, Account to, double howMuch)
     {
         from.Withdrawal(howMuch);
         to.Deposit(howMuch);

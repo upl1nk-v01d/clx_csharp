@@ -5,20 +5,24 @@ namespace BankAccount
 {
     class Account
     {
-        public string Name { get; set; }
-        private double _realBalance { get; set; }
-        public double Balance { get; set; }
+        private string Name { get; set; }
 
-        private void AddToBalance(double ammount)
-        {
-            _realBalance = Balance;
-        }
+        private double Balance { get; set; }
 
         public Account(string name, double balance)
         {
             Name = name;
             Balance = balance;
-            AddToBalance(balance);
+        }
+
+        public double GetBalance()
+        {
+            return Balance;
+        }
+
+        public string GetAccountName()
+        {
+            return Name;
         }
     }
 
@@ -31,22 +35,22 @@ namespace BankAccount
             users.Add(new Account(name, balance));
         }
 
-        public static string ShowUserNameAndBalance(string name)
+        private static string ShowUserNameAndBalance(string name)
         {
             foreach(var user in users)
             {
-                if(user.Name.ToLower() == name.ToLower())
+                if(user.GetAccountName().ToLower() == name.ToLower())
                 {
-                    string minus = user.Balance < 0 ? "-" : "";
+                    string minus = user.GetBalance() < 0 ? "-" : "";
 
-                    return $"{user.Name}, {minus}${Math.Abs(user.Balance):n}";
+                    return $"{user.GetAccountName()}, {minus}${Math.Abs(user.GetBalance()):0.00}";
                 }
             }
             
             return users.ToString();    
         }
 
-        public static void Main(string[] args)
+        private static void Main(string[] args)
         {
             AddUser("Benson", 17.25);
             AddUser("Alfred", 18.19);
