@@ -43,9 +43,8 @@ namespace Histogram
                 } 
                 else
                 {
-                    Console.WriteLine($"{(i-1) % 10 * 10:0#}-{i * 10 - 1:0#}: {star}");
+                    Console.WriteLine($"{(i - 1) % 10 * 10:0#}-{i * 10 - 1:0#}: {star}");
                 }   
-                
             }
         }
     }
