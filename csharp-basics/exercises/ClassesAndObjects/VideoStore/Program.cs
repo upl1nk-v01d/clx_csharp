@@ -4,7 +4,7 @@ namespace VideoStore
 {
     class Program
     {
-        private static readonly VideoStore store = new VideoStore();
+        public static readonly VideoStore store = new VideoStore();
 
         public static void Main(string[] args)
         {

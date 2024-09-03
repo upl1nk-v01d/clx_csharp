@@ -2,20 +2,42 @@ using System.Reflection;
 
 class Product
 {
-    public string Name { get; set; }
+    private string Name { get; set; }
 
-    public double PriceAtStart { get; set; }
+    private double PriceAtStart { get; set; }
 
-    public int AmountAtStart { get; set; }
+    private int AmountAtStart { get; set; }
+
+    public Product(string name, double priceAtStart, int amountAtStart)
+    {
+         Name = name;
+         PriceAtStart = priceAtStart;
+         AmountAtStart = amountAtStart;
+    }
+
+    public object GetProductName()
+    {
+        return this.Name;
+    }
+
+    public object GetProductPrice()
+    {
+        return this.PriceAtStart;
+    }
+
+    public object GetProductAmount()
+    {
+        return this.AmountAtStart;
+    }
 }
 
 class ProductList
 {
-    public List<object> products = new List<object>();
+    private List<Product> products = new List<Product>();
 
     public void AddProduct(string name, double priceAtStart, int amountAtStart)
     {
-        products.Add( new { Name = name, PriceAtStart = priceAtStart, AmountAtStart = amountAtStart });
+        products.Add(new Product(name, priceAtStart, amountAtStart));
     }
 
     public void ChangeProductInfo()
@@ -26,9 +48,9 @@ class ProductList
         Console.WriteLine("Please enter a product name to change: ");
         string searchName = Console.ReadLine()!;
 
-        foreach(object o in products)
+        foreach(Product product in products)
         {
-            if(o.GetType().GetProperty("Name").GetValue(o).ToString() == searchName)
+            if(product.GetProductName().ToString().ToLower() == searchName.ToLower())
             {
                 detected = i;
             }
@@ -40,7 +62,7 @@ class ProductList
         {
             Console.Clear();
 
-            var propName = products[detected].GetType().GetProperty("Name").GetValue(products[detected]).ToString();
+            var propName = products[detected].GetProductName();
             
             Console.WriteLine($"old Name value: {propName}");
             Console.WriteLine("Leave blank and press 'Enter' key if you want to discard changes");
@@ -49,7 +71,7 @@ class ProductList
             string promptPropName = Console.ReadLine();
             Console.Clear();
             
-            var propPriceAtStart = products[detected].GetType().GetProperty("PriceAtStart").GetValue(products[detected]).ToString();
+            var propPriceAtStart = products[detected].GetProductPrice();
             
             Console.WriteLine($"old PriceAtStart value: {propPriceAtStart}");
             Console.WriteLine("Leave blank and press 'Enter' key if you want to discard changes");
@@ -58,7 +80,7 @@ class ProductList
             string promptPriceAtStart = Console.ReadLine();
             Console.Clear();
 
-            var propAmountAtStart = products[detected].GetType().GetProperty("AmountAtStart").GetValue(products[detected]).ToString();
+            var propAmountAtStart = products[detected].GetProductAmount();
             
             Console.WriteLine($"old AmountAtStart value: {propAmountAtStart}");
             Console.WriteLine("Leave blank and press 'Enter' key if you want to discard changes");
@@ -82,12 +104,8 @@ class ProductList
                 propAmountAtStart = promptAmountAtStart;
             }
                 
-            var product = new Product() 
-            {
-                Name = propName,
-                PriceAtStart = double.Parse(propPriceAtStart),
-                AmountAtStart = int.Parse(propAmountAtStart),
-            };
+            var product = new Product(propName.ToString(), double.Parse(propPriceAtStart.ToString()), 
+            int.Parse(propAmountAtStart.ToString()));
 
             products[detected] = product;
 
@@ -107,16 +125,13 @@ class ProductList
         Console.WriteLine();
         Console.WriteLine("Printing list of products:\n");
 
-        foreach (object o in products)
+        foreach (Product product in products)
         {
-            foreach (PropertyInfo p in products[i].GetType().GetProperties())
-            {
-                Console.Write(p.Name + ": ");
-                Console.WriteLine(p.GetValue(products[i])); 
-            }
-     
+            Console.WriteLine("Name: " + product.GetProductName());
+            Console.WriteLine("Price: " + product.GetProductPrice());
+            Console.WriteLine("Amount: " + product.GetProductAmount());
             Console.WriteLine();
-
+     
             i++;
         }
     }
