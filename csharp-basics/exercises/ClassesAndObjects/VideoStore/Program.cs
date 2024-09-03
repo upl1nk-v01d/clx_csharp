@@ -4,7 +4,7 @@ namespace VideoStore
 {
     class Program
     {
-        public static readonly VideoStore store = new VideoStore();
+        public static readonly VideoStore _store = new VideoStore();
 
         public static void Main(string[] args)
         {
@@ -47,26 +47,32 @@ namespace VideoStore
 
         private static void ListInventory()
         {
-            var _store = store.ListInventory();
+            var inventory = _store.ListInventory();
 
-            foreach(var video in _store)
+            Console.WriteLine();
+
+            foreach(var video in inventory)
             {
-                Console.WriteLine(video.Title);
+                Console.WriteLine("Title: " + video.Title);
+                Console.WriteLine("Rating: " + (video.GetRating() == null 
+                ? "[no rating]" : video.GetRating()));
+
+                Console.WriteLine();
             }
         }
 
         private static void FillVideoStore()
         {
-            store.AddVideo("The Matrix");
-            store.AddVideo("Godfather II");
-            store.AddVideo("Star Wars Episode IV: A New Hope");
+            _store.AddVideo("The Matrix");
+            _store.AddVideo("Godfather II");
+            _store.AddVideo("Star Wars Episode IV: A New Hope");
         }
 
         private static void RentVideo()
         {
             Console.Write("Please enter desired movie title: ");
             var title = Console.ReadLine();
-            var video = store.CheckOut(title);
+            var video = _store.CheckOut(title);
 
             if(video == null)
             {
@@ -83,16 +89,16 @@ namespace VideoStore
             Console.Write("Please enter movie title to return: ");
             var title = Console.ReadLine();
 
-            store.Return(title);
+            _store.Return(title);
         }
 
         public static void GiveRating(){
             Console.Write("Please enter movie title to rate: ");
             var title = Console.ReadLine();
-            Console.Write("Please enter movie title to rate: ");
+            Console.Write("Please a movie rate number 1-5: ");
             var rating = double.Parse(Console.ReadLine());
 
-            store.ReceiveRating(title, rating);
+            _store.ReceiveRating(title, rating);
         }
     }
 }

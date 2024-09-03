@@ -16,6 +16,16 @@ namespace VideoStore
             Ratings = new List<double>();
         }
 
+        public double GetRating()
+        {
+            if(this.Ratings.Count() > 0)
+            {
+                return this.AverageRating;
+            }
+            
+            return 0;
+        }
+
         public string Title { get; set; }
 
         public double AverageRating => Ratings.Average();
