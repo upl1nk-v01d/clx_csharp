@@ -1,3 +1,16 @@
-﻿// See https://aka.ms/new-console-template for more information
-//ToDo: Write a query that returns names of days
-//https://docs.microsoft.com/en-us/dotnet/api/system.dayofweek?view=net-6.0
+﻿class Program
+{
+    private static string ReturnDayName(int day)
+    {
+        return Enum.GetName(typeof(DayOfWeek),day);
+    }
+
+    public static void Main(string[] args)
+    {
+        Console.Clear();
+
+        string weekDay = ReturnDayName(0); //return Sunday
+
+        Console.WriteLine(weekDay);
+    }
+}
