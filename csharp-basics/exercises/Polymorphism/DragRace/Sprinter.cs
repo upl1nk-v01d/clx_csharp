@@ -2,21 +2,21 @@ using System;
 
 namespace DragRace
 {
-    public class Audi : Car, ICar
+    public class Sprinter : Car, ICar
     {
         public override void SpeedUp()
         {
-            _currentSpeed += 10;
+            _currentSpeed += 6;
         }
 
         public override void SlowDown()
         {
-            _currentSpeed -= 5;
+            _currentSpeed -= 8;
         }
 
         public void StartEngine() 
         {
-            Console.WriteLine("Rrrrrrr.....");
+            Console.WriteLine("Hrrrrrr.....");
         }
     }
 }
