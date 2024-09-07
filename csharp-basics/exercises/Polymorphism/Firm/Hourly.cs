@@ -24,9 +24,9 @@ namespace Firm
         //-----------------------------------------------------------------
         // Computes and returns the pay for this hourly employee.
         //-----------------------------------------------------------------
-        public override double Pay() 
-
-            var payment = payRate * _hoursWorked;
+        public override double Pay()
+        {
+            var payment = this._payRate * _hoursWorked;
             _hoursWorked = 0;
             return payment;
         }

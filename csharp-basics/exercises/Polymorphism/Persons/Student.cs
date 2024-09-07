@@ -12,15 +12,13 @@
 
         public override string Display()
         {
-            var (firstName, lastName, address, id) = this.GetData();
-
             string output = "";
 
-            output += "firstName: " + firstName + ", \n";
-            output += "lastName: " + lastName + ", \n";
-            output += "address: " + address + ", \n";
-            output += "id: " + id.ToString() + ", \n";
-            output += "GPA: " + this.GPA.ToString() + "\n";
+            output += "firstName: " + FirstName + ", \n";
+            output += "lastName: " + LastName + ", \n";
+            output += "address: " + Address + ", \n";
+            output += "id: " + Id.ToString() + ", \n";
+            output += "GPA: " + GPA.ToString() + "\n";
 
             return output;
         }

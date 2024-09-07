@@ -2,13 +2,13 @@
 {
     public class Person
     {
-        public string FirstName { get; set; }
+        protected string FirstName { get; set; }
 
-        public string LastName { get; set; }
+        protected string LastName { get; set; }
 
-        public string Address { get; set; }
+        protected string Address { get; set; }
 
-        public int Id { get; set; }
+        protected int Id { get; set; }
 
         public Person(string firstName, string lastName, string address, int id)
         {
@@ -16,11 +16,6 @@
             LastName = lastName;
             Address = address;
             Id = id;
-        }
-
-        public virtual (string, string, string, int) GetData()
-        {
-            return (FirstName, LastName, Address, Id);
         }
 
         public virtual string Display()

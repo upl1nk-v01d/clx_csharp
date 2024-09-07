@@ -1,20 +1,42 @@
+using System;
+
 namespace Firm
 {
     public abstract class StaffMember
     {
-        private string _name;
-        private string _address;
-        private string _phone;
+        protected string _name;
+        protected string _address;
+        protected string _phone;
+        protected double _hourlyPayRate;
 
         //-----------------------------------------------------------------
         // Sets up a staff member using the specified information.
         //-----------------------------------------------------------------
-        protected StaffMember(string name, string address, string phone) 
+        protected StaffMember(string name, string address, string phone, string socialSecurityNumber) 
         {
             _name = name;
             _address = address;
             _phone = phone;
         }
+
+        public StaffMember(string name, string address, string phone, string socialSecurityNumber, double hourlyPayRate) : this(name, address, phone, socialSecurityNumber)
+        {
+            _hourlyPayRate = hourlyPayRate;
+        }
+
+        protected StaffMember(string Name, string Address, string Phone)
+        {
+            _name = Name;
+            _address = Address;
+            _phone = Phone;
+        }
+
+        protected StaffMember(string Name, string Address) //constructor for subclass Volunteer
+        {
+            _name = Name;
+            _address = Address;
+        }
+
 
         //-----------------------------------------------------------------
         // Returns a string including the basic employee information.
@@ -32,5 +54,14 @@ namespace Firm
         // employee.
         //-----------------------------------------------------------------
         public abstract double Pay();
+
+        public virtual void AddSales(int sales)
+        {
+        }
+
+        public string GetName()
+        {
+            return _name;
+        }
     }
 }

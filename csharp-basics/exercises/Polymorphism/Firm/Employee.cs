@@ -1,5 +1,3 @@
-using System;
-
 namespace Firm
 {
     public class Employee : StaffMember
@@ -12,7 +10,8 @@ namespace Firm
         // Sets up an employee with the specified information.
         //-----------------------------------------------------------------
         public Employee(string eName, string eAddress, string ePhone,
-            string socSecNumber, double rate) : base(eName, eAddress, ePhone)
+        string socSecNumber, double rate) 
+        : base(eName, eAddress, ePhone, socSecNumber)
         {
             _socialSecurityNumber = socSecNumber;
             _payRate = rate;
