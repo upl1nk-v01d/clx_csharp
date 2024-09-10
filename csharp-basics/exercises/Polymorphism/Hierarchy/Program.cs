@@ -7,14 +7,18 @@ namespace Hierarchy
         static void Main(string[] args)
         {
             Food apples = new Vegetables(1);    
-            //{AnimalType} {AnimalName} {AnimalWeight} {AnimalLivingRegion} [{CatBreed} = Only if its cat]
-            Animal cat = new Cat("Snowbell","Cat", 3.12, 1, "Fluffy", "Latvia", apples);
+            Food meat = new Meat(2);    
+
+            Animal cat = new Cat("Snowbell","Cat", 3.12, 1, "Persian", "Persia", apples);
+            Animal tiger = new Tiger("Typho","Tiger", 121.3, 1, "Africa", meat);
             
-            //string foodType = apples.GetType().Name;
-            //Console.WriteLine(foodType);
-            Console.Write($"{cat._animalType} {cat._animalName} {cat._animalWeight} ");
-            Console.Write($"{cat._breed} {cat._foodEaten}");
-            Console.WriteLine($"{cat.eat(apples)}!");
+            Console.WriteLine($"{cat._animalType} {cat._animalName} {cat._animalWeight} {cat}");
+            Console.WriteLine(cat.eat(apples));
+            cat.makeSound();
+
+            Console.WriteLine($"{tiger._animalType} {tiger._animalName} {tiger._animalWeight} {tiger}");
+            Console.WriteLine(tiger.eat(meat));
+            tiger.makeSound();
         }
     }
 }

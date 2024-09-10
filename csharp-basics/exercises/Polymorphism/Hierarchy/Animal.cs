@@ -17,14 +17,19 @@ namespace Hierarchy
             _foodEaten = foodEaten;
         }
 
-        public void makeSound()
+        public virtual void makeSound()
         {
             
         }
         
-        public virtual string eat(Food food)
+        public string eat(Food food)
         {
-            return "";
+            if(food.GetType().Name == "Meat")
+            {
+                return $"{this._animalType} is eating {food.GetType().Name}!";
+            }
+
+            return $"{this._animalType} is not eating {food.GetType().Name}!";
         }
     }
 }

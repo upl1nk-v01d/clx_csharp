@@ -14,5 +14,10 @@ namespace Hierarchy
             _livingRegion = livingRegion;
             _foodType = foodType;
         }
+
+        public virtual string GetLivingRegion()
+        {
+            return _livingRegion;
+        }
     }
 }
