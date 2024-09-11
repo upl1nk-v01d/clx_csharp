@@ -3,15 +3,20 @@ namespace AdApp
     public class TVAd : Advert
     {
         private int _airTime;
-        private int _cost;
-        private bool _doubling;
-        public TVAd(int fee, int airTime, int cost, bool doubling) : base(fee)
+        private int _views;
+        private int _cpm;
+        private bool _peak;
+
+        public TVAd(int fee, int views, int airTime, bool peak) : base(fee)
         {
-            _airTime = airTime;
-            _cost = cost;
-            _doubling = doubling;
+            this._airTime = airTime;
+            this._views = views;
+            this._cpm = 5; //$5 per 1,000 impressions (CPM).
+            this._peak = peak;
+
+            this._fee = fee * airTime + views * this._cpm;
         }
-        
+
         public new int Cost() 
         {
             return base.Cost();

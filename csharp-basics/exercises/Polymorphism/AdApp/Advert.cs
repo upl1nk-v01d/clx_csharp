@@ -2,7 +2,7 @@ namespace AdApp
 {
     public class Advert
     {
-        private int _fee;
+        protected int _fee;
 
         public Advert() 
         {
@@ -26,7 +26,7 @@ namespace AdApp
 
         public override string ToString() 
         {
-            return "\nAdvert: Fee=" + _fee;
+            return $"Advert: {this.GetType().Name} fee = {_fee}";
         }
     }
 }
