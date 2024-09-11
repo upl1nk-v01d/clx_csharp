@@ -6,17 +6,22 @@ namespace VendingMachine
     {
         static void Main(string[] args)
         {
-            //Cant change any of given code
-            //Valid money for Vending machine 0.10, 0.20, 0.50, 1.00, 2.00 coins.
-            Console.Clear();
-
             VendingMachine vendingMachine = new VendingMachine("Coke", 100, 50);
 
-            vendingMachine.AddProduct("CocaCola", vendingMachine.ConvertToMoney(1500, 50), 5);
-            vendingMachine.InsertCoin(vendingMachine.ConvertToMoney(2, 0));
+            vendingMachine.AddProduct("PepsiCola", new Money { Euros = 1, Cents = 20 }, 0);
+            vendingMachine.AddProduct("Fanta", new Money { Euros = 1, Cents = 40 }, 6);
+            vendingMachine.AddProduct("Sprite", new Money { Euros = 1, Cents = 30 }, 7);
 
-            Console.WriteLine(vendingMachine.Manufacturer);
+            vendingMachine.InsertCoin(new Money{ Euros = 2, Cents = 0 });
 
-        }
+            vendingMachine.BuyProduct(1); //choose rank number not index
+            vendingMachine.BuyProduct(2); 
+
+            vendingMachine.InsertCoin(new Money{ Euros = 2, Cents = 20 });
+            vendingMachine.InsertCoin(new Money{ Euros = 3, Cents = 0 });
+            vendingMachine.InsertCoin(new Money{ Euros = 0, Cents = 30 });
+
+            vendingMachine.BuyProduct(3); 
+		}	
     }
 }
