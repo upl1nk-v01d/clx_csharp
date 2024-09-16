@@ -1,6 +1,6 @@
 namespace AdApp
 {
-    public class Poster : Advert
+    public abstract class Poster : Advert
     {
         private int _width;
         private int _height;
@@ -13,8 +13,6 @@ namespace AdApp
             _height = height;
             _copies = copies;
             _costPerCopy = costPerCopy;
-
-            
         }
     }
 }

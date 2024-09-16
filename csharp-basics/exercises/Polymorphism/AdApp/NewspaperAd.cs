@@ -16,9 +16,9 @@ namespace AdApp
             this._fee += Convert.ToInt32(this._fee * (rate * 0.01));
         }
 
-        private new int Cost()
+        public override int Cost()
         {
-            return base.Cost();
+            return this._fee;
         }
 
         public override string ToString()

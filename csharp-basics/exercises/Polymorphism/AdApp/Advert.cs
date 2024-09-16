@@ -1,6 +1,6 @@
 namespace AdApp
 {
-    public class Advert
+    public abstract class Advert
     {
         protected int _fee;
 
@@ -19,10 +19,7 @@ namespace AdApp
             _fee = fee;
         }
 
-        public int Cost() 
-        {
-            return _fee;
-        }
+        public abstract int Cost();
 
         public override string ToString() 
         {

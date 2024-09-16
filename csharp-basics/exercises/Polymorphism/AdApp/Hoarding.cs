@@ -14,9 +14,9 @@ namespace AdApp
             this._fee = fee * days * rate;
         }
 
-        public new int Cost() 
+        public override int Cost()
         {
-            return base.Cost();
+            return this._fee;
         }
 
         public override string ToString() 
