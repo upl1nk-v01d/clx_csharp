@@ -1,6 +1,6 @@
 ﻿namespace Hierarchy
 {
-    public class Zebra : Mammal
+    public abstract class Zebra : Mammal
     {        
         public Zebra(string animalName, string animalType, double animalWeight, 
         int foodEaten, string livingRegion, Food foodType) 

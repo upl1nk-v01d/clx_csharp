@@ -18,9 +18,7 @@
             _foodEaten = foodEaten;
         }
 
-        public virtual void MakeSound()
-        {
-        }
+        public abstract void MakeSound();
         
         public string Eat(Food food)
         {

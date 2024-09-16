@@ -4,7 +4,7 @@ namespace Hierarchy
 {
     public class Tiger : Mammal
     {        
-        public string _sound = "ROAR!";
+        public string Sound = "ROAR!";
 
         public Tiger(string animalName, string animalType, double animalWeight, 
         int foodEaten, string livingRegion, Food foodType) 
@@ -15,7 +15,7 @@ namespace Hierarchy
 
         public override void MakeSound()
         {
-            Console.WriteLine(this._sound);
+            Console.WriteLine(this.Sound);
         }
 
         public override string ToString()

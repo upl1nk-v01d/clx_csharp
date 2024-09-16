@@ -6,7 +6,7 @@ namespace Hierarchy
     {        
         protected string _breed;
 
-        public string _sound = "meow";
+        public string Sound = "meow";
 
         public Cat(string animalName, string animalType, double animalWeight, 
         int foodEaten, string breed, string livingRegion, Food foodType) 
@@ -18,7 +18,7 @@ namespace Hierarchy
 
         public override void MakeSound()
         {
-            Console.WriteLine(this._sound);
+            Console.WriteLine(this.Sound);
         }
 
         public override string ToString()
