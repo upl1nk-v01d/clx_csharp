@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Hierarchy
+﻿namespace Hierarchy
 {
     public abstract class Felime : Mammal
     {    

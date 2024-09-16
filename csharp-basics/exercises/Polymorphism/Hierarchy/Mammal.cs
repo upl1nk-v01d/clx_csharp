@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace Hierarchy
+﻿namespace Hierarchy
 {
     public abstract class Mammal : Animal
     {
         public string _livingRegion;
+        
         protected Food _foodType;
         
         public Mammal(string animalName, string animalType, double animalWeight, 

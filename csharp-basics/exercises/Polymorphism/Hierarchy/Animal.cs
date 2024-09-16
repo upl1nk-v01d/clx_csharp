@@ -1,12 +1,13 @@
-﻿using System;
-
-namespace Hierarchy
+﻿namespace Hierarchy
 {
     public abstract class Animal
     {
         public string _animalName;
+
         public string _animalType;
+
         public double _animalWeight;
+
         public int _foodEaten;
         
         public Animal(string animalName, string animalType, double animalWeight, int foodEaten)
@@ -17,12 +18,11 @@ namespace Hierarchy
             _foodEaten = foodEaten;
         }
 
-        public virtual void makeSound()
+        public virtual void MakeSound()
         {
-            
         }
         
-        public string eat(Food food)
+        public string Eat(Food food)
         {
             if(food.GetType().Name == "Meat")
             {

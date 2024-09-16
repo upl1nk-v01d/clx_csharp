@@ -14,7 +14,7 @@ namespace Hierarchy
             _foodType = foodType;
         }
 
-        public override void makeSound()
+        public override void MakeSound()
         {
             Console.WriteLine(this._sound);
         }
