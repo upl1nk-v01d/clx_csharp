@@ -1,17 +1,15 @@
-using System;
-
 namespace Firm
 {
     public abstract class StaffMember
     {
         protected string _name;
+
         protected string _address;
+
         protected string _phone;
+
         protected double _hourlyPayRate;
 
-        //-----------------------------------------------------------------
-        // Sets up a staff member using the specified information.
-        //-----------------------------------------------------------------
         protected StaffMember(string name, string address, string phone, string socialSecurityNumber) 
         {
             _name = name;
@@ -37,22 +35,15 @@ namespace Firm
             _address = Address;
         }
 
-
-        //-----------------------------------------------------------------
-        // Returns a string including the basic employee information.
-        //-----------------------------------------------------------------
         public override string ToString() 
         {
             var result = "Name: " + _name + "\n";
             result += "Address: " + _address + "\n";
             result += "Phone: " + _phone;
+            
             return result;
         }
 
-        //-----------------------------------------------------------------
-        // Derived classes must define the pay method for each type of
-        // employee.
-        //-----------------------------------------------------------------
         public abstract double Pay();
 
         public virtual void AddSales(int sales)

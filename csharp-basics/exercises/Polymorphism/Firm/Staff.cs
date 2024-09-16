@@ -6,9 +6,6 @@ namespace Firm
     {
         StaffMember[] staffList;
 
-        //-----------------------------------------------------------------
-        // Sets up the list of staff members.
-        //-----------------------------------------------------------------
         public Staff()
         {
             staffList = new StaffMember[8];
@@ -32,31 +29,30 @@ namespace Firm
             ((Hourly) staffList[3]).AddHours(40);
         }
 
-        //-----------------------------------------------------------------
-        // Pays all staff members.
-        //-----------------------------------------------------------------
         public void Payday()
         {
             foreach (var staff in staffList)
             {
                 if(staff.GetName() == "Laura")
                 {
-                    //staff.AddSales(400);
                 }
                 
                 else if(staff.GetName() == "George")
                 {
-                    //staff.AddSales(950);
                 }
                 
                 Console.WriteLine(staff);
 
                 var amount = staff.Pay();
 
-                if (amount == 0.00)
+                if(amount == 0.00)
+                {
                     Console.WriteLine("Thanks!");
+                }
                 else
+                {
                     Console.WriteLine("Paid: $" + amount);
+                }
 
                 Console.WriteLine("-----------------------------------");
             }

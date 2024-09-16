@@ -2,9 +2,6 @@ namespace Firm
 {
     public class Volunteer : StaffMember
     {
-        //-----------------------------------------------------------------
-        // Sets up a volunteer using the specified information.
-        //-----------------------------------------------------------------
         private string _socialSecurityNumber;
         
         public Volunteer(string vName, string vAddress, string vSocSecNumber) 
@@ -19,11 +16,10 @@ namespace Firm
         {
             var result = base.ToString();
             result += "\nSocial Security Number: " + _socialSecurityNumber;
+
             return result;
         }
-        //-----------------------------------------------------------------
-        // Returns a zero pay value for this volunteer.
-        //-----------------------------------------------------------------
+    
         public override double Pay()
         {
             return 0.0;
