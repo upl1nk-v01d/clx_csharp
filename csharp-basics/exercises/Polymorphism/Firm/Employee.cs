@@ -26,5 +26,10 @@ namespace Firm
         {
             return _payRate;
         }
+
+        public override void AddSales(int sales)
+        {
+            
+        }
     }
 }

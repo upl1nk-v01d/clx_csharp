@@ -46,9 +46,7 @@ namespace Firm
 
         public abstract double Pay();
 
-        public virtual void AddSales(int sales)
-        {
-        }
+        public abstract void AddSales(int sales);
 
         public string GetName()
         {

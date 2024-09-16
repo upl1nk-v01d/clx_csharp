@@ -24,5 +24,10 @@ namespace Firm
         {
             return 0.0;
         }
+
+        public override void AddSales(int sales)
+        {
+            
+        }
     }
 }
