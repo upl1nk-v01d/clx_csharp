@@ -1,10 +1,5 @@
-﻿using System;
-
-namespace BankAccountNS
+﻿namespace BankAccountNS
 {
-    /// <summary>
-    /// Bank account demo class.
-    /// </summary>
     public class BankAccount
     {
         private readonly string m_customerName;
@@ -40,7 +35,7 @@ namespace BankAccountNS
                 throw new ArgumentOutOfRangeException("amount");
             }
 
-            m_balance -= amount; // intentionally incorrect code
+            m_balance -= amount;
         }
 
         public void Credit(double amount)
