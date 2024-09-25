@@ -103,11 +103,10 @@ public class TestHierarchy
     public void Vegetables_ValidQuantity()
     {
         Food vegetables = new Vegetables(1); 
-        //Zebra zebra = new Zebra("Strippy","Zebra", 55.5, 1, "Africa", vegetables); //does not work, shows as abtract class despite class Zebra is modified
-        Mouse mouse = new Mouse("Jerry","Mouse", 0.12, 1, "Azerbaijan", vegetables);
+        Zebra zebra = new Zebra("Strippy","Zebra", 55.5, 1, "Africa", vegetables);
 
-        mouse._foodEaten.Should().BeGreaterThan(0);
-        //Debug.WriteLine(mouse._foodEaten);
+        zebra._foodEaten.Should().BeGreaterThan(0);
+        //Debug.WriteLine(zebra._foodEaten);
     }
 
     [TestMethod]
