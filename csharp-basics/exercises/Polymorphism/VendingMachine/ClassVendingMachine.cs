@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace VendingMachine
+namespace VendingMachineNS
 {
     public class VendingMachine : IVendingMachine
     {
@@ -85,7 +85,6 @@ namespace VendingMachine
             return false;
         }
 
-
         public Money ReturnMoney()
         {
             int productEuros = ProductList[ChosenProductIndex].Price.Euros;
@@ -117,6 +116,8 @@ namespace VendingMachine
             int euros = price.Euros;
             double cents = price.Cents * 0.01;
             double _price = euros + cents;
+
+            this.HasProducts = true;
 
             Console.WriteLine($"Added product: {name} with price {_price:0.00} EUR and quantity {count} pieces");
 
@@ -170,11 +171,21 @@ namespace VendingMachine
                     Console.WriteLine($"You bought product {productName} with price {_price:0.00} EUR");
         
                     this.ReturnMoney();
+
+                    if(ProductList[ChosenProductIndex].Available < 1)
+                    {
+                        ProductList.RemoveAt(ChosenProductIndex);
+                    }
                 }
                 else
                 {
                     this.ChosenProductIndex = -1;
                 }
+            }
+
+            if(this.ProductList.Count < 1)
+            {
+                this.HasProducts = false;
             }
 
             return productNumber;
