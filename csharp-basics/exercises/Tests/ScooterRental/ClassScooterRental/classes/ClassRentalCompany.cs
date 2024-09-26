@@ -20,6 +20,11 @@
             {
                 throw new InvalidOperationException();
             }
+
+            if(scooter.IsRented)
+            {
+                throw new InvalidOperationException();
+            }
             
             scooter.IsRented = true;
         }
@@ -31,7 +36,21 @@
 
         public decimal EndRent(string id)
         {
-            throw new NotImplementedException();
+            Scooter scooter = _scooterService.GetScooterById(id);
+
+            if(scooter == null)
+            {
+                throw new InvalidOperationException();
+            }
+
+            if(!scooter.IsRented)
+            {
+                throw new InvalidOperationException();
+            }
+            
+            scooter.IsRented = false;
+
+            return scooter.PricePerMinute;
         }
     }
 }

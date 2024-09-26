@@ -39,8 +39,54 @@ public class TestScooterService
     }
 
     [TestMethod]
-    public void StartRent_RentNonExistingScooter_ScooterIsRented()
+    public void StartRent_RentNonExistingScooter__ThrowInvalidOperation()
     {
+        _scooterServiceMock.Setup(service => service.GetScooterById("1")).Returns(() => null);
+
+        Action action = () => _rentalCompany.StartRent("1");
+
+        action.Should().Throw<InvalidOperationException>();
+    }
+
+    [TestMethod]
+    public void StartRent_RentRentedScooter_ScooterIsRented()
+    {
+        var scooter = new Scooter("1", 0.5m)
+        {
+            IsRented = true
+        };
+
+        _scooterServiceMock.Setup(service => service.GetScooterById("1")).Returns(() => scooter);
+
+        Action action = () => _rentalCompany.StartRent("1");
+
+        action.Should().Throw<InvalidOperationException>();
+    }
+
+    public void EndRent_EndRentExistingScooter_ScooterIsNotRented()
+    {
+        Scooter scooter = new Scooter("1", 5m);
+
+        _scooterServiceMock.Setup(service => service.GetScooterById("1")).Returns(scooter);
+        _rentalCompany.EndRent("1");
+
+        scooter.IsRented.Should().BeTrue();
+    }
+
+    public void EndRent_RentNonExistingScooter_ThrowInvalidOperation()
+    {
+        Scooter scooter = new Scooter("2", 5m);
+        _scooterServiceMock.Setup(service => service.GetScooterById("2")).Returns(() => null);
+
+        Action action = () => _rentalCompany.StartRent("1");
+
+        action.Should().Throw<InvalidOperationException>();
+    }
+
+    public void EndRent_RentNotRentedExistingScooter_ThrowInvalidOperation()
+    {
+        Scooter scooter = new Scooter("2", 5m);
+        scooter.IsRented = true;
         _scooterServiceMock.Setup(service => service.GetScooterById("1")).Returns(() => null);
 
         Action action = () => _rentalCompany.StartRent("1");
