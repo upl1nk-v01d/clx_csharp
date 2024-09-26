@@ -8,10 +8,23 @@ namespace Exercise1
         {
             int i;
 
+            Console.Clear();
+
             Console.WriteLine("The first 10 natural numbers are: ");
 
-            //todo - write a program in C# to display the first 10 natural numbers
+            i = 1;
+            
+            Console.WriteLine();
 
+            while(i < 11)
+            {
+                Console.Write(i + " ");
+                
+                i++;
+            }
+            
+            Console.ReadKey(true);
+            Console.WriteLine();
         }
     }
 }
