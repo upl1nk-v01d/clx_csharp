@@ -2,7 +2,7 @@ namespace ScooterRental.Exceptions
 {
     public class InvalidIdException : Exception
     {
-        public InvalidIdException(string id) : base($"Id {id} is not valid or does not exist!")
+        public InvalidIdException(string id) : base($"Id {id} is not valid!")
         {
 
         }

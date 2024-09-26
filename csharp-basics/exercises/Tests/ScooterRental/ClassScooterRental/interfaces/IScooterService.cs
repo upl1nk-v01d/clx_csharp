@@ -23,6 +23,6 @@
         /// </summary>
         /// <param name="scooterId">Unique ID of the scooter.</param>
         /// <returns>Return a particular scooter.</returns>
-        ScooterService GetScooterById(string scooterId);
+        Scooter GetScooterById(string scooterId);
     }
 }

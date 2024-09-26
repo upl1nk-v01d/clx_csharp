@@ -20,10 +20,11 @@ public class TestScooterService
     [TestMethod]
     public void GetScooters_InvalidScootersCount_ThrowNoScootersAvailableException()
     {
-        //var scooter = new Scooter("Id", 0.5m);
-        //_scooterList.Add(scooter);
+        _scooterList.Clear();
 
-        _scooterList.Count.Should().Be(0);
+        Action action = () =>  _scooterService.GetScooters();
+
+        action.Should().Throw<NoScootersAvailableException>();
     }
 
     [TestMethod]
@@ -63,26 +64,69 @@ public class TestScooterService
     }
 
     [TestMethod]
-    public void RemoveScooter_InvalidScootersCount_ThrowNoScootersAvailableException()
-    {
-        //var scooter = new Scooter("Id", 0.5m);
-        //_scooterList.Add(scooter);
-
-        _scooterList.Count.Should().Be(0);
-    }
-
-    [TestMethod]
-    public void RemoveScooter_ValidPriceIdProvided_RemoveScooter()
-    {
-        _scooterService.RemoveScooter("Id");
-        _scooterList.Count.Should().Be(0);
-    }
-
-    [TestMethod]
     public void RemoveScooter_InvalidIdProvided_ThrowInvalidIdException()
     {
         Action action = () => _scooterService.RemoveScooter("");
 
         action.Should().Throw<InvalidIdException>();
+    }
+
+    [TestMethod]
+    public void RemoveScooter_InvalidScootersCount_ThrowNoScootersAvailableException()
+    {
+        _scooterList.Clear();
+
+        Action action = () => _scooterService.RemoveScooter("Id");
+
+        action.Should().Throw<NoScootersAvailableException>();
+    }
+
+    [TestMethod]
+    public void RemoveScooter_ValidPriceIdProvided_RemoveScooter()
+    {
+        var scooter = new Scooter("Id", 0.5m);
+        _scooterList.Add(scooter);
+
+        _scooterService.RemoveScooter("Id");
+        
+        _scooterList.Count.Should().Be(0);
+    }
+
+    [TestMethod]
+    public void RemoveScooter_RentedIdProvided_ThrowRentedIdException()
+    {
+        var scooter = new Scooter("Id", 0.5m);
+        scooter.IsRented = true;
+        _scooterList.Add(scooter);
+
+        Action action = () => _scooterService.RemoveScooter("Id");
+
+        action.Should().Throw<RentedIdException>();
+    }
+
+    [TestMethod]
+    public void GetScooterById_NoIdProvided_ThrowInvalidIdException()
+    {
+        Action action = () => _scooterService.GetScooterById("");
+
+        action.Should().Throw<NoInputProvidedException>();
+    }
+
+    [TestMethod]
+    public void GetScooterById_InvalidIdProvided_ThrowInvalidIdException()
+    {
+        Action action = () => _scooterService.GetScooterById("!?%#");
+
+        action.Should().Throw<InvalidIdException>();
+    }
+
+    [TestMethod]
+    public void GetScooterById_IdNotFound_ThrowIdNotFoundException()
+    {
+        _scooterService.AddScooter("1", 0.5m);
+
+        Action action = () => _scooterService.GetScooterById("2");
+
+        action.Should().Throw<IdNotFoundException>();
     }
 }
