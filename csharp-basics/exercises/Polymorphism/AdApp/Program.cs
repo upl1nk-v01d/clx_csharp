@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 namespace AdApp
 {
@@ -6,12 +6,13 @@ namespace AdApp
     {
         private static void Main(string[] args)
         {
-            var c = new Campaign();
-            c.AddAdvert(new Advert(1000));
-            c.AddAdvert(new Hoarding(500, 7, 200));
-            c.AddAdvert(new NewspaperAd(0, 30, 20));
-            c.AddAdvert(new TVAd(50000, 1000, 30, true));
-            Console.WriteLine(c);
+            Console.Clear();
+
+            var campaign1 = new Campaign("The Post");
+            campaign1.AddAdvert(new Hoarding(500, 7, 1)); //fee, days, rate koef
+            campaign1.AddAdvert(new NewspaperAd(2, 21, 52, 50)); //fee, columns, size, additional charge in percent
+            campaign1.AddAdvert(new TVAd(50000, 1000, 30, true)); //fee, views, seconds, what is 'true'?
+            Console.WriteLine("\n" + campaign1 + "\n");
         }
     }
 }

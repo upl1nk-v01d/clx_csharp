@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -5,26 +6,32 @@ namespace AdApp
 {
     public class Campaign
     {
+        private string _name;
+        
         private List<Advert> _campaign;
 
-        public Campaign() 
+        public Campaign(string name) 
         {
-            _campaign = new List<Advert>();
+            this._campaign = new List<Advert>();
+            this._name = name;
         }
 
-        public void AddAdvert(Advert a) 
+        public void AddAdvert(Advert advert) 
         {
-            _campaign.Add(a);
+            this._campaign.Add(advert);
+            Console.WriteLine(advert);
         }
 
         public int GetCost()
         {
-            return _campaign.Sum(item => item.Cost());
+            int sum = this._campaign.Sum(item => item.Cost());
+
+            return sum;
         }
 
         public override string ToString()
         {
-            return "Advert Campaign" + _campaign + "\nTotal Cost = "+ GetCost();
+            return $"Advert campaign '{this._name}' total cost = {this.GetCost()}";
         }
     }
 }
