@@ -8,21 +8,23 @@ class Program
 
         carList.AddCar("Porche", 0, 230, 6.4); 
         carList.AddCar("Bentley", 0, 130, 8.1); 
-        carList.AddCar("Audi", 0, 90, 4.8); 
+        carList.AddCar("Audi", 0, 999997, 4.8); 
 
         carList.Report();
 
         bool quit = false;
+
+        string prompt;
         
         while(!quit)
-        {
-            Console.Write("Please enter a car name: ");
-            string prompt = Console.ReadLine();
+        {          
+            Console.Write("\n\nPlease enter a car name: ");
+            prompt = Console.ReadLine();
 
             if(prompt != "")
             {
 
-                object car = carList.SearchCar(prompt);
+                object car = CarList.SearchCar(prompt);
 
                 if(car != null)
                 {
@@ -30,19 +32,40 @@ class Program
                     int startKilometers = Convert.ToInt32(car.GetType().GetProperty("StartKilometers").GetValue(car));
                     int endKilometers = Convert.ToInt32(car.GetType().GetProperty("EndKilometers").GetValue(car));
                     double liters = Convert.ToDouble(car.GetType().GetProperty("Liters").GetValue(car));
-                    
-                    int mileage = endKilometers - startKilometers;
+                
+                    Console.WriteLine("\n\nPress any key to watch odometer changing...");
+                    Console.ReadKey(true);
 
-                    bool IsGasHog = Convert.ToBoolean(Car.IsGasHog(mileage,liters));
-                    bool IsEconomyCar = Convert.ToBoolean(Car.IsEconomyCar(mileage,liters));
-                    
-                    double consumption = CarTest.CalculateConsumption100KM(mileage, liters);
-                    string isGasHog = IsGasHog == true ? "gas hog" : "not a gas hog";
-                    string isEconomyCar = IsEconomyCar == true ? "economy car" : "not an economy car";
+                    for(int i = 0; i < 15; i++)
+                    {
+                        CarOdometer.ChangeOdometer(carName, 1);
+                    }
 
-                    Console.WriteLine($"Car's {carName} fuel consumption is {consumption:0.00} liters on 100 km.");
-                    Console.WriteLine($"Car's {carName} is {isGasHog}.");
-                    Console.WriteLine($"Car's {carName} is {isEconomyCar}.");
+                    Console.WriteLine("\n\nPress any key to watch fuel gauge adding...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    CarFuelGauge.ChangeFuelGauge(carName, 1.1);
+
+                    Console.WriteLine("\n\nPress any key to see cars report...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    carList.Report();
+
+                    Console.WriteLine("\n\nPress any key to watch fuel gauge decreasing...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    
+                        CarFuelGauge.ChangeFuelGauge(carName, -1.1);
+                    
+
+                    Console.WriteLine("\n\nPress any key to see again cars report...");
+                    Console.ReadKey(true);
+                    Console.Clear();
+
+                    carList.Report();
                 }
 
                 Console.WriteLine();
