@@ -1,14 +1,21 @@
 ﻿namespace ScooterRental
 {
-    public class RentedScooters
+    public class RentedScooter
     {
-        public DateTime StartTime;
-        public DateTime? EndTime;
-        public string scooterId;
-        public decimal pricePerMinute;
-        
-        public RentalCompany(string name, IScooterService scooterService)
+        public DateTime _startTime;
+        public DateTime? _endTime;
+        public string _scooterId;
+        public decimal _pricePerMinute;
+        public string _name;
+        public IScooterService _scooterService;
+
+        public RentedScooter(string name, IScooterService scooterService, string scooterId, decimal pricePerMinute, DateTime StartTime)
         {
-            
+            _name = name;
+            _scooterService = scooterService;
+            _scooterId = scooterId;
+            _pricePerMinute = pricePerMinute;
+            _startTime = StartTime;
         }
+    }
 }
