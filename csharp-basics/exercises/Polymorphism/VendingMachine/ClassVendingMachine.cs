@@ -22,6 +22,16 @@ namespace VendingMachineNS
 
         public int ChosenProductIndex;
 
+        public VendingMachine(string manufacturer, int amountEuros, int amountCents)
+        {
+            this.Manufacturer = manufacturer;
+
+            this.Balance.Euros = amountEuros;
+            this.Balance.Cents = amountCents;
+
+            this.ChosenProductIndex = -1;
+        }
+
         public bool CheckCoins(Money coins)
         {
             if (coins.Euros > 0)
@@ -73,7 +83,7 @@ namespace VendingMachineNS
 
         public bool CheckProduct(int index)
         {
-            if(ProductList[ChosenProductIndex].Available < 1)
+            if(ProductList[index].Available < 1)
             {
                 Console.WriteLine($"Product {ProductList[index].Name} is not available!");
             }
@@ -111,6 +121,11 @@ namespace VendingMachineNS
 
         public bool AddProduct(string name, Money price, int count)
         {
+            if(name == "" || count < 1 || price.Euros <= 1 && price.Cents < 1)
+            {
+                return false;
+            }
+
             this.ProductList.Add(new Product { Name = name, Price = price, Available = count });
 
             int euros = price.Euros;
@@ -126,6 +141,11 @@ namespace VendingMachineNS
 
         public bool UpdateProduct(int productNumber, string name, Money? price, int amount)
         {
+            if(name == "" || amount < 1 || (price.Value.Euros <= 0 && price.Value.Cents <= 0))
+            {
+                return false;
+            }
+            
             this.ProductList[productNumber] = new Product { Name = name, Price = price.Value, Available = amount };
 
             return true;
@@ -189,16 +209,6 @@ namespace VendingMachineNS
             }
 
             return productNumber;
-        }
-
-        public VendingMachine(string manufacturer, int amountEuros, int amountCents)
-        {
-            this.Manufacturer = manufacturer;
-
-            this.Balance.Euros = amountEuros;
-            this.Balance.Cents = amountCents;
-
-            this.ChosenProductIndex = -1;
         }
     }
 }
