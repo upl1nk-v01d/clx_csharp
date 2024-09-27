@@ -13,7 +13,6 @@ public class TestScooterService
     private RentalCompany _rentalCompany;
     private AutoMocker _mocker;
     private Mock<IScooterService> _scooterServiceMock;
-    private Mock<RentalCompany> _scooterRentalCompanyMock;
     private const string Name = "Test";
 
     [TestInitialize]
@@ -21,7 +20,7 @@ public class TestScooterService
     {
         _mocker = new AutoMocker();
         _scooterServiceMock = _mocker.GetMock<IScooterService>();
-        _rentalCompany = new RentalCompany(Name, _scooterServiceMock.Object);
+        _rentalCompany = new RentalCompany(Name, _scooterServiceMock.Object, new List<RentedScooter>());
     }
 
     [TestMethod]
@@ -111,16 +110,33 @@ public class TestScooterService
 
     [TestMethod]
     public void CalculateIncome_NoRentedScooters_ThrowInvalidOperation()
-    {
-        RentedScooter rentedScooter = new RentedScooter(Name, _scooterServiceMock.Object, "1", 1m, new DateTime(2024, 01, 01, 10, 00, 00));
-
-        //_scooterRentalCompanyMock.Setup(rental => rental).Returns(() => null);
-
-        _rentalCompany._rentedScooters.Add(rentedScooter);
-        //_rentalCompany._rentedScooters.Remove(rentedScooter);
-
+    {        
         Action action = () => _rentalCompany.CalculateIncome(2024, true);
 
-        action.Should().Throw<NullReferenceException>();
+        action.Should().Throw<InvalidOperationException>();
+    }
+
+    [TestMethod]
+    public void CalculateIncome_InvalidYearProvided_ThrowInvalidOperation()
+    {
+        RentedScooter rentedScooter = new RentedScooter("1", 1m, new DateTime(2024, 01, 01, 10, 00, 00));
+        _rentalCompany._rentedScooters.Add(rentedScooter);
+
+        Action action = () => _rentalCompany.CalculateIncome(2025, true);
+
+        action.Should().Throw<InvalidOperationException>();
+    }
+
+    [TestMethod]
+    public void CalculateIncome_ReturnedSum()
+    {
+        RentedScooter rentedScooter = new RentedScooter("1", 1, new DateTime(2024, 01, 01, 10, 00, 00));
+        rentedScooter._endTime = new DateTime(2024, 01, 01, 10, 01, 00);
+        _rentalCompany._rentedScooters.Add(rentedScooter);
+
+        decimal sum = _rentalCompany.CalculateIncome(2024, true);
+        Debug.WriteLine("sum: " + sum);
+
+        sum.Should().Be(1m);
     }
 }

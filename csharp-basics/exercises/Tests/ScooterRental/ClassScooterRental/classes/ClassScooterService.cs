@@ -6,7 +6,6 @@ namespace ScooterRental
     public class ScooterService : IScooterService
     {
         private readonly List<Scooter> _inventory;
-        //private Regex regexIsNumbers = new Regex("[0-9]");
         
         public ScooterService(List<Scooter> inventory)
         {
