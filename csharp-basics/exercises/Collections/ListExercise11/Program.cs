@@ -1,22 +1,45 @@
-﻿namespace ListExercise11
+﻿using System;
+using System.Collections.Generic;
+
+namespace ListExercise11
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //TODO: Create an List with string elements
+            List<string> list = new List<string>();
 
-            //TODO: Add 10 values to list
+            string chars = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
+            var random = new Random();
+            string str = "";
 
-            //TODO: Add new value at 5th position
+            for(var i1 = 0; i1 < 10; i1++)
+            {
+                for(var i2 = 0; i2 < 3; i2++)
+                {
+                    str += chars[random.Next(0, chars.Length)];
+                }
 
-            //TODO: Change value at last position (Calculate last position programmatically)
+                list.Add(str);
+                str = "";
+            }
 
-            //TODO: Sort your list in alphabetical order
+            Console.Clear();
+            Console.WriteLine("\n\nPrinting unsorted 'list'...\n");
 
-            //TODO: Check if your list contains "Foobar" element
+            list[4] = "-- 5th_position [Foobar]";
+            list[list.Count-1] = "-- changed last position value :)";
+            list.ForEach(Console.WriteLine);
 
-            //TODO: Print each element of list using loop
+            Console.WriteLine("\n\nPrinting sorted 'list'...\n");
+            list.Sort();
+            list.ForEach(Console.WriteLine);
+
+            bool contains = list.Contains("Foobar");
+            int index =  list.FindIndex(i => i.Contains("Foobar"));
+
+            Console.WriteLine("\n");
+            Console.WriteLine($"'list' contains substring 'Foobar' at position {index + 1}");
         }
     }
 }

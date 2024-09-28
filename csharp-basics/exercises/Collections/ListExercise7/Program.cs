@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ListExercise7
 {
@@ -15,7 +16,8 @@ namespace ListExercise7
                 "Black"
             };
 
-            //      TODO: Check if list contains "White" element
+            Console.Clear();
+            Console.WriteLine($"\nList 'colors' contains 'White' color: {colors.Contains("White")}\n");
         }
     }
 }

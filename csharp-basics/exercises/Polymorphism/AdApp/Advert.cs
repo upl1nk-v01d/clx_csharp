@@ -1,8 +1,8 @@
 namespace AdApp
 {
-    public class Advert
+    public abstract class Advert
     {
-        private int _fee;
+        protected int _fee;
 
         public Advert() 
         {
@@ -19,14 +19,11 @@ namespace AdApp
             _fee = fee;
         }
 
-        public int Cost() 
-        {
-            return _fee;
-        }
+        public abstract int Cost();
 
         public override string ToString() 
         {
-            return "\nAdvert: Fee=" + _fee;
+            return $"Advert: {this.GetType().Name} fee = {_fee}";
         }
     }
 }

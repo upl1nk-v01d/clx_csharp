@@ -8,15 +8,20 @@ namespace NumbersFromRange
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Clear();
+            
             var random = new Random();
             var numbers = new List<int>();
-            while (numbers.Count() < 10)
+            var i = 10;
+
+            while (i-->0)
             {
                 numbers.Add(random.Next(1, 100));
             }
 
-            //ToDo: Given an array of integers, write a query that returns list of numbers greater than 30 and less than 100.
+            var filteredNumbers = numbers.Where(n => n > 30 && n < 100).ToList();
+
+            filteredNumbers.ForEach(Console.WriteLine);
         }
     }
 }

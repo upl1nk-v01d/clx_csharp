@@ -6,12 +6,9 @@ namespace Firm
     {
         StaffMember[] staffList;
 
-        //-----------------------------------------------------------------
-        // Sets up the list of staff members.
-        //-----------------------------------------------------------------
         public Staff()
         {
-            staffList = new StaffMember[6];
+            staffList = new StaffMember[8];
             staffList[0] = new Executive("Sam", "123 Main Line",
                 "555-0469", "123-45-6789", 2423.07);
             staffList[1] = new Employee("Carla", "456 Off Line",
@@ -24,23 +21,39 @@ namespace Firm
                 "555-8374");
             staffList[5] = new Volunteer("Cliff", "321 Duds Lane",
                 "555-7282");
+            staffList[6] = new Commission("Laura", "777 Off Line",
+                "555-0101", "987-65-4321", 6.25, 20, 35, 400);
+            staffList[7] = new Commission("George", "888 Off Line",
+                "555-0101", "987-65-4321", 9.75, 15, 40, 950);
             ((Executive) staffList[0]).AwardBonus(500.00);
             ((Hourly) staffList[3]).AddHours(40);
         }
 
-        //-----------------------------------------------------------------
-        // Pays all staff members.
-        //-----------------------------------------------------------------
         public void Payday()
         {
             foreach (var staff in staffList)
             {
+                if(staff.GetName() == "Laura")
+                {
+                }
+                
+                else if(staff.GetName() == "George")
+                {
+                }
+                
                 Console.WriteLine(staff);
+
                 var amount = staff.Pay();
-                if (amount == 0.00)
+
+                if(amount == 0.00)
+                {
                     Console.WriteLine("Thanks!");
+                }
                 else
-                    Console.WriteLine("Paid: " + amount);
+                {
+                    Console.WriteLine("Paid: $" + amount);
+                }
+
                 Console.WriteLine("-----------------------------------");
             }
         }
