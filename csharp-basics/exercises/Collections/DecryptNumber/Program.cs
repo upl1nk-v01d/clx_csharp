@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DecryptNumber
 {
@@ -17,27 +18,21 @@ namespace DecryptNumber
             {")", "9"}
         };
 
-        private static List<string> decryptedNumbers = new List<string>();
+        private static List<string> DecryptedNumbers = new List<string>();
 
-        static void decrypt(List<string> list)
+        static void Decrypt(List<string> list)
         {
-            foreach(var item in list)
-            {
-                string decrypted = "";
-
-                foreach(char c in item)
-                {
-                    for(int i = 0; i < _array.GetLength(0); i++)
-                    {
-                        if(_array[i,0] == c.ToString())
-                        {
-                            decrypted += _array[i,1];
-                        }
-                    }
-                }
-
-                decryptedNumbers.Add(decrypted);
-            }
+            DecryptedNumbers = list.Select(c => c = c
+                .Replace(_array[0,0], _array[0,1])
+                .Replace(_array[1,0], _array[1,1])
+                .Replace(_array[2,0], _array[2,1])
+                .Replace(_array[3,0], _array[3,1])
+                .Replace(_array[4,0], _array[4,1])
+                .Replace(_array[5,0], _array[5,1])
+                .Replace(_array[6,0], _array[6,1])
+                .Replace(_array[7,0], _array[7,1])
+                .Replace(_array[8,0], _array[8,1])
+            ).ToList();
         }
 
         static void Main(string[] args)
@@ -56,19 +51,13 @@ namespace DecryptNumber
 
             Console.WriteLine("crypted numbers:\n");
 
-            foreach(var item in cryptedNumbers)
-            {
-                Console.WriteLine(item);
-            }
+            cryptedNumbers.ForEach(Console.WriteLine);
 
             Console.WriteLine("\n\ndecrypted numbers:\n");
             
-            decrypt(cryptedNumbers);
+            Decrypt(cryptedNumbers);
 
-            foreach(var item in decryptedNumbers)
-            {
-                Console.WriteLine(item);
-            }
+            DecryptedNumbers.ForEach(Console.WriteLine);
         }
     }
 }

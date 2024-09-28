@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Exercise5
+﻿namespace Exercise5
 {
     class Program
     {
@@ -11,7 +7,7 @@ namespace Exercise5
             int squared = 0;
 
             List<int> squaredNumbers = new List<int>();
-            int length = passedNumber.ToString().ToCharArray().ToList().Count();
+            int length = passedNumber.ToString().Length;
 
             while(passedNumber > 1)
             {

@@ -7,10 +7,8 @@ namespace ListExercise11
     {
         static void Main(string[] args)
         {
-            //TODO: Create an List with string elements
             List<string> list = new List<string>();
 
-            //TODO: Add 10 values to list
             string chars = "$%#@!*abcdefghijklmnopqrstuvwxyz1234567890?;:ABCDEFGHIJKLMNOPQRSTUVWXYZ^&";
             var random = new Random();
             string str = "";
@@ -29,7 +27,7 @@ namespace ListExercise11
             Console.Clear();
             Console.WriteLine("\n\nPrinting unsorted 'list'...\n");
 
-            list.Insert(4, "-- 5th_position [Foobar]");
+            list[4] = "-- 5th_position [Foobar]";
             list[list.Count-1] = "-- changed last position value :)";
             list.ForEach(Console.WriteLine);
 

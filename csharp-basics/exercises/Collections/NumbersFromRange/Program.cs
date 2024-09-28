@@ -12,26 +12,16 @@ namespace NumbersFromRange
             
             var random = new Random();
             var numbers = new List<int>();
+            var i = 10;
 
-            while (numbers.Count() < 10)
+            while (i-->0)
             {
                 numbers.Add(random.Next(1, 100));
             }
 
-            var filteredNumbers = new List<int>();
+            var filteredNumbers = numbers.Where(n => n > 30 && n < 100).ToList();
 
-            foreach(var number in numbers)
-            {
-                if(number > 30 && number < 100)
-                {
-                    filteredNumbers.Add(number);
-                }
-            }
-
-            foreach(var number in filteredNumbers)
-            {
-                Console.WriteLine(number);
-            }
+            filteredNumbers.ForEach(Console.WriteLine);
         }
     }
 }

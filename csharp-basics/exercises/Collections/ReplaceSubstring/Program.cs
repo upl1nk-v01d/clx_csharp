@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ReplaceSubstring
@@ -7,21 +8,13 @@ namespace ReplaceSubstring
     {
         static void Main(string[] args)
         {
-            var words = new[] { "near", "speak", "tonight", "weapon", "customer", "deal", "lawyer" };
-            
-            Regex regex = new Regex("ea");
-            
-            int i = 0;
+            var words = new[] { "near", "speak", "tonight", "weapon", "customer", "deal", "lawyer" };            
 
-            foreach(var word in words)
-            {
-                words[i] = regex.Replace(word, "*");
-                i++;
-            }
+            var wordsList = words.Select(word => word = Regex.Replace(word, "ea", "*"));
 
             Console.Clear();
 
-            foreach(var word in words)
+            foreach(var word in wordsList)
             {
                 Console.WriteLine(word);
             }
