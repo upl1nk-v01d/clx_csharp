@@ -12,10 +12,11 @@ namespace DecryptNumber
             {"#", "3"},
             {"$", "4"},
             {"%", "5"},
-            {"&", "6"},
-            {"*", "7"},
-            {"(", "8"},
-            {")", "9"}
+            {"^", "6"},
+            {"&", "7"},
+            {"*", "8"},
+            {"(", "9"},
+            {")", "0"}
         };
 
         private static List<string> DecryptedNumbers = new List<string>();
@@ -32,6 +33,7 @@ namespace DecryptNumber
                 .Replace(_array[6,0], _array[6,1])
                 .Replace(_array[7,0], _array[7,1])
                 .Replace(_array[8,0], _array[8,1])
+                .Replace(_array[9,0], _array[9,1])
             ).ToList();
         }
 
