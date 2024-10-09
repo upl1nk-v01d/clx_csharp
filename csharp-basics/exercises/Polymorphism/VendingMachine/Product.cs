@@ -1,4 +1,4 @@
-﻿namespace VendingMachine
+﻿namespace VendingMachineNS
 {
     public struct Product
     {
