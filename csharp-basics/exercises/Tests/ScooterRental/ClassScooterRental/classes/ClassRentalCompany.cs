@@ -6,12 +6,14 @@ namespace ScooterRental
     {
         private readonly IScooterService _scooterService;
         private readonly List<RentedScooter> _rentedScooters;
+        protected decimal _revenue;
         
         public RentalCompany(string name, IScooterService scooterService, List<RentedScooter> rentedScooters)
         {
             Name = name;
             _scooterService = scooterService;
             _rentedScooters = rentedScooters;
+            _revenue = 0;
         }
 
         public string Name { get; }
@@ -38,9 +40,14 @@ namespace ScooterRental
         
         public decimal CalculateIncome(int? year, bool includeNotCompletedRentals)
         {
-            if(year > DateTime.Now.Year || _rentedScooters.Count < 1)
+            if(year > DateTime.Now.Year)
             {
                 throw new InvalidOperationException();
+            }
+
+            if(_rentedScooters.Count < 1)
+            {
+                throw new NoRentedScootersAvailableException();
             }
 
             decimal sum = 0m;
@@ -55,7 +62,7 @@ namespace ScooterRental
                 }
             }
 
-            return sum;
+            return Decimal.Round(sum, 3);
         }
 
         public decimal EndRent(string id)
@@ -71,6 +78,8 @@ namespace ScooterRental
 
             var rentedScooter = this.GetRentedScooterById(id);
             rentedScooter._endTime = DateTime.Now;
+
+            _revenue = this.CalculateIncome(DateTime.Now.Year, false);
             
             return scooter.PricePerMinute;
         }
@@ -83,7 +92,7 @@ namespace ScooterRental
                 return rentedScooter;
             }
 
-            throw new NoRentedScootersAvailableException(id);
+            throw new NoRentedScooterIsAvailableException(id);
         }
     }
 }

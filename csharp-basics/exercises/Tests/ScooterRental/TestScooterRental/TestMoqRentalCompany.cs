@@ -34,7 +34,7 @@ public class TestScooterService
     {
         Action action = () => _rentalCompany.GetRentedScooterById("1");
 
-        action.Should().Throw<NoRentedScootersAvailableException>();
+        action.Should().Throw<NoRentedScooterIsAvailableException>();
     }
 
     [TestMethod]
@@ -129,20 +129,16 @@ public class TestScooterService
 
     [TestMethod]
     public void CalculateIncome_NoRentedScooters_ThrowInvalidOperation()
-    {        
-        Action action = () => _rentalCompany.CalculateIncome(2024, true);
+    {
+        Action action = () => _rentalCompany.CalculateIncome(2024, false);
 
-        action.Should().Throw<InvalidOperationException>();
+        action.Should().Throw<NoRentedScootersAvailableException>();
     }
 
     [TestMethod]
     public void CalculateIncome_InvalidYearProvided_ThrowInvalidOperation()
     {
-        RentedScooter rentedScooter = new RentedScooter("1", 1m, new DateTime(2024, 01, 01, 10, 00, 00));
-        _rentalCompany.StartRent(rentedScooter._scooterId);
-        _rentalCompany.EndRent(rentedScooter._scooterId);
-
-        Action action = () => _rentalCompany.CalculateIncome(2025, true);
+        Action action = () => _rentalCompany.CalculateIncome(2025, false);
 
         action.Should().Throw<InvalidOperationException>();
     }
@@ -150,14 +146,20 @@ public class TestScooterService
     [TestMethod]
     public void CalculateIncome_ReturnedSum()
     {
-        RentedScooter rentedScooter = new RentedScooter("1", 1, new DateTime(2024, 01, 01, 10, 00, 00));
-        rentedScooter._endTime = new DateTime(2024, 01, 01, 10, 01, 00);
-        _rentalCompany.StartRent(rentedScooter._scooterId);
-        _rentalCompany.EndRent(rentedScooter._scooterId);
+        Scooter scooter = new Scooter("1", 1m);
+        _scooterServiceMock.Setup(service => service.GetScooterById("1")).Returns(scooter);
+         _rentalCompany.StartRent("1");
+         Thread.Sleep(1000);
+        _rentalCompany.EndRent("1");
 
-        decimal sum = _rentalCompany.CalculateIncome(2024, true);
+        //RentedScooter rentedScooter = new RentedScooter("1", 1, new DateTime(2024, 01, 01, 10, 00, 00));
+        //rentedScooter._endTime = new DateTime(2024, 01, 01, 10, 01, 00);
+        //_rentalCompany.StartRent(rentedScooter._scooterId);
+        //_rentalCompany.EndRent(rentedScooter._scooterId);
+
+        decimal sum = _rentalCompany.CalculateIncome(2024, false);
         Debug.WriteLine("sum: " + sum);
 
-        sum.Should().Be(1m);
+        sum.Should().Be(0.017m);
     }
 }

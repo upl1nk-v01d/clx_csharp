@@ -2,7 +2,7 @@ namespace ScooterRental.Exceptions
 {
     public class NoRentedScootersAvailableException : Exception
     {
-        public NoRentedScootersAvailableException(string id) : base($"No scooter with id ${id} are available in service!")
+        public NoRentedScootersAvailableException() : base($"No rented scooters are available in company!")
         {
 
         }
