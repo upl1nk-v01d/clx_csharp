@@ -30,6 +30,25 @@ public class TestScooterService
     }
 
     [TestMethod]
+    public void GetRentedScooterById_NonExistingScooter()
+    {
+        Action action = () => _rentalCompany.GetRentedScooterById("1");
+
+        action.Should().Throw<NoRentedScootersAvailableException>();
+    }
+
+    [TestMethod]
+    public void GetRentedScooterById_ExistingScooter_ScooterIsRented()
+    {
+        Scooter scooter = new Scooter("1", 5m);
+        _scooterServiceMock.Setup(service => service.GetScooterById("1")).Returns(scooter);
+        _rentalCompany.StartRent("1");
+        _rentalCompany.EndRent("1");
+
+        _rentalCompany.GetRentedScooterById("1")._scooterId.Should().Be("1");
+    }
+
+    [TestMethod]
     public void StartRent_ExistingScooter_ScooterIsRented()
     {
         Scooter scooter = new Scooter("1", 5m);
@@ -70,7 +89,7 @@ public class TestScooterService
 
         Action action = () => _rentalCompany.StartRent("1");
 
-        action.Should().Throw<InvalidOperationException>();
+        action.Should().Throw<RentedIdException>();
     }
 
     [TestMethod]
@@ -120,7 +139,8 @@ public class TestScooterService
     public void CalculateIncome_InvalidYearProvided_ThrowInvalidOperation()
     {
         RentedScooter rentedScooter = new RentedScooter("1", 1m, new DateTime(2024, 01, 01, 10, 00, 00));
-        _rentalCompany._rentedScooters.Add(rentedScooter);
+        _rentalCompany.StartRent(rentedScooter._scooterId);
+        _rentalCompany.EndRent(rentedScooter._scooterId);
 
         Action action = () => _rentalCompany.CalculateIncome(2025, true);
 
@@ -132,7 +152,8 @@ public class TestScooterService
     {
         RentedScooter rentedScooter = new RentedScooter("1", 1, new DateTime(2024, 01, 01, 10, 00, 00));
         rentedScooter._endTime = new DateTime(2024, 01, 01, 10, 01, 00);
-        _rentalCompany._rentedScooters.Add(rentedScooter);
+        _rentalCompany.StartRent(rentedScooter._scooterId);
+        _rentalCompany.EndRent(rentedScooter._scooterId);
 
         decimal sum = _rentalCompany.CalculateIncome(2024, true);
         Debug.WriteLine("sum: " + sum);

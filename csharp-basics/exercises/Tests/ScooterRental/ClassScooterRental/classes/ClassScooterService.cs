@@ -55,15 +55,8 @@ namespace ScooterRental
                 {
                     var scooter = _inventory.First(scooter => scooter.Id == id);
 
-                    if(scooter.IsRented)
-                    {
-                        throw new RentedIdException(id);
-                    }
-                    else
-                    {
-                        _inventory.RemoveAll(scooter => scooter.Id == id);
-                        return;
-                    }
+                    _inventory.RemoveAll(scooter => scooter.Id == id);
+                    return;
                 }
                 else
                 {

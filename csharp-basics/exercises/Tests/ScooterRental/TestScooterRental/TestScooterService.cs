@@ -93,18 +93,6 @@ public class TestScooterService
     }
 
     [TestMethod]
-    public void RemoveScooter_RentedIdProvided_ThrowRentedIdException()
-    {
-        var scooter = new Scooter("Id", 0.5m);
-        scooter.IsRented = true;
-        _scooterList.Add(scooter);
-
-        Action action = () => _scooterService.RemoveScooter("Id");
-
-        action.Should().Throw<RentedIdException>();
-    }
-
-    [TestMethod]
     public void GetScooterById_NoIdProvided_ThrowInvalidIdException()
     {
         Action action = () => _scooterService.GetScooterById("");
