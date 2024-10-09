@@ -152,11 +152,6 @@ public class TestScooterService
          Thread.Sleep(1000);
         _rentalCompany.EndRent("1");
 
-        //RentedScooter rentedScooter = new RentedScooter("1", 1, new DateTime(2024, 01, 01, 10, 00, 00));
-        //rentedScooter._endTime = new DateTime(2024, 01, 01, 10, 01, 00);
-        //_rentalCompany.StartRent(rentedScooter._scooterId);
-        //_rentalCompany.EndRent(rentedScooter._scooterId);
-
         decimal sum = _rentalCompany.CalculateIncome(2024, false);
         Debug.WriteLine("sum: " + sum);
 
