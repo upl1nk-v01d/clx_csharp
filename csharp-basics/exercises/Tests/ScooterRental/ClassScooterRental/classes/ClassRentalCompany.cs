@@ -72,8 +72,6 @@ namespace ScooterRental
             var rentedScooter = this.GetRentedScooterById(id);
             rentedScooter._endTime = DateTime.Now;
             
-            CalculateIncome(2024, true);
-
             return scooter.PricePerMinute;
         }
 
