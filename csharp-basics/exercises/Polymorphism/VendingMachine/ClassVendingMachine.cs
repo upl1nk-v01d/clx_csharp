@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace VendingMachine
+namespace VendingMachineNS
 {
     public class VendingMachine : IVendingMachine
     {
@@ -21,6 +21,16 @@ namespace VendingMachine
         private List<Product> ProductList = new List<Product>();
 
         public int ChosenProductIndex;
+
+        public VendingMachine(string manufacturer, int amountEuros, int amountCents)
+        {
+            this.Manufacturer = manufacturer;
+
+            this.Balance.Euros = amountEuros;
+            this.Balance.Cents = amountCents;
+
+            this.ChosenProductIndex = -1;
+        }
 
         public bool CheckCoins(Money coins)
         {
@@ -73,7 +83,7 @@ namespace VendingMachine
 
         public bool CheckProduct(int index)
         {
-            if(ProductList[ChosenProductIndex].Available < 1)
+            if(ProductList[index].Available < 1)
             {
                 Console.WriteLine($"Product {ProductList[index].Name} is not available!");
             }
@@ -84,7 +94,6 @@ namespace VendingMachine
             
             return false;
         }
-
 
         public Money ReturnMoney()
         {
@@ -112,11 +121,18 @@ namespace VendingMachine
 
         public bool AddProduct(string name, Money price, int count)
         {
+            if(name == "" || count < 1 || price.Euros <= 1 && price.Cents < 1)
+            {
+                return false;
+            }
+
             this.ProductList.Add(new Product { Name = name, Price = price, Available = count });
 
             int euros = price.Euros;
             double cents = price.Cents * 0.01;
             double _price = euros + cents;
+
+            this.HasProducts = true;
 
             Console.WriteLine($"Added product: {name} with price {_price:0.00} EUR and quantity {count} pieces");
 
@@ -125,6 +141,11 @@ namespace VendingMachine
 
         public bool UpdateProduct(int productNumber, string name, Money? price, int amount)
         {
+            if(name == "" || amount < 1 || (price.Value.Euros <= 0 && price.Value.Cents <= 0))
+            {
+                return false;
+            }
+            
             this.ProductList[productNumber] = new Product { Name = name, Price = price.Value, Available = amount };
 
             return true;
@@ -170,6 +191,11 @@ namespace VendingMachine
                     Console.WriteLine($"You bought product {productName} with price {_price:0.00} EUR");
         
                     this.ReturnMoney();
+
+                    if(ProductList[ChosenProductIndex].Available < 1)
+                    {
+                        ProductList.RemoveAt(ChosenProductIndex);
+                    }
                 }
                 else
                 {
@@ -177,17 +203,12 @@ namespace VendingMachine
                 }
             }
 
+            if(this.ProductList.Count < 1)
+            {
+                this.HasProducts = false;
+            }
+
             return productNumber;
-        }
-
-        public VendingMachine(string manufacturer, int amountEuros, int amountCents)
-        {
-            this.Manufacturer = manufacturer;
-
-            this.Balance.Euros = amountEuros;
-            this.Balance.Cents = amountCents;
-
-            this.ChosenProductIndex = -1;
         }
     }
 }
